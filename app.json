@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "pclubapp",
+    "slug": "pclubapp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "pclubapp"
+}
