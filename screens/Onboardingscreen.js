@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     borderColor:"#118b06",
     //marginTop:20,
     //marginTop:h * 0.09,
-    marginTop:40,
+    marginTop:70,
     borderWidth:2,
 borderRadius:5,
   },
@@ -129,8 +129,8 @@ const Onboardingscreen = ({navigation}) => {
           flex: 1,
           paddingHorizontal: 30,
           paddingVertical: 20,
-          justifyContent: "flex-end",
-          alignItems: "flex-end",
+          justifyContent: "center",
+          alignItems: "center",
         }}
         style={styles.wrapper}
         showsButtons={false}
@@ -142,7 +142,7 @@ const Onboardingscreen = ({navigation}) => {
         activeDotColor="#118b06"
         dotColor="#998FA2"
         
-      /*  prevButton={
+        nextButton={
           <View 
             style={{
               height: 60,
@@ -159,7 +159,7 @@ const Onboardingscreen = ({navigation}) => {
         
           </View>
         }
-        */
+        
      onIndexChanged={(index)=>{
       
       if(index===3)
@@ -182,9 +182,7 @@ const Onboardingscreen = ({navigation}) => {
           <Text style={styles.skiptext}>
           An portal for uiet students
           </Text>
-          <Pressable style={styles.continue} onPress={()=>navigation.navigate('Login')} >
-      <Text style={styles.skiptext}>Continue</Text>
-    </Pressable>
+    
           
         
         </View>
@@ -197,9 +195,7 @@ const Onboardingscreen = ({navigation}) => {
           <Text style={styles.text}>
            In your coding journey make a pitstop through our session and gain some knowledge about exciting world of coding !
           </Text>
-          <Pressable style={styles.continue} onPress={()=>navigation.navigate('Login')} >
-      <Text style={styles.skiptext}>Continue</Text>
-    </Pressable>
+        
         </View>
 
         <View style={styles.slide}>
@@ -212,9 +208,7 @@ const Onboardingscreen = ({navigation}) => {
           Explore different open source project and new stacks with our experts and get a 
 chance to be a part of open source community
           </Text>
-          <Pressable style={styles.continue} onPress={()=>navigation.navigate('Login')} >
-      <Text style={styles.skiptext}>Continue</Text>
-    </Pressable>
+         
         </View>
         
         <View style={styles.slide} >

@@ -7,6 +7,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import{createStackNavigator} from '@react-navigation/stack';
 import Onboardingscreen from "./screens/Onboardingscreen";
 import LoginScreen from "./screens/LoginScreen";
+import Signupscreen from "./screens/Signupscreen";
+
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const AppStack = createStackNavigator();
@@ -18,6 +20,8 @@ return ( <NavigationContainer>
 
     <AppStack.Screen name="Onboarding" component= {Onboardingscreen} />
     <AppStack.Screen name="Login"component ={LoginScreen} />
+    <AppStack.Screen name="Signup" component= {Signupscreen} />
+
 
 
 
