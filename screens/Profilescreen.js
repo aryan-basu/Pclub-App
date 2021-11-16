@@ -1,5 +1,6 @@
 import React from "react";
 import {View , Text, Button , StyleSheet,Image} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Profilescreen = ({navigation}) => {
 
@@ -32,87 +33,106 @@ const Profilescreen = ({navigation}) => {
      }}>University Institute of Engineering and Technology</Text>
      </View>
      <View style={styles.newconatiner}>
+       <View style={{flexDirection: 'row', marginTop: 20,
+      marginBottom:10,marginLeft: 20,}}>
+     <Icon name="play" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
-      fontFamily: "Montserrat__700Bold",
-      marginTop: 10,
-      marginBottom:10,
+      fontFamily: "Montserrat__400Regular",
+     
       fontSize: 19,
       lineHeight: 24,
-      marginLeft: 40,
+      
       alignItems:"flex-start",
-     }}>My courses</Text>
-          <Text style={{ color: "#000",
-      fontFamily: "Montserrat__700Bold",
-      marginTop: 10,
-      marginBottom:10,
+     }}>My courses</Text></View>
+    <View style={{flexDirection: 'row', marginTop: 10,
+      marginBottom:10,marginLeft: 20,}}>
+     <Icon name="bookmark" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+     <Text style={{ color: "#000",
+      fontFamily: "Montserrat__400Regular",
+     
       fontSize: 19,
       lineHeight: 24,
-      marginLeft: 40,
+      
       alignItems:"flex-start",
-     }}>Save Articles</Text>
-          <Text style={{ color: "#000",
-      fontFamily: "Montserrat__700Bold",
-      marginTop: 10,
-      marginBottom:10,
+     }}>Saved Articles</Text></View>
+         
+         <View style={{flexDirection: 'row', marginTop: 10,
+      marginBottom:10,marginLeft: 20,}}>
+     <Icon name="download" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+     <Text style={{ color: "#000",
+      fontFamily: "Montserrat__400Regular",
+     
       fontSize: 19,
       lineHeight: 24,
-      marginLeft: 40,
+      
       alignItems:"flex-start",
-     }}>Offline Articles</Text>
-          <Text style={{ color: "#000",
-      fontFamily: "Montserrat__700Bold",
-      marginTop: 10,
-      marginBottom:10,
+     }}>Offline Articles</Text></View>
+           <View style={{flexDirection: 'row', marginTop: 10,
+      marginBottom:10,marginLeft: 20,}}>
+     <Icon name="star" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+     <Text style={{ color: "#000",
+      fontFamily: "Montserrat__400Regular",
+     
       fontSize: 19,
       lineHeight: 24,
-      marginLeft: 40,
+      
       alignItems:"flex-start",
-     }}>Interests</Text>
-          <Text style={{ color: "#000",
-      fontFamily: "Montserrat__700Bold",
-      marginTop: 10,
-      marginBottom:10,
+     }}>Interests</Text></View>
+             <View style={{flexDirection: 'row', marginTop: 10,
+      marginBottom:10,marginLeft: 20,}}>
+     <Icon name="info-circle" style={{marginRight:22,color:"#373636"}} size={26} color="#900" />
+     <Text style={{ color: "#000",
+      fontFamily: "Montserrat__400Regular",
+     
       fontSize: 19,
       lineHeight: 24,
-      marginLeft: 40,
+      
       alignItems:"flex-start",
-     }}>About Us</Text>
-          <Text style={{ color: "#000",
-      fontFamily: "Montserrat__700Bold",
-      marginTop: 10,
-      marginBottom:10,
+     }}>About us</Text></View>
+         <View style={{flexDirection: 'row', marginTop: 10,
+      marginBottom:10,marginLeft: 20,}}>
+     <Icon name="play" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+     <Text style={{ color: "#000",
+      fontFamily: "Montserrat__400Regular",
+     
       fontSize: 19,
       lineHeight: 24,
-      marginLeft: 40,
+      
       alignItems:"flex-start",
-     }}>Privacy and Policy</Text>
-          <Text style={{ color: "#000",
-      fontFamily: "Montserrat__700Bold",
-      marginTop: 10,
-      marginBottom:10,
+     }}>Privacy and Policy</Text></View>
+           <View style={{flexDirection: 'row', marginTop: 10,
+      marginBottom:10,marginLeft: 20,}}>
+     <Icon name="bug" style={{marginRight:20,color:"#373636"}} size={25}  />
+     <Text style={{ color: "#000",
+      fontFamily: "Montserrat__400Regular",
+     
       fontSize: 19,
       lineHeight: 24,
-      marginLeft: 40,
+      
       alignItems:"flex-start",
-     }}>Feedback</Text>
-          <Text style={{ color: "#000",
-      fontFamily: "Montserrat__700Bold",
-      marginTop: 10,
-      marginBottom:10,
+     }}>Feedback</Text></View>
+            <View style={{flexDirection: 'row', marginTop: 10,
+      marginBottom:10,marginLeft: 20,}}>
+     <Icon name="cogs" style={{marginRight:20,color:"#373636"}} size={25}  />
+     <Text style={{ color: "#000",
+      fontFamily: "Montserrat__400Regular",
+     
       fontSize: 19,
       lineHeight: 24,
-      marginLeft: 40,
+      
       alignItems:"flex-start",
-     }}>Settings</Text>
-          <Text style={{ color: "#000",
-      fontFamily: "Montserrat__700Bold",
-      marginTop: 10,
-      marginBottom:10,
+     }}>Settings</Text></View>
+         <View style={{flexDirection: 'row', marginTop: 10,
+      marginBottom:10,marginLeft: 20,}}>
+     <Icon name="sign-out" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+     <Text style={{ color: "#000",
+      fontFamily: "Montserrat__400Regular",
+     
       fontSize: 19,
       lineHeight: 24,
-      marginLeft: 40,
+      
       alignItems:"flex-start",
-     }}>Logout</Text>
+     }}>Logout</Text></View>
      
     <Button
   style={{fontSize: 20, color: 'green'}}
