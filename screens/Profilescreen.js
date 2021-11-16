@@ -37,7 +37,7 @@ const Profilescreen = ({navigation}) => {
      <View style={styles.newconatiner}>
        <View style={{flexDirection: 'row', marginTop: 20,
       marginBottom:10,marginLeft: 20,}}>
-     <Icon name="play-box-outline" style={{marginRight:10,borderColor:"#373636",color:"#000",}} size={25} />
+     <Icon name="play-box-outline" style={{marginRight:20,borderColor:"#373636",color:"#000",}} size={25} />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
