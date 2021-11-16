@@ -2,7 +2,8 @@ import React from "react";
 import { useNavigation } from '@react-navigation/native';
 import {View ,Image, Text, Button , StyleSheet,TextInput,Pressable,SocialIcon} from 'react-native';
 
-
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 const handlePress=()=>{
 
@@ -18,6 +19,7 @@ const LoginScreen = ({navigation}) => {
 
     <Text style={styles.title}>Welcome</Text>
     <Text style={styles.text}>Sign-In To Contiue!</Text>
+   
     <TextInput
         style={styles.input}
         placeholder='Email or Username'
@@ -39,7 +41,6 @@ const LoginScreen = ({navigation}) => {
       <Pressable style={styles.continue}   onPress={()=>navigation.navigate('Onboarding')} >
       <Text style={styles.skiptext}>Sign In</Text>
     </Pressable>
- 
     <Pressable style={{ backgroundColor:"#dcdcdc",
       borderColor:"#dcdcdc",
       //marginTop:20,
@@ -47,7 +48,10 @@ const LoginScreen = ({navigation}) => {
       marginTop:10,
       borderWidth:2,
       marginBottom:10,
+      justifyContent:"center",
+      flexDirection:"row",
   borderRadius:10,}}   onPress={()=>navigation.navigate('Onboarding')} >
+         <Icon name="google" style={{ marginTop:5,marginRight:18,color:"#373636"}} size={25} color="#900" />
       <Text style={{ color:"#000000",
       fontFamily: "Montserrat_400Regular",
       
@@ -66,7 +70,10 @@ const LoginScreen = ({navigation}) => {
       marginTop:10,
       borderWidth:2,
       marginBottom:10,
+      justifyContent:"center",
+      flexDirection:"row",
   borderRadius:10,}}   onPress={()=>navigation.navigate('Onboarding')} >
+         <Icon name="facebook" style={{ marginTop:5,marginRight:10,color:"#373636"}} size={25} color="#900" />
       <Text style={{ color:"#000000",
       fontFamily: "Montserrat_400Regular",
       
@@ -77,8 +84,6 @@ const LoginScreen = ({navigation}) => {
       
       paddingTop:10,
       paddingBottom:10}}>Sign In with Facebook</Text>
-     
-
     </Pressable>
     <Pressable style={{ backgroundColor:"#dcdcdc",
       borderColor:"#dcdcdc",
@@ -87,7 +92,10 @@ const LoginScreen = ({navigation}) => {
       marginTop:10,
       borderWidth:2,
       marginBottom:10,
+      justifyContent:"center",
+      flexDirection:"row",
   borderRadius:10,}}   onPress={()=>navigation.navigate('Onboarding')} >
+         <Icon name="github" style={{ marginTop:5,marginRight:20,color:"#373636"}} size={25} color="#900" />
       <Text style={{ color:"#000000",
       fontFamily: "Montserrat_400Regular",
       
@@ -106,7 +114,10 @@ const LoginScreen = ({navigation}) => {
       marginTop:10,
       borderWidth:2,
       marginBottom:10,
+      justifyContent:"center",
+      flexDirection:"row",
   borderRadius:10,}}   onPress={()=>navigation.navigate('Onboarding')} >
+         <Icon name="linkedin" style={{ marginTop:5,marginRight:20,color:"#373636"}} size={25} color="#900" />
       <Text style={{ color:"#000000",
       fontFamily: "Montserrat_400Regular",
       
@@ -116,8 +127,9 @@ const LoginScreen = ({navigation}) => {
           textAlign: 'center',
       
       paddingTop:10,
-      paddingBottom:10}}>Sign In with LinkedIn</Text>
+      paddingBottom:10}}>Sign In with linkedin</Text>
     </Pressable>
+  
     <View style={{ marginTop: 10,
       marginBottom:10,
       fontSize: 14,
