@@ -19,17 +19,32 @@ const LoginScreen = ({navigation}) => {
 
     <Text style={styles.title}>Welcome</Text>
     <Text style={styles.text}>Sign-In To Contiue!</Text>
-   
+   <View style={{flexDirection:"row", borderColor: "gray",
+        width: "100%",
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 10,
+        marginTop:10,
+        marginBottom:10,}}>
+   <Icon name="account" style={{marginRight:20,color:"#666"}} size={25} color="#900" />
     <TextInput
         style={styles.input}
         placeholder='Email or Username'
         placeholderTextColor="#666"
-      />
-       <TextInput
+      /></View>
+       <View style={{flexDirection:"row", borderColor: "gray",
+        width: "100%",
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 10,
+        marginTop:10,
+        marginBottom:10,}}>
+   <Icon name="key" style={{marginRight:20,color:"#666"}} size={25} color="#900" />
+    <TextInput
         style={styles.input}
         placeholder='Password'
         placeholderTextColor="#666"
-      />
+      /></View>
        <Text style={{ color: "#767676",
       fontFamily: "Montserrat_400Regular",
       marginTop: 5,
@@ -168,13 +183,7 @@ const styles = StyleSheet.create ({
   
     },
       input: {
-        borderColor: "gray",
-        width: "100%",
-        borderWidth: 1,
-        borderRadius: 10,
-        padding: 10,
-        marginTop:10,
-        marginBottom:10,
+       
       },
     text: {
       color: "#767676",
