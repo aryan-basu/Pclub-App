@@ -1,7 +1,9 @@
 import React from "react";
 import { useNavigation } from '@react-navigation/native';
 import {View ,Image, Text, Button , StyleSheet,TextInput,Pressable,SocialIcon} from 'react-native';
-import { Icon } from "react-native-vector-icons/FontAwesome";
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Awesome from 'react-native-vector-icons/FontAwesome'
 
 
 
@@ -19,26 +21,58 @@ const Signupscreen = ({navigation}) => {
 
     <Text style={styles.title}>Create an Account</Text>
     <Text style={styles.text}>Sign-up To get Started!</Text>
+    <View style={{flexDirection:"row", borderColor: "gray",
+        width: "100%",
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 10,
+        marginTop:10,
+        marginBottom:10,}}>
+   <Icon name="account" style={{marginRight:20,color:"#666"}} size={25} color="#900" />
     <TextInput
         style={styles.input}
         placeholder='Email'
         placeholderTextColor="#666"
-      />
-       <TextInput
+      /></View>
+     <View style={{flexDirection:"row", borderColor: "gray",
+        width: "100%",
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 10,
+        marginTop:10,
+        marginBottom:10,}}>
+   <Awesome name="institution" style={{marginRight:20,color:"#666"}} size={25} color="#900" />
+    <TextInput
         style={styles.input}
         placeholder='Institution/Organization'
         placeholderTextColor="#666"
-      />
-       <TextInput
+      /></View>
+        <View style={{flexDirection:"row", borderColor: "gray",
+        width: "100%",
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 10,
+        marginTop:10,
+        marginBottom:10,}}>
+   <Icon name="key" style={{marginRight:20,color:"#666"}} size={25} color="#900" />
+    <TextInput
         style={styles.input}
         placeholder='Password'
         placeholderTextColor="#666"
-      />
-       <TextInput
+      /></View>
+        <View style={{flexDirection:"row", borderColor: "gray",
+        width: "100%",
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 10,
+        marginTop:10,
+        marginBottom:10,}}>
+   <Icon name="key" style={{marginRight:20,color:"#666"}} size={25} color="#900" />
+    <TextInput
         style={styles.input}
         placeholder='Confirm Password'
         placeholderTextColor="#666"
-      />
+      /></View>
        <View style={{ 
       fontSize: 14,
       //lineHeight: 2,
@@ -102,13 +136,7 @@ const styles = StyleSheet.create ({
   
     },
       input: {
-        borderColor: "gray",
-        width: "100%",
-        borderWidth: 1,
-        borderRadius: 10,
-        padding: 10,
-        marginTop:10,
-        marginBottom:10,
+        
       },
     text: {
       color: "#767676",
