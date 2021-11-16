@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { StyleSheet, Image,Button, Dimensions, Text, View, Pressable  } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import LoginScreen from "./LoginScreen";
+
 
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Swiper from "react-native-swiper";

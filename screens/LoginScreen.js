@@ -1,9 +1,8 @@
 import React from "react";
 import { useNavigation } from '@react-navigation/native';
-import {View ,Image, Text, Button , StyleSheet,TextInput,Pressable,SocialIcon,Icon} from 'react-native';
-import {App} from '../App';
-import Onboardingscreen
- from "./Onboardingscreen";
+import {View ,Image, Text, Button , StyleSheet,TextInput,Pressable,SocialIcon} from 'react-native';
+
+
 
 const handlePress=()=>{
 
