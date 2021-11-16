@@ -1,19 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {View ,Image, Text, Button , StyleSheet,TextInput,Pressable,SocialIcon} from 'react-native';
+import auth from '@react-native-firebase/auth';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import AntDesign from 'react-native-vector-icons/AntDesign'
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
-const handlePress=()=>{
+async function googlelogin(){
+  const { idToken } = await GoogleSignin.signIn();
 
+  // Create a Google credential with the token
+  const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+  // Sign-in the user with the credential
+  return auth().signInWithCredential(googleCredential);
      
-    alert('Login')
+  
 }
+
 
 const LoginScreen = ({navigation}) => {
   
     //const navigation = useNavigation();
+
+    useEffect(() => {
+      GoogleSignin.configure({
+
+        webClientId:
+         '213404143944-opjfievv337vaf2va1c2r5q3kh5b447o.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
+         // if you want to access Google API on behalf of the user FROM YOUR SERVER
+      });
+    }, []);
     return (
 <View style={styles.container}>
 
@@ -66,7 +84,7 @@ const LoginScreen = ({navigation}) => {
       marginBottom:10,
       justifyContent:"center",
       flexDirection:"row",
-  borderRadius:10,}}   onPress={()=>navigation.navigate('Onboarding')} >
+  borderRadius:10,}}   onPress={googlelogin} >
          <Icon name="google" style={{ marginTop:5,marginRight:18,color:"#373636"}} size={25} color="#900" />
       <Text style={{ color:"#000000",
       fontFamily: "Montserrat_400Regular",

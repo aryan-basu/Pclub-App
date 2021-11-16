@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "213404143944",
+    "project_id": "pclub-app-c4cbb",
+    "storage_bucket": "pclub-app-c4cbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213404143944:android:8bf99d731133a6a83f637d",
+        "android_client_info": {
+          "package_name": "com.pclubapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213404143944-qa80sfkr4r48cdnqdj0nvo6g4umme1te.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pclubapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "213404143944-opjfievv337vaf2va1c2r5q3kh5b447o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmpA7Ah7C0zSvOoouDbHtiXF3mHe4DxDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "213404143944-opjfievv337vaf2va1c2r5q3kh5b447o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
