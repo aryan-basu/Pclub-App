@@ -1,6 +1,8 @@
 import React from "react";
 import {View , Text, Button , StyleSheet,Image} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { color } from "react-native-reanimated";
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 const Profilescreen = ({navigation}) => {
 
@@ -35,7 +37,7 @@ const Profilescreen = ({navigation}) => {
      <View style={styles.newconatiner}>
        <View style={{flexDirection: 'row', marginTop: 20,
       marginBottom:10,marginLeft: 20,}}>
-     <Icon name="play" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+     <Icon name="play-box-outline" style={{marginRight:10,borderColor:"#373636",color:"#000",}} size={25} />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -46,7 +48,7 @@ const Profilescreen = ({navigation}) => {
      }}>My courses</Text></View>
     <View style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
-     <Icon name="bookmark" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+     <Icon name="bookmark-multiple-outline" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -58,7 +60,7 @@ const Profilescreen = ({navigation}) => {
          
          <View style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
-     <Icon name="download" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+     <AntDesign name="download" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -69,7 +71,7 @@ const Profilescreen = ({navigation}) => {
      }}>Offline Articles</Text></View>
            <View style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
-     <Icon name="star" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+     <Icon name="star-outline" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -80,7 +82,7 @@ const Profilescreen = ({navigation}) => {
      }}>Interests</Text></View>
              <View style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
-     <Icon name="info-circle" style={{marginRight:22,color:"#373636"}} size={26} color="#900" />
+     <Icon name="information-outline" style={{marginRight:22,color:"#373636"}} size={26} color="#900" />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -91,7 +93,7 @@ const Profilescreen = ({navigation}) => {
      }}>About us</Text></View>
          <View style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
-     <Icon name="play" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+     <Icon name="security" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -102,7 +104,7 @@ const Profilescreen = ({navigation}) => {
      }}>Privacy and Policy</Text></View>
            <View style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
-     <Icon name="bug" style={{marginRight:20,color:"#373636"}} size={25}  />
+     <Icon name="bug-outline" style={{marginRight:20,color:"#373636"}} size={25}  />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -124,7 +126,7 @@ const Profilescreen = ({navigation}) => {
      }}>Settings</Text></View>
          <View style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
-     <Icon name="sign-out" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+     <Icon name="logout" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
