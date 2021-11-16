@@ -187,7 +187,7 @@ const Onboardingscreen = ({navigation}) => {
         
         </View>
         <View style={styles.slide}>
-        <Pressable style={styles.skip} onPress={()=>alert(`${index}`)} >
+        <Pressable style={styles.skip} onPress={()=>navigation.navigate('Login')} >
       <Text style={styles.skiptext}>Skip</Text>
     </Pressable>
           <Image source={require("../images/gain.png")} style={styles.img} /> 

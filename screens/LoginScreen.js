@@ -44,6 +44,7 @@ const LoginScreen = ({navigation}) => {
         style={styles.input}
         placeholder='Password'
         placeholderTextColor="#666"
+        secureTextEntry
       /></View>
        <Text style={{ color: "#767676",
       fontFamily: "Montserrat_400Regular",

@@ -59,6 +59,7 @@ const Signupscreen = ({navigation}) => {
         style={styles.input}
         placeholder='Password'
         placeholderTextColor="#666"
+        secureTextEntry
       /></View>
         <View style={{flexDirection:"row", borderColor: "gray",
         width: "100%",
@@ -72,6 +73,7 @@ const Signupscreen = ({navigation}) => {
         style={styles.input}
         placeholder='Confirm Password'
         placeholderTextColor="#666"
+        secureTextEntry
       /></View>
        <View style={{ 
       fontSize: 14,
