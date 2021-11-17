@@ -1,11 +1,32 @@
 import React from "react";
-import {View , Text, Button , StyleSheet,Image} from 'react-native';
+import {View , Text, Button , StyleSheet,Image,TouchableOpacity} from 'react-native';
 import { color } from "react-native-reanimated";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import AntDesign from 'react-native-vector-icons/AntDesign'
-
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import auth from '@react-native-firebase/auth';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 const Profilescreen = ({navigation}) => {
+async function signout(){
+  try {
+   
+    var user = auth().currentUser;
+    if(user)
+    {
+      await auth().signOut();
+      await GoogleSignin.revokeAccess();
+      await GoogleSignin.signOut().then(alert('pq'));
+      
+    
+    }
+    else
+    alert('kkr');
+    //this.setState({ user: null }); // Remember to remove the user from your app's state as well
+  } catch (error) {
+    console.error(error);
+  }
+ 
 
+}
     return (
       <View>
 <View style={styles.container}>
@@ -124,7 +145,7 @@ const Profilescreen = ({navigation}) => {
       
       alignItems:"flex-start",
      }}>Settings</Text></View>
-         <View style={{flexDirection: 'row', marginTop: 10,
+         <TouchableOpacity onPress={signout} style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
      <Icon name="logout" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
@@ -134,12 +155,12 @@ const Profilescreen = ({navigation}) => {
       lineHeight: 24,
       
       alignItems:"flex-start",
-     }}>Logout</Text></View>
+     }}>Logout</Text></TouchableOpacity>
      
     <Button
   style={{fontSize: 20, color: 'green'}}
   styleDisabled={{color: 'red'}}
-  onPress={()=>navigation.navigate('Onboarding')}
+  
   title="Press Me"
 >
   Press Me

@@ -6,15 +6,51 @@ import auth from '@react-native-firebase/auth';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
-
+function signin(){
+ // var user=GoogleSignin.getCurrentUser();
+ //console.log(user);
+ var user = auth().currentUser;
+  if(user==null)
+ alert('abc');
+  else
+  alert(`${user.email}`) 
+}
 async function googlelogin(){
-  const { idToken } = await GoogleSignin.signIn();
+  try {
+    // Get the users ID token
+    const { idToken } = await GoogleSignin.signIn();
 
-  // Create a Google credential with the token
-  const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+    // Create a Google credential with the token
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
 
-  // Sign-in the user with the credential
-  return auth().signInWithCredential(googleCredential);
+    // Sign-in the user with the credential
+    await auth().signInWithCredential(googleCredential)
+    // Use it only when user Sign's up, 
+    // so create different social signup function
+    // .then(() => {
+    //   //Once the user creation has happened successfully, we can add the currentUser into firestore
+    //   //with the appropriate details.
+    //   // console.log('current User', auth().currentUser);
+    //   firestore().collection('users').doc(auth().currentUser.uid)
+    //   .set({
+    //       fname: '',
+    //       lname: '',
+    //       email: auth().currentUser.email,
+    //       createdAt: firestore.Timestamp.fromDate(new Date()),
+    //       userImg: null,
+    //   })
+    //   //ensure we catch any errors at this stage to advise us if something does go wrong
+    //   .catch(error => {
+    //       console.log('Something went wrong with added user to firestore: ', error);
+    //   })
+    // })
+    //we need to catch the whole sign up process if it fails too.
+    .catch(error => {
+        console.log('Something went wrong with sign up: ', error);
+    });
+  } catch(error) {
+    console.log({error});
+  }
      
   
 }
@@ -30,6 +66,7 @@ const LoginScreen = ({navigation}) => {
         webClientId:
          '213404143944-opjfievv337vaf2va1c2r5q3kh5b447o.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
          // if you want to access Google API on behalf of the user FROM YOUR SERVER
+         offlineAccess:true
       });
     }, []);
     return (
@@ -72,7 +109,7 @@ const LoginScreen = ({navigation}) => {
       lineHeight: 24,
       textAlign:"right"
       }}>Forgot Password ?</Text>
-      <Pressable style={styles.continue}   onPress={()=>navigation.navigate('Onboarding')} >
+      <Pressable style={styles.continue}   onPress={signin} >
       <Text style={styles.skiptext}>Sign In</Text>
     </Pressable>
     <Pressable style={{ backgroundColor:"#dcdcdc",
