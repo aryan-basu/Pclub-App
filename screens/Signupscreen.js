@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {View ,Image, Text, Button , StyleSheet,TextInput,Pressable,SocialIcon} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Awesome from 'react-native-vector-icons/FontAwesome'
+import Profilescreen from './Profilescreen';
 
-
+import auth from '@react-native-firebase/auth';
 
 const handlePress=()=>{
 
@@ -13,9 +14,16 @@ const handlePress=()=>{
     alert('Login')
 }
 
+
 const Signupscreen = ({navigation}) => {
   
     //const navigation = useNavigation();
+
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    function register (email,password){
+      auth().createUserWithEmailAndPassword(email,password).then(navigation.navigate('Profile'));
+    }
     return (
 <View style={styles.container}>
 
@@ -32,6 +40,7 @@ const Signupscreen = ({navigation}) => {
     <TextInput
         style={styles.input}
         placeholder='Email'
+        onChangeText={(email) => setEmail(email)}
         placeholderTextColor="#666"
       /></View>
      <View style={{flexDirection:"row", borderColor: "gray",
@@ -58,6 +67,7 @@ const Signupscreen = ({navigation}) => {
     <TextInput
         style={styles.input}
         placeholder='Password'
+        onChangeText={(password) => setPassword(password)}
         placeholderTextColor="#666"
         secureTextEntry
       /></View>
@@ -94,7 +104,7 @@ const Signupscreen = ({navigation}) => {
     
       fontSize: 14,
   }}onPress={() =>navigation.navigate("Signup")}> Privacy and policy</Text></View>
-      <Pressable style={styles.continue}   onPress={()=>navigation.navigate('Onboarding')} >
+      <Pressable style={styles.continue}   onPress={()=>register(email, password)} >
       <Text style={styles.skiptext}>Sign Up</Text>
     </Pressable>
  

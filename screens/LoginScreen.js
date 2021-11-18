@@ -2,64 +2,47 @@ import React, { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {View ,Image, Text, Button , StyleSheet,TextInput,Pressable,SocialIcon} from 'react-native';
 import auth from '@react-native-firebase/auth';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
-function signin(){
- // var user=GoogleSignin.getCurrentUser();
- //console.log(user);
- var user = auth().currentUser;
-  if(user==null)
- alert('abc');
-  else
-  alert(`${user.email}`) 
-}
-async function googlelogin(){
-  try {
-    // Get the users ID token
-    const { idToken } = await GoogleSignin.signIn();
 
-    // Create a Google credential with the token
-    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
 
-    // Sign-in the user with the credential
-    await auth().signInWithCredential(googleCredential)
-    // Use it only when user Sign's up, 
-    // so create different social signup function
-    // .then(() => {
-    //   //Once the user creation has happened successfully, we can add the currentUser into firestore
-    //   //with the appropriate details.
-    //   // console.log('current User', auth().currentUser);
-    //   firestore().collection('users').doc(auth().currentUser.uid)
-    //   .set({
-    //       fname: '',
-    //       lname: '',
-    //       email: auth().currentUser.email,
-    //       createdAt: firestore.Timestamp.fromDate(new Date()),
-    //       userImg: null,
-    //   })
-    //   //ensure we catch any errors at this stage to advise us if something does go wrong
-    //   .catch(error => {
-    //       console.log('Something went wrong with added user to firestore: ', error);
-    //   })
-    // })
-    //we need to catch the whole sign up process if it fails too.
-    .catch(error => {
-        console.log('Something went wrong with sign up: ', error);
-    });
-  } catch(error) {
-    console.log({error});
-  }
-     
-  
-}
 
 
 const LoginScreen = ({navigation}) => {
   
     //const navigation = useNavigation();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    function signin(email,password){
+      // var user=GoogleSignin.getCurrentUser();
+      //console.log(user);
+      auth().signInWithEmailAndPassword(email,password).then(navigation.navigate('Profile'))
+     }
 
+     async function googlelogin(){
+      try {
+        // Get the users ID token
+        const { idToken } = await GoogleSignin.signIn();
+    
+        // Create a Google credential with the token
+        const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+    
+        // Sign-in the user with the credential
+        await auth().signInWithCredential(googleCredential)//.then(navigation.navigate('Profile')) //.then(navigation.navigate('Profile'))
+        await navigation.navigate('Profile')
+       
+       
+        .catch(error => {
+            console.log('Something went wrong with sign up: ', error);
+        });
+      } catch(error) {
+        console.log({error});
+      }
+         
+      
+    }
     useEffect(() => {
       GoogleSignin.configure({
 
@@ -85,6 +68,7 @@ const LoginScreen = ({navigation}) => {
     <TextInput
         style={styles.input}
         placeholder='Email or Username'
+        onChangeText={(email) => setEmail(email)}
         placeholderTextColor="#666"
       /></View>
        <View style={{flexDirection:"row", borderColor: "gray",
@@ -98,6 +82,7 @@ const LoginScreen = ({navigation}) => {
     <TextInput
         style={styles.input}
         placeholder='Password'
+        onChangeText={(password) => setPassword(password)}
         placeholderTextColor="#666"
         secureTextEntry
       /></View>
@@ -109,7 +94,7 @@ const LoginScreen = ({navigation}) => {
       lineHeight: 24,
       textAlign:"right"
       }}>Forgot Password ?</Text>
-      <Pressable style={styles.continue}   onPress={signin} >
+      <Pressable style={styles.continue}   onPress={()=>signin(email,password)} >
       <Text style={styles.skiptext}>Sign In</Text>
     </Pressable>
     <Pressable style={{ backgroundColor:"#dcdcdc",
