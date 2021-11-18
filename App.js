@@ -49,7 +49,7 @@ function HomeTabs() {
             <View style={{alignItems:'center',justifyContent:'center',top:1}} >
 
             
-<Octicons name="home" style={{color:"#373636"}} size={25} color="#900" />
+<Octicons name="home" style={{color:focused ? '#118b06':'#767676',}} size={focused?28:25} color="#900" />
               
               <Text style={{color:focused ? '#118b06':'#767676',fontSize:12,fontFamily: "Montserrat_400Regular" }} > Home</Text>
             </View>
@@ -66,7 +66,7 @@ function HomeTabs() {
           <View style={{alignItems:'center',justifyContent:'center',top:1}} >
 
 
-<Icon name="star-outline" style={{color:"#373636"}} size={25} color="#900" />
+<Icon name="star-outline" style={{color:focused ? '#118b06':'#767676',}} size={focused?31:29} color="#900" />
             
             <Text style={{color:focused ? '#118b06':'#767676',fontSize:12,fontFamily: "Montserrat_400Regular" }} > Explore</Text>
           </View>
@@ -80,9 +80,9 @@ function HomeTabs() {
       
       options={{
         tabBarIcon:({focused}) => (
-          <View style={{alignItems:'center',justifyContent:'center',top:1}} >
+          <View style={{alignItems:'center',justifyContent:'center',top:1,}} >
 
-<Icon name="account-outline" style={{color:"#373636"}} size={25} color="#900" />
+<Icon name="account-outline" style={{color:focused ? '#118b06':'#767676',}} size={focused?28:25} color="#900" />
           
             
             <Text style={{color:focused ? '#118b06':'#767676',fontSize:12,
