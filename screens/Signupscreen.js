@@ -22,7 +22,7 @@ const Signupscreen = ({navigation}) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     function register (email,password){
-      auth().createUserWithEmailAndPassword(email,password).then(navigation.navigate('Profile'));
+      auth().createUserWithEmailAndPassword(email,password).then(navigation.navigate('Home'));
     }
     return (
 <View style={styles.container}>
@@ -123,7 +123,7 @@ const Signupscreen = ({navigation}) => {
       }}>Already have an account ?</Text><Text style={{color:"#118b06"}}onPress={() =>navigation.navigate("Login")}> Sign in Now!</Text></View>
     
  
-    <Pressable style={styles.continue}   onPress={()=>navigation.navigate('Profile')} >
+    <Pressable style={styles.continue}   onPress={()=>navigation.navigate('Home')} >
       <Text style={styles.skiptext}>Sign Up</Text>
     </Pressable>
 </View>

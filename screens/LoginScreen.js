@@ -18,7 +18,7 @@ const LoginScreen = ({navigation}) => {
     function signin(email,password){
       // var user=GoogleSignin.getCurrentUser();
       //console.log(user);
-      auth().signInWithEmailAndPassword(email,password).then(navigation.navigate('Profile'))
+      auth().signInWithEmailAndPassword(email,password).then(navigation.navigate('Home'))
      }
 
      async function googlelogin(){
@@ -31,7 +31,7 @@ const LoginScreen = ({navigation}) => {
     
         // Sign-in the user with the credential
         await auth().signInWithCredential(googleCredential)//.then(navigation.navigate('Profile')) //.then(navigation.navigate('Profile'))
-        await navigation.navigate('Profile')
+        await navigation.navigate('Home')
        
        
         .catch(error => {

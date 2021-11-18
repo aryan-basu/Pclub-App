@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {View , Text, Button , StyleSheet,Image,TouchableOpacity} from 'react-native';
+import {View , Text, Button , StyleSheet,Image,TouchableOpacity,SectionList,ScrollView} from 'react-native';
 import { color } from "react-native-reanimated";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -42,6 +42,7 @@ useEffect (() => {
 
 })
     return (
+      <ScrollView>
       <View>
 <View style={styles.container}>
 <Image 
@@ -160,7 +161,7 @@ useEffect (() => {
       alignItems:"flex-start",
      }}>Settings</Text></View>
          <TouchableOpacity onPress={signout} style={{flexDirection: 'row', marginTop: 10,
-      marginBottom:10,marginLeft: 20,}}>
+      marginBottom:70,marginLeft: 20,}}>
      <Icon name="logout" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
@@ -173,7 +174,10 @@ useEffect (() => {
      
   
 </View>
+
+
 </View>
+</ScrollView>
 
     );
 };
