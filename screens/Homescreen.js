@@ -42,7 +42,9 @@ const Homescreen = ({navigation}) => {
        <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>Flipkart Interview</Text>
                 <Text style={{  color: "#767676",
-        fontFamily: "Montserrat_400Regular", marginLeft:10,marginBottom:14,marginTop:10,marginRight:1,justifyContent:"space-evenly"}} numberOfLines={4}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to mak</Text>
+        fontFamily: "Montserrat_400Regular", marginLeft:10,marginBottom:14,marginTop:10,marginRight:1,justifyContent:"space-evenly"}} numberOfLines={4}>Flipkart recently visited our campus for the recruitment of SDE internship 2021. Students of CSE, EC, EE having a minimum CGPA of 7.0 were eligible to apply for this position. Nearly 250 students applied for it.
+
+        There was a shortlist based on resume – Nearly 180 students were shortlisted for further rounds.</Text>
               
         </TouchableOpacity>
         <TouchableOpacity style={styles.card}>

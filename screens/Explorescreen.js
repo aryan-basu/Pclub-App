@@ -19,16 +19,16 @@ const Explorescreen = ({navigation}) => {
            </TouchableOpacity>
             <ScrollView showsHorizontalScrollIndicator={false}  horizontal={true}>
              
-                <View style={styles.card}>
+                <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>Pclub-Meet</Text>
-                </View>
+                </TouchableOpacity>
                 
-                <View style={styles.card}>
+                <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>!answer</Text>
-                </View>
-                <View style={styles.card}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>PSoC</Text>
-                </View>
+                </TouchableOpacity>
 
             </ScrollView>
             
@@ -44,13 +44,19 @@ const Explorescreen = ({navigation}) => {
            </TouchableOpacity>
           <ScrollView showsHorizontalScrollIndicator={false}   Vertical={true}>
                 <Card>
+                    <TouchableOpacity>
                 <Text style={{fontFamily:"Montserrat_700Bold"}}>PSoC</Text>
+                </TouchableOpacity>
                 </Card>
                 <Card>
+                    <TouchableOpacity>
                 <Text style={{fontFamily:"Montserrat_700Bold"}}>SFD</Text>
+                </TouchableOpacity>
                 </Card>
                 <Card>
+                    <TouchableOpacity>
                 <Text style={{fontFamily:"Montserrat_700Bold"}}>HACKUIET</Text>
+                </TouchableOpacity>
                 </Card>
               
 
@@ -66,15 +72,20 @@ const Explorescreen = ({navigation}) => {
            </TouchableOpacity>
           <ScrollView showsHorizontalScrollIndicator={false}  horizontal={true}>
            
-                <View style={styles.card}>
+                <TouchableOpacity style={styles.card}>
+                <Icon name="language-python" style={{marginLeft:5,color:"#118b06",textAlign:"center"}} size={32} color="#118b06" />
                 <Text style={styles.cardtitle}>DJANGO</Text>
-                </View>
-                <View style={styles.card}>
+              
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
+                <Icon name="react" style={{marginLeft:5,color:"#118b06",textAlign:"center"}} size={32} color="#118b06" />
                 <Text style={styles.cardtitle}>REACT</Text>
-                </View>
-                <View style={styles.card}>
+            
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
+                <Icon name="brain" style={{marginLeft:5,color:"#118b06",textAlign:"center"}} size={32} color="#118b06" />
                 <Text style={styles.cardtitle}>ML</Text>
-                </View>
+                </TouchableOpacity>
 
             
             </ScrollView>
@@ -94,6 +105,7 @@ const Explorescreen = ({navigation}) => {
                 </View>
                 <View style={styles.card}>
                 <Text style={styles.cardtitle}>REACT</Text>
+          
                 </View>
                 
                 </ScrollView>
@@ -144,36 +156,36 @@ const Explorescreen = ({navigation}) => {
            <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
            </TouchableOpacity>
           <ScrollView showsHorizontalScrollIndicator={false}  horizontal={true} style={{marginBottom:90}}>
-                <View style={styles.card}>
+                <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>GURNAMEH SINGH</Text>
-                </View>
-                <View style={styles.card}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>ASHWANI RATHEE</Text>
-                </View>
-                <View style={styles.card}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>ARYAN BASU</Text>
-                </View>
-                <View style={styles.card}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>RIK</Text>
-                </View>
-                <View style={styles.card}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>HARBANS SINGH</Text>
-                </View>
-                <View style={styles.card}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>KANISHK TYAGI</Text>
-                </View>
-                <View style={styles.card}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>MEGHNA THAKUR</Text>
-                </View>
-                <View style={styles.card}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>ABHIROOP SINGH</Text>
-                </View>
-                <View style={styles.card}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>JATIN JAIN</Text>
-                </View>
-                <View style={styles.card}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
                 <Text style={styles.cardtitle}>ADITI SANDHYAL</Text>
-                </View>
+                </TouchableOpacity>
 
             </ScrollView>
           </View>

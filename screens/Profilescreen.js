@@ -71,7 +71,7 @@ useEffect (() => {
      }}>University Institute of Engineering and Technology</Text>
      </View>
      <View style={styles.newconatiner}>
-       <View style={{flexDirection: 'row', marginTop: 20,
+       <TouchableOpacity style={{flexDirection: 'row', marginTop: 20,
       marginBottom:10,marginLeft: 20,}}>
      <Icon name="play-box-outline" style={{marginRight:20,borderColor:"#373636",color:"#000",}} size={25} />
      <Text style={{ color: "#000",
@@ -81,8 +81,8 @@ useEffect (() => {
       lineHeight: 24,
       
       alignItems:"flex-start",
-     }}>My courses</Text></View>
-    <View style={{flexDirection: 'row', marginTop: 10,
+     }}>My courses</Text></TouchableOpacity>
+    <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
      <Icon name="bookmark-multiple-outline" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
@@ -92,9 +92,9 @@ useEffect (() => {
       lineHeight: 24,
       
       alignItems:"flex-start",
-     }}>Saved Articles</Text></View>
+     }}>Saved Articles</Text></TouchableOpacity>
          
-         <View style={{flexDirection: 'row', marginTop: 10,
+         <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
      <AntDesign name="download" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
@@ -104,8 +104,8 @@ useEffect (() => {
       lineHeight: 24,
       
       alignItems:"flex-start",
-     }}>Offline Articles</Text></View>
-           <View style={{flexDirection: 'row', marginTop: 10,
+     }}>Offline Articles</Text></TouchableOpacity>
+           <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
      <Icon name="star-outline" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
@@ -115,8 +115,8 @@ useEffect (() => {
       lineHeight: 24,
       
       alignItems:"flex-start",
-     }}>Interests</Text></View>
-             <View style={{flexDirection: 'row', marginTop: 10,
+     }}>Interests</Text></TouchableOpacity>
+             <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
      <Icon name="information-outline" style={{marginRight:22,color:"#373636"}} size={26} color="#900" />
      <Text style={{ color: "#000",
@@ -126,8 +126,8 @@ useEffect (() => {
       lineHeight: 24,
       
       alignItems:"flex-start",
-     }}>About us</Text></View>
-         <View style={{flexDirection: 'row', marginTop: 10,
+     }}>About us</Text></TouchableOpacity>
+         <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
      <Icon name="security" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
@@ -137,8 +137,8 @@ useEffect (() => {
       lineHeight: 24,
       
       alignItems:"flex-start",
-     }}>Privacy and Policy</Text></View>
-           <View style={{flexDirection: 'row', marginTop: 10,
+     }}>Privacy and Policy</Text></TouchableOpacity>
+           <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
      <Icon name="bug-outline" style={{marginRight:20,color:"#373636"}} size={25}  />
      <Text style={{ color: "#000",
@@ -148,8 +148,8 @@ useEffect (() => {
       lineHeight: 24,
       
       alignItems:"flex-start",
-     }}>Feedback</Text></View>
-            <View style={{flexDirection: 'row', marginTop: 10,
+     }}>Feedback</Text></TouchableOpacity>
+            <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
       marginBottom:10,marginLeft: 20,}}>
      <Icon name="cogs" style={{marginRight:20,color:"#373636"}} size={25}  />
      <Text style={{ color: "#000",
@@ -159,7 +159,7 @@ useEffect (() => {
       lineHeight: 24,
       
       alignItems:"flex-start",
-     }}>Settings</Text></View>
+     }}>Settings</Text></TouchableOpacity>
          <TouchableOpacity onPress={signout} style={{flexDirection: 'row', marginTop: 10,
       marginBottom:70,marginLeft: 20,}}>
      <Icon name="logout" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
