@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {View , Text, Button , StyleSheet,Image,TouchableOpacity,SectionList,ScrollView} from 'react-native';
 import { color } from "react-native-reanimated";
+import { Avatar } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import auth from '@react-native-firebase/auth';
@@ -11,7 +12,7 @@ import { updateId } from 'expo-updates';
 
 const Profilescreen = ({navigation}) => {
   const [userdata, updateuserdata] = useState('Null')
-  const [photo,updatephoto]=useState('https://raw.githubusercontent.com/AboutReact/sampleresource/master/old_logo.png')
+  const [photo,updatephoto]=useState('https://gravatar.com/avatar/ba51395b85ae7e37c96b7a3712f9c48e?s=400&d=robohash&r=x')
   const [institute,updateinstitute]=useState('University Institute of Engineering and Technology')
 async function signout(){
   try {
@@ -65,7 +66,7 @@ useEffect (() => {
   source={{
     uri: `${photo}`
   }} 
-  style={{width: 180, height: 180, borderRadius: 400/ 2,marginTop:40}} 
+  style={{width: 180, height: 180, borderRadius: 400/ 2,marginTop:40,backgroundColor:"#ffffff"}} 
 />
     <Text style={{ color: "#000",
       fontFamily: "Montserrat__700Bold",
