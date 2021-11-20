@@ -64,7 +64,7 @@ const LoginScreen = ({navigation}) => {
         padding: 10,
         marginTop:10,
         marginBottom:10,}}>
-   <Icon name="account" style={{marginRight:20,color:"#666"}} size={25} color="#900" />
+   <Icon name="email" style={{marginRight:20,color:"#666"}} size={25} color="#900" />
     <TextInput
         style={styles.input}
         placeholder='Email or Username'

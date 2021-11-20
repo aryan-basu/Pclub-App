@@ -4,6 +4,7 @@ import { color } from "react-native-reanimated";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { updateId } from 'expo-updates';
 
@@ -11,6 +12,7 @@ import { updateId } from 'expo-updates';
 const Profilescreen = ({navigation}) => {
   const [userdata, updateuserdata] = useState('Null')
   const [photo,updatephoto]=useState('https://raw.githubusercontent.com/AboutReact/sampleresource/master/old_logo.png')
+  const [institute,updateinstitute]=useState('University Institute of Engineering and Technology')
 async function signout(){
   try {
    
@@ -34,9 +36,23 @@ async function signout(){
 }
 useEffect (() => {
   var data=auth().currentUser
-  if(data){
+  console.log(data)
+  
+  if(data.displayName!=null){
   updateuserdata(data.displayName);
   updatephoto(data.photoURL);
+  }
+  else if(data.email!=null)
+  {
+    firestore()
+  .collection('user')
+  .doc(`${data.email}`)
+  .get()
+  .then(documentSnapshot => {
+  updateinstitute(documentSnapshot.data().institution)
+  updateuserdata(documentSnapshot.data().name)
+      console.log('User data: ', documentSnapshot.data());
+    });
   }
  // console.log(userdata);
 
@@ -68,7 +84,7 @@ useEffect (() => {
       marginLeft: 10,
       marginRight:10,
       textAlign:"center"
-     }}>University Institute of Engineering and Technology</Text>
+     }}>{institute}</Text>
      </View>
      <View style={styles.newconatiner}>
        <TouchableOpacity style={{flexDirection: 'row', marginTop: 20,

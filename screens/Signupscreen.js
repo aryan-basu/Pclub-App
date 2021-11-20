@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import {View ,Image, Text, Button , StyleSheet,TextInput,Pressable,SocialIcon} from 'react-native';
+import {View ,Image, Text, Button , StyleSheet,TextInput,Pressable,SocialIcon,TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Awesome from 'react-native-vector-icons/FontAwesome'
 import Profilescreen from './Profilescreen';
-
 import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 const handlePress=()=>{
 
@@ -21,15 +21,27 @@ const Signupscreen = ({navigation}) => {
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    function register (email,password){
-      auth().createUserWithEmailAndPassword(email,password).then(navigation.navigate('Home'));
+    const [name,setName]=useState();
+    const [institution,setInstitution]=useState();
+
+    async function register (email,password){
+      const data={
+        email:email,
+        name:name,
+        institution:institution
+      }
+      console.log(data);
+      await firestore().collection('user').doc(`${email}`).set(data).then(
+       auth().createUserWithEmailAndPassword(email,password)).then(navigation.navigate('Home'));
+      
+
     }
     return (
 <View style={styles.container}>
 
     <Text style={styles.title}>Create an Account</Text>
     <Text style={styles.text}>Sign-up To get Started!</Text>
-    <View style={{flexDirection:"row", borderColor: "gray",
+    <TouchableOpacity style={{flexDirection:"row", borderColor: "gray",
         width: "100%",
         borderWidth: 1,
         borderRadius: 10,
@@ -37,6 +49,20 @@ const Signupscreen = ({navigation}) => {
         marginTop:10,
         marginBottom:10,}}>
    <Icon name="account" style={{marginRight:20,color:"#666"}} size={25} color="#900" />
+    <TextInput
+        style={styles.input}
+        placeholder='Name'
+        onChangeText={(name) => setName(name)}
+        placeholderTextColor="#666"
+      /></TouchableOpacity>
+    <View style={{flexDirection:"row", borderColor: "gray",
+        width: "100%",
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 10,
+        marginTop:10,
+        marginBottom:10,}}>
+   <Icon name="email" style={{marginRight:20,color:"#666"}} size={25} color="#900" />
     <TextInput
         style={styles.input}
         placeholder='Email'
@@ -54,6 +80,7 @@ const Signupscreen = ({navigation}) => {
     <TextInput
         style={styles.input}
         placeholder='Institution/Organization'
+        onChangeText={(institution) => setInstitution(institution)}
         placeholderTextColor="#666"
       /></View>
         <View style={{flexDirection:"row", borderColor: "gray",

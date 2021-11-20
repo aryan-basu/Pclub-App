@@ -19,7 +19,7 @@ const Explorescreen = ({navigation}) => {
            </TouchableOpacity>
             <ScrollView showsHorizontalScrollIndicator={false}  horizontal={true}>
              
-                <TouchableOpacity style={styles.card}>
+                <TouchableOpacity style={styles.card} >
                 <Text style={styles.cardtitle}>Pclub-Meet</Text>
                 </TouchableOpacity>
                 
