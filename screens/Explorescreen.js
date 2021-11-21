@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 // eslint-disable-next-line prettier/prettier
 import React from 'react';
-import {View , Text, Button, StyleSheet,ScrollView,TouchableOpacity} from 'react-native';
+import {View , Text, Button, StyleSheet,ScrollView,TouchableOpacity,Image} from 'react-native';
 import { Card } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -12,7 +12,7 @@ const Explorescreen = ({navigation}) => {
         <ScrollView>
         <View   style ={{marginTop:30}}>
             <Text style={styles.title}>PROJECTS</Text>
-           <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}>
+           <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}onPress={()=>navigation.navigate('Ep1')}>
             
            <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
            <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
@@ -37,7 +37,7 @@ const Explorescreen = ({navigation}) => {
         </View>
         <View style={styles.container}>
           <Text style={styles.title}>EVENTS</Text>
-          <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}>
+          <TouchableOpacity style={{flexDirection:"row",marginLeft:290}} onPress={()=>navigation.navigate('Ep2')}>
             
            <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
            <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
@@ -65,7 +65,7 @@ const Explorescreen = ({navigation}) => {
           </View>
           <View style={styles.container}>
           <Text style={styles.title}>SESSIONS</Text>
-          <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}>
+          <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}onPress={()=>navigation.navigate('Ep3')}>
             
            <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
            <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
@@ -93,7 +93,7 @@ const Explorescreen = ({navigation}) => {
           
           <View style={styles.container}>
           <Text style={styles.title}>AI SATURDAY</Text>
-          <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}>
+          <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}onPress={()=>navigation.navigate('Ep4')}>
             
            <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
            <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
@@ -129,7 +129,7 @@ const Explorescreen = ({navigation}) => {
           </View>
           <View style={styles.container}>
           <Text style={styles.title}>RESEARCH FRIDAY</Text>
-          <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}>
+          <TouchableOpacity style={{flexDirection:"row",marginLeft:290}} onPress={()=>navigation.navigate('Ep5')}>
             
            <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
            <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
@@ -150,7 +150,8 @@ const Explorescreen = ({navigation}) => {
           </View>
           <View style={styles.container}>
           <Text style={styles.title}>OUR TEAM</Text>
-          <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}>
+          <Image style={{height:200,width:360,borderRadius:15,marginLeft:15,marginRight:15,marginTop:15,marginBottom:10}} source={require("../images/Psoc-bg.jpg")}></Image>
+          <TouchableOpacity style={{flexDirection:"row",marginLeft:295}} onPress={()=>navigation.navigate('Ep6')}>
             
            <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
            <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />

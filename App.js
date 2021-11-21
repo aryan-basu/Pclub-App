@@ -16,6 +16,13 @@ import Profilescreen from "./screens/Profilescreen";
 import Homescreen from "./screens/Homescreen";
 import Explorescreen from "./screens/Explorescreen";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import Explorepage1 from "./screens/Explorepages/Explorepage1";
+import Explorepage2 from "./screens/Explorepages/Explorepage2";
+import Explorepage3 from "./screens/Explorepages/Explorepage3";
+import Explorepage4 from "./screens/Explorepages/Explorepage4";
+import Explorepage5 from "./screens/Explorepages/Explorepage5";
+import Explorepage6 from "./screens/Explorepages/Explorepage6";
 const AppStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -109,7 +116,13 @@ return ( <NavigationContainer>
     <AppStack.Screen name="Login"component ={LoginScreen} />
     <AppStack.Screen name="Signup" component= {Signupscreen} />
     <AppStack.Screen name="Home" component={HomeTabs} />
-   
+    <AppStack.Screen name="Ep1"component={Explorepage1}/>
+    <AppStack.Screen name="Ep2"component={Explorepage2}/>
+    <AppStack.Screen name="Ep3"component={Explorepage3}/>
+    <AppStack.Screen name="Ep4"component={Explorepage4}/>
+    <AppStack.Screen name="Ep5"component={Explorepage5}/>
+    <AppStack.Screen name="Ep6"component={Explorepage6}/>
+
 
 
 
