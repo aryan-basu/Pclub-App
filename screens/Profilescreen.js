@@ -11,7 +11,7 @@ import { updateId } from 'expo-updates';
 
 
 const Profilescreen = ({navigation}) => {
-  const [userdata, updateuserdata] = useState('Null')
+  const [userdata, updateuserdata] = useState('Robohash')
   const [photo,updatephoto]=useState('https://gravatar.com/avatar/ba51395b85ae7e37c96b7a3712f9c48e?s=400&d=robohash&r=x')
   const [institute,updateinstitute]=useState('University Institute of Engineering and Technology')
 async function signout(){
@@ -37,8 +37,8 @@ async function signout(){
 }
 useEffect (() => {
   var data=auth().currentUser
-  console.log(data)
-  
+ // console.log(data)
+  if(data){
   if(data.displayName!=null){
   updateuserdata(data.displayName);
   updatephoto(data.photoURL);
@@ -52,9 +52,10 @@ useEffect (() => {
   .then(documentSnapshot => {
   updateinstitute(documentSnapshot.data().institution)
   updateuserdata(documentSnapshot.data().name)
-      console.log('User data: ', documentSnapshot.data());
+    //  console.log('User data: ', documentSnapshot.data());
     });
   }
+}
  // console.log(userdata);
 
 })
