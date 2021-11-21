@@ -1,7 +1,9 @@
 import React from "react";
-import {View , Text, Button , StyleSheet} from 'react-native';
+import {View , Text, Button , StyleSheet,TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const Explorepage4 = () => {
+const Explorepage4 = ({navigation}) => {
 
     return (
 <View style={styles.container}>

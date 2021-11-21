@@ -1,11 +1,18 @@
 import React from "react";
-import {View , Text, Button , StyleSheet} from 'react-native';
+import {View , Text, Button , StyleSheet,TouchableOpacity} from 'react-native';
 import { Card } from "react-native-elements/dist/card/Card";
-const Explorepage2 = () => {
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+const Explorepage2 = ({navigation}) => {
 
     return (
 <View style={styles.container}>
-    <Text style={styles.title}>Events</Text>
+<TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>
+    <Icon name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
+    <Text style={styles.title}>Events</Text> 
+    
+    </TouchableOpacity>
+   
     <Card>
                 <Text style={{fontFamily:"Montserrat_700Bold"}}>PSoC</Text>
                 </Card>
@@ -29,8 +36,7 @@ const styles = StyleSheet.create ({
   
    
     container :{
-        flex:1,
-        
+       
        // alignItems:'center',
       //  justifyContent: 'center',
         backgroundColor: '#f5f5f5',
