@@ -1,5 +1,5 @@
 import React from "react";
-import {View , Text, Button , StyleSheet,ScrollView,TouchableOpacity} from 'react-native';
+import {View , Text, Button , StyleSheet,ScrollView,TouchableOpacity,Image} from 'react-native';
 import { Card } from "react-native-elements/dist/card/Card";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -87,6 +87,9 @@ const Explorepage6 = ({navigation}) => {
         <Text style={styles.cardtitle}>GURNAMEH SINGH</Text>
         
     </TouchableOpacity>
+    <Image style={{height:350,width:380,justifyContent:"center"}} source={{uri:'https://robohash.org/b?size=400x400'}}></Image>
+                <Text style={{ fontFamily: "Montserrat_700Bold",fontSize:22,marginTop:18,textAlign:"center"}}>All Done!</Text>
+                <Text style={{ fontFamily: "Montserrat__400Regular",textAlign:"center",marginTop:12,color:"#767676",marginBottom:20}}>You are all caught up</Text>
     </ScrollView>
     </View>
 

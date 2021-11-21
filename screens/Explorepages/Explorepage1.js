@@ -1,5 +1,5 @@
 import React from "react";
-import {View , Text, Button , StyleSheet,TouchableOpacity} from 'react-native';
+import {View , Text, Button , StyleSheet,TouchableOpacity,Image} from 'react-native';
 import { Card } from "react-native-elements/dist/card/Card";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -21,6 +21,9 @@ const Explorepage1 = ({navigation}) => {
                 <Card>
                 <Text style={{fontFamily:"Montserrat_700Bold"}}>!answer</Text>
                 </Card>
+                <Image style={{height:350,width:380,justifyContent:"center"}} source={{uri:'https://robohash.org/b?size=400x400'}}></Image>
+                <Text style={{ fontFamily: "Montserrat_700Bold",fontSize:22,marginTop:18,textAlign:"center"}}>All Done!</Text>
+                <Text style={{ fontFamily: "Montserrat__400Regular",textAlign:"center",marginTop:12,color:"#767676"}}>You are all caught up</Text>
 </View>
 
     );
