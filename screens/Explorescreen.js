@@ -44,18 +44,21 @@ const Explorescreen = ({navigation}) => {
            </TouchableOpacity>
           <ScrollView showsHorizontalScrollIndicator={false}   Vertical={true}>
                 <Card>
-                    <TouchableOpacity>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>PSoC</Text>
+                    <TouchableOpacity style={{flexDirection:"row"}}>
+                    <Image style={{height:35,width:40,borderRadius:15,marginLeft:15,marginRight:15,marginTop:0,marginBottom:0}} source={require("../images/psoc-logo.png")}></Image>    
+                <Text style={{fontFamily:"Montserrat_700Bold",textAlign:"center", marginTop:7}}>PSoC</Text>
                 </TouchableOpacity>
                 </Card>
                 <Card>
-                    <TouchableOpacity>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>SFD</Text>
+                <TouchableOpacity style={{flexDirection:"row"}}>
+                    <Image style={{height:30,width:40,borderRadius:15,marginLeft:15,marginRight:15,marginTop:0,marginBottom:0}} source={require("../images/sfd.png")}></Image>    
+                <Text style={{fontFamily:"Montserrat_700Bold",textAlign:"center", marginTop:7}}>SFD</Text>
                 </TouchableOpacity>
                 </Card>
                 <Card>
-                    <TouchableOpacity>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>HACKUIET</Text>
+                <TouchableOpacity style={{flexDirection:"row"}}>
+                    <Image style={{height:30,width:40,borderRadius:15,marginLeft:15,marginRight:15,marginTop:0,marginBottom:0}} source={require("../images/hu1.png")}></Image>    
+                <Text style={{fontFamily:"Montserrat_700Bold",textAlign:"center", marginTop:7}}>HACKUIET</Text>
                 </TouchableOpacity>
                 </Card>
               
