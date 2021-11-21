@@ -93,6 +93,8 @@ const Explorescreen = ({navigation}) => {
           
           <View style={styles.container}>
           <Text style={styles.title}>AI SATURDAY</Text>
+
+          <Image style={{height:200,width:360,borderRadius:15,marginLeft:15,marginRight:15,marginTop:15,marginBottom:10}} source={require("../images/AIsaturday.jpg")}></Image>
           <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}onPress={()=>navigation.navigate('Ep4')}>
             
            <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
@@ -129,6 +131,7 @@ const Explorescreen = ({navigation}) => {
           </View>
           <View style={styles.container}>
           <Text style={styles.title}>RESEARCH FRIDAY</Text>
+          <Image style={{height:200,width:360,borderRadius:15,marginLeft:15,marginRight:15,marginTop:15,marginBottom:10}} source={require("../images/RF.png")}></Image>
           <TouchableOpacity style={{flexDirection:"row",marginLeft:290}} onPress={()=>navigation.navigate('Ep5')}>
             
            <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
