@@ -103,33 +103,18 @@ const Explorescreen = ({navigation}) => {
            <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
            <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
            </TouchableOpacity>
-          <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} >
-          <ScrollView style={{marginLeft:0}}>
-                <View style={styles.card}>
-                <Text style={styles.cardtitle}>DJANGO</Text>
-                </View>
-                <View style={styles.card}>
-                <Text style={styles.cardtitle}>REACT</Text>
-          
-                </View>
-                
-                </ScrollView>
-                <ScrollView style={{marginLeft:20}}>
-                <View style={styles.card}>
-                <Text style={styles.cardtitle}>DJANGO</Text>
-                </View>
-                <View style={styles.card}>
-                <Text style={styles.cardtitle}>REACT</Text>
-                </View>
-                </ScrollView>
-                <ScrollView style={{marginLeft:20}}>
-                <View style={styles.card}>
-                <Text style={styles.cardtitle}>DJANGO</Text>
-                </View>
-                <View style={styles.card}>
-                <Text style={styles.cardtitle}>REACT</Text>
-                </View>
-                </ScrollView>
+           <ScrollView showsHorizontalScrollIndicator={false}   Vertical={true}>
+                <Card>
+                <Text style={{fontFamily:"Montserrat_700Bold"}}>Introduction to Neutral Network</Text>
+                </Card>
+                <Card>
+                <Text style={{fontFamily:"Montserrat_700Bold"}}>Optimizing Neutral Network</Text>
+                </Card>
+                <Card>
+                <Text style={{fontFamily:"Montserrat_700Bold"}}>Introduction to CNN</Text>
+                </Card>
+              
+
             </ScrollView>
           </View>
           <View style={styles.container}>
