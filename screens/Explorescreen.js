@@ -142,13 +142,13 @@ const Explorescreen = ({navigation}) => {
            </TouchableOpacity>
           <ScrollView showsHorizontalScrollIndicator={false}   Vertical={true}>
                 <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>PSoC</Text>
+                <Text style={{fontFamily:"Montserrat_700Bold"}}>RESEARCH FRIDAY 1</Text>
                 </Card>
                 <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>SFD</Text>
+                <Text style={{fontFamily:"Montserrat_700Bold"}}>RESEARCH FRIDAY 2</Text>
                 </Card>
                 <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>HACKUIET</Text>
+                <Text style={{fontFamily:"Montserrat_700Bold"}}>RESEARCH FRIDAY 3</Text>
                 </Card>
               
 
