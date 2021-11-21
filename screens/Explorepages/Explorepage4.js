@@ -1,9 +1,10 @@
 import React from "react";
-import {View , Text, Button , StyleSheet,TouchableOpacity,Image,ScrollView} from 'react-native';
+import {View , Text, Button , StyleSheet,TouchableOpacity,Image,ScrollView,Linking} from 'react-native';
 import { Card } from "react-native-elements/dist/card/Card";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
+import YouTubePlayer from "react-native-youtube-sdk";
 const Explorepage4 = ({navigation}) => {
 
     return (
@@ -11,26 +12,75 @@ const Explorepage4 = ({navigation}) => {
     <ScrollView>
 <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>
     <Icon name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
-    <Text style={styles.title}>RESEARCH FRIDAY</Text> 
-    
+    <Text style={styles.title}>AI SATURDAY</Text> 
     </TouchableOpacity>
+
    
-    <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>Introduction to Neutral Network</Text>
-                </Card>
-                <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>Optimizing Neutral Network</Text>
-                </Card>
-                <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>Introduction To CNN</Text>
-                </Card>
+              
                 
-                <Image style={{height:350,width:380,justifyContent:"center"}} source={{uri:'https://robohash.org/b?size=400x400'}}></Image>
-                <Text style={{ fontFamily: "Montserrat_700Bold",fontSize:22,marginTop:18,textAlign:"center"}}>All Done!</Text>
-                <Text style={{ fontFamily: "Montserrat__400Regular",textAlign:"center",marginTop:12,color:"#767676",marginBottom:20}}>You are all caught up</Text>
+                <Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
+        marginTop:20,}}>Introduction to Neutral Network</Text>
+               
+                
+                <YouTubePlayer
+  ref={ref => (this.youTubePlayer = ref)}
+  videoId="FUov71Xqtkw"
+  autoPlay={false}
+  fullscreen={false}
+  showFullScreenButton={true}
+  showSeekBar={true}
+  showPlayPauseButton={true}
+  startTime={5}
+  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  onError={e => console.log(e)}
+  onChangeState={e => console.log(e)}
+  onChangeFullscreen={e => console.log(e)}
+/>
+            
+                <Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
+        marginTop:20,}}>Optimizing Neutral Network</Text>        
+            
+                <YouTubePlayer
+  ref={ref => (this.youTubePlayer = ref)}
+  videoId="dw1-kkVTIM4"
+  autoPlay={false}
+  fullscreen={false}
+  showFullScreenButton={true}
+  showSeekBar={true}
+  showPlayPauseButton={true}
+  startTime={5}
+  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  onError={e => console.log(e)}
+  onChangeState={e => console.log(e)}
+  onChangeFullscreen={e => console.log(e)}
+/>
+                
+                <Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
+        marginTop:20}}>Introduction To CNN</Text>
+              
+                
+                <YouTubePlayer
+  ref={ref => (this.youTubePlayer = ref)}
+  videoId="hR_Mjm6LVuQ"
+  autoPlay={false}
+  fullscreen={false}
+  showFullScreenButton={true}
+  showSeekBar={true}
+  showPlayPauseButton={true}
+  startTime={5}
+  style={{ width: "100%", height: 200,marginBottom:40,marginTop:20,marginRight:10,marginLeft:10}}
+  onError={e => console.log(e)}
+  onChangeState={e => console.log(e)}
+  onChangeFullscreen={e => console.log(e)}
+/>
+             
+
+
+
+               
+
                 </ScrollView>
 </View>
-
     );
 };
 export default Explorepage4;
@@ -38,7 +88,7 @@ export default Explorepage4;
 const styles = StyleSheet.create ({
   
     container :{
-        flex:1,
+    
         
        // alignItems:'center',
       //  justifyContent: 'center',
