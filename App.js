@@ -24,6 +24,7 @@ import Explorepage4 from "./screens/Explorepages/Explorepage4";
 import Explorepage5 from "./screens/Explorepages/Explorepage5";
 import Explorepage6 from "./screens/Explorepages/Explorepage6";
 import WriteArticle from "./screens/WriteArticle";
+import Article from "./screens/Article";
 const AppStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -124,6 +125,7 @@ return ( <NavigationContainer>
     <AppStack.Screen name="Ep5"component={Explorepage5}/>
     <AppStack.Screen name="Ep6"component={Explorepage6}/>
     <AppStack.Screen name="writearticle"component={WriteArticle}/>
+    <AppStack.Screen name="article"component={Article}/>
 
 
 

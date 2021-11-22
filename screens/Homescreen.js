@@ -24,7 +24,7 @@ const Homescreen = ({navigation}) => {
          await firestore().collection('article').get().then((querySnapshot) => {
               querySnapshot.forEach((doc) => {
                   // doc.data() is never undefined for query doc snapshots
-               // console.log(doc.data());
+               // console.log(doc.data().email);
                  articles.push({Title:doc.data().title,Description:doc.data().description,Name:doc.data().Name,Email:doc.data().email});
                   //console.log(doc.id, " => ", doc.data().firstName);
                 
@@ -37,6 +37,7 @@ const Homescreen = ({navigation}) => {
         // store the data into our books variable
         //console.log(maindata);
        setBooks(articles) ;
+      
       
       }
     }, []);
@@ -81,7 +82,7 @@ const Homescreen = ({navigation}) => {
         return val
           }
         }).map((book , index) => index<5&&(
-          <TouchableOpacity key={index} style={styles.card}>
+          <TouchableOpacity key={index} style={styles.card} onPress={()=>navigation.navigate('article',{Name:book.Name,Title:book.Title,Description:book.Description,Email:book.Email})} >
           <Text style={styles.cardtitle}>{book.Title}</Text>
           <Text style={{  color: "#767676",
           fontFamily: "Montserrat_400Regular", marginLeft:10,marginBottom:14,marginTop:10,marginRight:1,justifyContent:"space-evenly"}} numberOfLines={4}>{book.Description}</Text>
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
       card:{
         marginTop:15,
         marginLeft:20,
-        height:140,
+        height:160,
         width:350,
         backgroundColor:"#fff",
         borderRadius:10,
