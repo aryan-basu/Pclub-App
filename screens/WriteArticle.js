@@ -4,6 +4,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+
+import { showMessage, hideMessage } from "react-native-flash-message";
 const WriteArticle = ({navigation}) => {
     async function Post(title,description)
     {
@@ -18,6 +20,14 @@ const WriteArticle = ({navigation}) => {
          description:description
      }
      await firestore().collection('article').doc(`${title}${user.email}`).set(data)
+      showMessage({
+        message: "Posted",
+        description: "Your Article is Posted!",
+        type: "success",
+        icon:"success",
+      })
+      await setTitle('');
+      await setDescription('')
  }
     }
     const [title,setTitle]=useState();
@@ -41,6 +51,7 @@ const WriteArticle = ({navigation}) => {
         marginRight:"5%",
         marginBottom:10,}}
         onChangeText={(title) => setTitle(title)}
+        value={title}
         placeholder='Title'
         placeholderTextColor="#666"/>
      
@@ -63,10 +74,11 @@ const WriteArticle = ({navigation}) => {
         marginBottom:10,}}
         onChangeText={(description) => setDescription(description)}
         textAlignVertical={'top'}
+        value={description}
         
         placeholderTextColor="#666"
       />
-  <Pressable style={styles.continue}   onPress={()=>Post(title,description)} >
+  <Pressable style={styles.continue}   onPress={() => Post(title,description)} >
       <Text style={styles.skiptext}>Post</Text>
     </Pressable>
 

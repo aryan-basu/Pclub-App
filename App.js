@@ -25,12 +25,14 @@ import Explorepage5 from "./screens/Explorepages/Explorepage5";
 import Explorepage6 from "./screens/Explorepages/Explorepage6";
 import WriteArticle from "./screens/WriteArticle";
 import Article from "./screens/Article";
+import FlashMessage from "react-native-flash-message";
 const AppStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 
 function HomeTabs() {
   return (
+
     <Tab.Navigator
     
     screenOptions={{
@@ -131,7 +133,9 @@ return ( <NavigationContainer>
 
 
   </AppStack.Navigator>
+  <FlashMessage position="top" />
 </NavigationContainer>
+    
 );
 }
 
