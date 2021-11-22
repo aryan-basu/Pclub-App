@@ -6,7 +6,41 @@ import {View , Text, Button, StyleSheet,ScrollView,TouchableOpacity,Image,Toucha
 import { Card,Slider } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
+import { useState,useEffect } from 'react';
 const Homescreen = ({navigation}) => {
+  const articles=[];
+  const [books, setBooks] = useState(null);
+    const [searchTerm,setsearchTerm]=useState("");
+
+
+    useEffect(() => {
+      getData();
+  
+      // we will use async/await to fetch this data
+      async function getData() {
+        
+         await firestore().collection('article').get().then((querySnapshot) => {
+              querySnapshot.forEach((doc) => {
+                  // doc.data() is never undefined for query doc snapshots
+               // console.log(doc.data());
+                 articles.push({Title:doc.data().title,Description:doc.data().description,Name:doc.data().Name,Email:doc.data().email});
+                  //console.log(doc.id, " => ", doc.data().firstName);
+                
+              });
+             // console.log(maindata);
+             // <CSVDownload data={maindata} target="_blank" />
+            
+            });
+ //console.log(articles)
+        // store the data into our books variable
+        //console.log(maindata);
+       setBooks(articles) ;
+      
+      }
+    }, []);
+
     return (
         <View style ={{ backgroundColor: '#f5f5f5',marginBottom:80}}>
            
@@ -37,29 +71,28 @@ const Homescreen = ({navigation}) => {
 <TouchableOpacity>
          <Image style={{height:200,width:360,borderRadius:15,marginLeft:10,marginRight:20}} source={require("../images/blockchain.png")}></Image> 
          </TouchableOpacity>
-          </ScrollView>
-      
-       <TouchableOpacity style={styles.card}>
-                <Text style={styles.cardtitle}>Flipkart Interview</Text>
-                <Text style={{  color: "#767676",
-        fontFamily: "Montserrat_400Regular", marginLeft:10,marginBottom:14,marginTop:10,marginRight:1,justifyContent:"space-evenly"}} numberOfLines={4}>Flipkart recently visited our campus for the recruitment of SDE internship 2021. Students of CSE, EC, EE having a minimum CGPA of 7.0 were eligible to apply for this position. Nearly 250 students applied for it.
+        </ScrollView>
+       {/* display books from the API */}
+       {books && ( 
+         <ScrollView>
+  {books.filter((val)=>{if(searchTerm===""){
+              return val
+          }else if(val.dish.toLowerCase().includes(searchTerm.toLowerCase())){
+        return val
+          }
+        }).map((book , index) => index<5&&(
+          <TouchableOpacity key={index} style={styles.card}>
+          <Text style={styles.cardtitle}>{book.Title}</Text>
+          <Text style={{  color: "#767676",
+          fontFamily: "Montserrat_400Regular", marginLeft:10,marginBottom:14,marginTop:10,marginRight:1,justifyContent:"space-evenly"}} numberOfLines={4}>{book.Description}</Text>
+            
+  </TouchableOpacity>
+          ))}
+  </ScrollView>
+      )}
 
-        There was a shortlist based on resume – Nearly 180 students were shortlisted for further rounds.</Text>
-              
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.card}>
-                <Text style={styles.cardtitle}>Google SDE-I Interview Experience</Text>
-                <Text style={{  color: "#767676",
-        fontFamily: "Montserrat_400Regular", marginLeft:10,marginBottom:14,marginTop:10,marginRight:1,justifyContent:"space-evenly"}} numberOfLines={4}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to mak</Text>
-              
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.card}>
-                <Text style={styles.cardtitle}>MySql important questions</Text>
-                <Text style={{  color: "#767676",
-        fontFamily: "Montserrat_400Regular", marginLeft:10,marginBottom:14,marginTop:10,marginRight:1,justifyContent:"space-evenly"}} numberOfLines={4}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to mak</Text>
-              
-        </TouchableOpacity>
       </ScrollView>
+      
         </View>
     );
 };
