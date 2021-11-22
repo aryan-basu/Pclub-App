@@ -90,7 +90,7 @@ useEffect (() => {
      </View>
      <View style={styles.newconatiner}>
        <TouchableOpacity style={{flexDirection: 'row', marginTop: 20,
-      marginBottom:10,marginLeft: 20,}}>
+      marginBottom:10,marginLeft: 20,}} onPress={()=>navigation.navigate('writearticle')}>
      <Icon name="play-box-outline" style={{marginRight:20,borderColor:"#373636",color:"#000",}} size={25} />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
