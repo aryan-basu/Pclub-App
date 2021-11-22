@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import {View , Text, Button , StyleSheet,TouchableOpacity,ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import Entypo from 'react-native-vector-icons/Entypo';
+
 
 
 const Article = ({route,navigation}) => {
@@ -37,10 +39,10 @@ const [email,SetEmail]=useState('');
     
     </TouchableOpacity>
     <Text style={styles.title}>{title}</Text> 
-    <Text style={{marginTop:20,fontFamily: "Montserrat__400Regular",color:'#767676',marginLeft:15,marginRight:10,fontSize:20}}>{description}</Text>
+    <Text style={{marginTop:20,fontFamily: "Montserrat__400Regular",color:'#767676',marginLeft:15,marginRight:0,fontSize:20}}>{description}</Text>
 
+    <Entypo name="dots-three-horizontal" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"center"}} size={28} color="#118b06" />
     <Text style={{marginTop:20,fontFamily: "Montserrat_700Bold",color:'#767676',marginLeft:15,marginRight:10,fontSize:18}}>ARTICLE CONTRIBUTED BY:</Text>
-
     <View style={{flexDirection:"row",marginBottom:20}}>
     <Icon name="account-circle" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={58} color="#118b06" />
     <View>
