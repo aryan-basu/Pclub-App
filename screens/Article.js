@@ -7,10 +7,11 @@ import Entypo from 'react-native-vector-icons/Entypo';
 
 
 const Article = ({route,navigation}) => {
-const [name,SetName]=useState('');
-const [title,SetTitle]=useState('');
-const [description,SetDescription]=useState('');
-const [email,SetEmail]=useState('');
+    const [name,SetName]=useState('');
+    const [title,SetTitle]=useState('');
+    const [description,SetDescription]=useState('');
+    const [email,SetEmail]=useState('');
+    const [books, setBooks] = useState(null);
     useEffect(() => {
        /* const name = route.params.Name;
         const title=route.params.Title;

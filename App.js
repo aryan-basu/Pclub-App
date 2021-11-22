@@ -25,6 +25,7 @@ import Explorepage5 from "./screens/Explorepages/Explorepage5";
 import Explorepage6 from "./screens/Explorepages/Explorepage6";
 import WriteArticle from "./screens/WriteArticle";
 import Article from "./screens/Article";
+import Allarticles from "./screens/Allarticles";
 import FlashMessage from "react-native-flash-message";
 const AppStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -128,6 +129,8 @@ return ( <NavigationContainer>
     <AppStack.Screen name="Ep6"component={Explorepage6}/>
     <AppStack.Screen name="writearticle"component={WriteArticle}/>
     <AppStack.Screen name="article"component={Article}/>
+    <AppStack.Screen name="allarticle"component={Allarticles}/>
+
 
 
 

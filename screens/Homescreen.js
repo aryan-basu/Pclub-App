@@ -48,7 +48,7 @@ const Homescreen = ({navigation}) => {
             <ScrollView>
              <Text style={styles.title}>POPULAR ARTICLES</Text>
           
-             <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}>
+             <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}onPress={()=>navigation.navigate('allarticle')}>
          
             <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
             <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
