@@ -28,8 +28,9 @@ const styles = StyleSheet.create({
   abc :{
     alignItems:"center",
     alignSelf: "center",
-    height: 235,
-    width: 215,
+    height: 335,
+    width: 335,
+    marginTop:50
   },
   logotitle:{
     fontFamily: "Montserrat_700Bold",
@@ -177,11 +178,8 @@ const Onboardingscreen = ({navigation}) => {
         <Pressable style={styles.skip} onPress={()=>navigation.navigate('Login')} >
       <Text style={styles.skiptext}>Skip</Text>
     </Pressable>
-          <Image source={require("../images/tpp.png")} style={styles.abc} />
-          <Text style={styles.logotitle}>Programming Club</Text>
-          <Text style={styles.skiptext}>
-          An portal for uiet students
-          </Text>
+          <Image source={require("../images/Pclub.png")} style={styles.abc} />
+         
     
           
         
