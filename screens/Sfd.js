@@ -2,6 +2,7 @@ import React from "react";
 import {View , Text, Button , StyleSheet,ScrollView,TouchableOpacity,Image} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import YouTubePlayer from "react-native-youtube-sdk";
 
 const Sfd = () => {
 
@@ -35,6 +36,115 @@ const Sfd = () => {
           <Image style={{height:350,width:350,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/speaker5.jpg")}></Image></TouchableOpacity>
 
         </ScrollView>
+
+        <Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
+        marginTop:20,}}>Open Source is your Destiny | Madhava Jay</Text>
+               
+                
+                <YouTubePlayer
+  ref={ref => (this.youTubePlayer = ref)}
+  videoId="ghvE6Y1oIrs"
+  autoPlay={false}
+  fullscreen={false}
+  showFullScreenButton={true}
+  showSeekBar={true}
+  showPlayPauseButton={true}
+  startTime={5}
+  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  onError={e => console.log(e)}
+  onChangeState={e => console.log(e)}
+  onChangeFullscreen={e => console.log(e)}
+/>
+<Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
+        marginTop:20,}}>Climbing up the Ladder Through Open-Source Contribution | Zarreen Naowal Reza </Text>
+               
+                
+                <YouTubePlayer
+  ref={ref => (this.youTubePlayer = ref)}
+  videoId="zOuT6WU02_4"
+  autoPlay={false}
+  fullscreen={false}
+  showFullScreenButton={true}
+  showSeekBar={true}
+  showPlayPauseButton={true}
+  startTime={5}
+  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  onError={e => console.log(e)}
+  onChangeState={e => console.log(e)}
+  onChangeFullscreen={e => console.log(e)}
+/>
+<Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
+        marginTop:20,}}>Post Quantum Cryptography | Gokul Alex </Text>
+               
+                
+                <YouTubePlayer
+  ref={ref => (this.youTubePlayer = ref)}
+  videoId="NbSv1gRlE1c"
+  autoPlay={false}
+  fullscreen={false}
+  showFullScreenButton={true}
+  showSeekBar={true}
+  showPlayPauseButton={true}
+  startTime={5}
+  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  onError={e => console.log(e)}
+  onChangeState={e => console.log(e)}
+  onChangeFullscreen={e => console.log(e)}
+/>
+<Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
+        marginTop:20,}}>Cosmos: The Internet of Blockchains | Sonia Singla</Text>
+               
+                
+                <YouTubePlayer
+  ref={ref => (this.youTubePlayer = ref)}
+  videoId="gHUIEWrOKxw"
+  autoPlay={false}
+  fullscreen={false}
+  showFullScreenButton={true}
+  showSeekBar={true}
+  showPlayPauseButton={true}
+  startTime={5}
+  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  onError={e => console.log(e)}
+  onChangeState={e => console.log(e)}
+  onChangeFullscreen={e => console.log(e)}
+/>
+<Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
+        marginTop:20,}}>My Journey from Open Source to HackerRank | Adyash Mohanty </Text>
+               
+                
+                <YouTubePlayer
+  ref={ref => (this.youTubePlayer = ref)}
+  videoId="uGNL9Uls_LQ"
+  autoPlay={false}
+  fullscreen={false}
+  showFullScreenButton={true}
+  showSeekBar={true}
+  showPlayPauseButton={true}
+  startTime={5}
+  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  onError={e => console.log(e)}
+  onChangeState={e => console.log(e)}
+  onChangeFullscreen={e => console.log(e)}
+/>
+<Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
+        marginTop:20,}}>Panel discussion | Jivitesh Dhaliwal | Akshay Kumar | Pranav Kumar </Text>
+               
+                
+                <YouTubePlayer
+  ref={ref => (this.youTubePlayer = ref)}
+  videoId="4JVsONj8YZk"
+  autoPlay={false}
+  fullscreen={false}
+  showFullScreenButton={true}
+  showSeekBar={true}
+  showPlayPauseButton={true}
+  startTime={5}
+  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  onError={e => console.log(e)}
+  onChangeState={e => console.log(e)}
+  onChangeFullscreen={e => console.log(e)}
+/>
           </ScrollView>
     );
 };
