@@ -14,76 +14,76 @@ const Explorepage6 = ({navigation}) => {
     
     </TouchableOpacity>
     
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation,{marginTop:40}]}>
         <Text style={styles.cardtitle}>GURNAMEH SINGH</Text>
         
     </TouchableOpacity>
    
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>ASHWANI RATHEE</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>ARYAN BASU</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>RIK</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>HARBANS SINGH</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>MEGHNA THAKUR</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>KANISHK TYAGI</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>GURIKA</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>ADITI SANDHYAL</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>NITIN</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>PRIYANSHI</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>SHUBHAM</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>ABHIROOP SINGH</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>JATIN JAIN</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>RITVIK</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>AMRINDER KAUR</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>GURNAMEH SINGH</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={[styles.card2,styles.elevation]}>
         <Text style={styles.cardtitle}>GURNAMEH SINGH</Text>
         
     </TouchableOpacity>
@@ -132,5 +132,19 @@ marginTop:16,
 textAlign:"center",
 fontSize:14,
 
+      },
+      card2:{
+        backgroundColor: 'white',
+        borderRadius: 10,
+
+        width:360,
+        height:190,
+        marginTop:20,
+        marginRight:15,
+        marginLeft:15,
+      },
+      elevation: {
+        elevation: 20,
+        shadowColor: '#000',
       },
 });
