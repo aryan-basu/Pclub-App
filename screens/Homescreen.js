@@ -59,7 +59,7 @@ const Homescreen = ({navigation}) => {
 
         <ScrollView  showsHorizontalScrollIndicator={false}  horizontal={true} style={{marginBottom:20,marginTop:20}}>
         <TouchableOpacity>
-          <Image style={{height:200,width:360,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/sql.png")}></Image></TouchableOpacity>
+          <Image style={{height:200,width:370,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/sql.png")}></Image></TouchableOpacity>
           <TouchableOpacity>
         
           <Image style={{height:200,width:360,borderRadius:15,marginLeft:10,marginRight:20}} source={require("../images/interview.png")}></Image></TouchableOpacity>
@@ -82,10 +82,10 @@ const Homescreen = ({navigation}) => {
         return val
           }
         }).map((book , index) => index<5&&(
-          <TouchableOpacity key={index} style={styles.card} onPress={()=>navigation.navigate('article',{Name:book.Name,Title:book.Title,Description:book.Description,Email:book.Email})} >
+          <TouchableOpacity key={index} style={[styles.card2,styles.elevation]} onPress={()=>navigation.navigate('article',{Name:book.Name,Title:book.Title,Description:book.Description,Email:book.Email})} >
           <Text style={styles.cardtitle}>{book.Title}</Text>
           <Text style={{  color: "#767676",
-          fontFamily: "Montserrat_400Regular", marginLeft:10,marginBottom:14,marginTop:10,marginRight:1,justifyContent:"space-evenly"}} numberOfLines={4}>{book.Description}</Text>
+          fontFamily: "Montserrat_400Regular", marginLeft:10,marginBottom:14,marginTop:10,marginRight:1,justifyContent:"space-evenly"}} numberOfLines={6}>{book.Description}</Text>
             
   </TouchableOpacity>
           ))}
@@ -148,6 +148,20 @@ const styles = StyleSheet.create({
 height:200,
 width:470,
 borderRadius:15,
-              }
+              },
+              card2:{
+                backgroundColor: 'white',
+                borderRadius: 10,
+    
+                width:370,
+                height:190,
+                marginTop:20,
+                marginRight:10,
+                marginLeft:10,
+              },
+              elevation: {
+                elevation: 20,
+                shadowColor: '#000',
+              },
 
 });

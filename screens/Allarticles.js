@@ -51,7 +51,7 @@ const Allarticles = ({navigation}) => {
         return val
           }
         }).map((book , index) => index<105&&(
-          <TouchableOpacity key={index} style={styles.card} onPress={()=>navigation.navigate('article',{Name:book.Name,Title:book.Title,Description:book.Description,Email:book.Email})} >
+          <TouchableOpacity key={index} style={[styles.card2,styles.elevation]} onPress={()=>navigation.navigate('article',{Name:book.Name,Title:book.Title,Description:book.Description,Email:book.Email})} >
           <Text style={styles.cardtitle}>{book.Title}</Text>
           <Text style={{  color: "#767676",
           fontFamily: "Montserrat_400Regular", marginLeft:10,marginBottom:5,marginTop:10,marginRight:1,justifyContent:"space-evenly"}} numberOfLines={4}>{book.Description}</Text>
@@ -119,6 +119,21 @@ height:200,
 width:470,
 borderRadius:15,
               }
+              ,
+              card2:{
+                backgroundColor: 'white',
+                borderRadius: 10,
+    
+                width:370,
+                height:190,
+                marginTop:20,
+                marginRight:10,
+                marginLeft:10,
+              },
+              elevation: {
+                elevation: 20,
+                shadowColor: '#000',
+              },
 
    
 });
