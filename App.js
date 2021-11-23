@@ -27,6 +27,7 @@ import WriteArticle from "./screens/WriteArticle";
 import Article from "./screens/Article";
 import Allarticles from "./screens/Allarticles";
 import FlashMessage from "react-native-flash-message";
+import Demo from "./screens/Demo";
 const AppStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -130,7 +131,7 @@ return ( <NavigationContainer>
     <AppStack.Screen name="writearticle"component={WriteArticle}/>
     <AppStack.Screen name="article"component={Article}/>
     <AppStack.Screen name="allarticle"component={Allarticles}/>
-
+    <AppStack.Screen name="demo"component={Demo}/>
 
 
 
