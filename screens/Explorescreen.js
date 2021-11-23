@@ -43,24 +43,24 @@ const Explorescreen = ({navigation}) => {
            <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
            </TouchableOpacity>
           <ScrollView showsHorizontalScrollIndicator={false}   Vertical={true}>
-                <Card style={styles.elevation}>
+          <View style={[styles.card2, styles.elevation]}>
                     <TouchableOpacity style={{flexDirection:"row"}}>
                     <Image style={{height:35,width:40,borderRadius:15,marginLeft:15,marginRight:15,marginTop:0,marginBottom:0}} source={require("../images/psoc-logo.png")}></Image>    
                 <Text style={{fontFamily:"Montserrat_700Bold",textAlign:"center", marginTop:7}}>PSoC</Text>
                 </TouchableOpacity>
-                </Card>
-                <Card>
+                </View>
+                <View style={[styles.card2, styles.elevation]}>
                 <TouchableOpacity style={{flexDirection:"row"}}>
                     <Image style={{height:30,width:40,borderRadius:15,marginLeft:15,marginRight:15,marginTop:0,marginBottom:0}} source={require("../images/sfd.png")}></Image>    
                 <Text style={{fontFamily:"Montserrat_700Bold",textAlign:"center", marginTop:7}}>SFD</Text>
                 </TouchableOpacity>
-                </Card>
-                <Card>
+                </View>
+                <View style={[styles.card2, styles.elevation]}>
                 <TouchableOpacity style={{flexDirection:"row"}}>
                     <Image style={{height:30,width:40,borderRadius:15,marginLeft:15,marginRight:15,marginTop:0,marginBottom:0}} source={require("../images/HackUiet.png")}></Image>    
                 <Text style={{fontFamily:"Montserrat_700Bold",textAlign:"center", marginTop:7}}>HACKUIET</Text>
                 </TouchableOpacity>
-                </Card>
+                </View>
               
 
             </ScrollView>
@@ -105,15 +105,15 @@ const Explorescreen = ({navigation}) => {
            <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
            </TouchableOpacity>
            <ScrollView showsHorizontalScrollIndicator={false}   Vertical={true}>
-                <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>Introduction to Neutral Network</Text>
-                </Card>
-                <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>Optimizing Neutral Network</Text>
-                </Card>
-                <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>Introduction to CNN</Text>
-                </Card>
+           <View style={[styles.card2, styles.elevation]}>
+                <Text style={{fontFamily:"Montserrat_700Bold" ,marginLeft:15}}>Introduction to Neutral Network</Text>
+              </View>
+              <View style={[styles.card2, styles.elevation]}>
+                <Text style={{fontFamily:"Montserrat_700Bold",marginLeft:15}}>Optimizing Neutral Network</Text>
+                </View>
+                <View style={[styles.card2, styles.elevation]}>
+                <Text style={{fontFamily:"Montserrat_700Bold",marginLeft:15}}>Introduction to CNN</Text>
+                </View>
               
 
             </ScrollView>
@@ -127,15 +127,15 @@ const Explorescreen = ({navigation}) => {
            <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
            </TouchableOpacity>
           <ScrollView showsHorizontalScrollIndicator={false}   Vertical={true}>
-                <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>RESEARCH FRIDAY 1</Text>
-                </Card>
-                <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>RESEARCH FRIDAY 2</Text>
-                </Card>
-                <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>RESEARCH FRIDAY 3</Text>
-                </Card>
+          <View style={[styles.card2, styles.elevation]}>
+                <Text style={{fontFamily:"Montserrat_700Bold",marginLeft:15}}>RESEARCH FRIDAY 1</Text>
+             </View>
+             <View style={[styles.card2, styles.elevation]}>
+                <Text style={{fontFamily:"Montserrat_700Bold",marginLeft:15}}>RESEARCH FRIDAY 2</Text>
+                </View>
+                <View style={[styles.card2, styles.elevation]}>
+                <Text style={{fontFamily:"Montserrat_700Bold",marginLeft:15}}>RESEARCH FRIDAY 3</Text>
+                </View>
               
 
             </ScrollView>
@@ -225,6 +225,17 @@ heading: {
     marginRight:10,
     marginLeft:10,
     marginBottom:20,
+  },
+  card2:{
+    backgroundColor: 'white',
+    borderRadius: 6,
+    justifyContent:"center",
+    width:370,
+    height:60,
+    marginTop:10,
+    marginRight:10,
+    marginLeft:10,
+    marginBottom:15,
   },
   elevation: {
     elevation: 20,
