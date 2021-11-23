@@ -12,7 +12,7 @@ const Explorescreen = ({navigation}) => {
         <ScrollView>
         <View   style ={{marginTop:10}}>
             <Text style={styles.title2}>PROJECTS</Text>
-           <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}onPress={()=>navigation.navigate('demo')}>
+           <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}onPress={()=>navigation.navigate('Ep1')}>
             
            <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
            <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
