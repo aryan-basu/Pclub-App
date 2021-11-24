@@ -44,7 +44,7 @@ const Explorescreen = ({navigation}) => {
            </TouchableOpacity>
           <ScrollView showsHorizontalScrollIndicator={false}   Vertical={true}>
           <View style={[styles.card2, styles.elevation,{marginTop:20}]}>
-                    <TouchableOpacity style={{flexDirection:"row"}}>
+                    <TouchableOpacity style={{flexDirection:"row"}}onPress={()=>navigation.navigate('sfd')}>
                     <Image style={{height:35,width:40,borderRadius:15,marginLeft:15,marginRight:15,marginTop:0,marginBottom:0}} source={require("../images/psoc-logo.png")}></Image>    
                 <Text style={{fontFamily:"Montserrat_700Bold",textAlign:"center", marginTop:7}}>PSoC</Text>
                 </TouchableOpacity>
@@ -56,7 +56,7 @@ const Explorescreen = ({navigation}) => {
                 </TouchableOpacity>
                 </View>
                 <View style={[styles.card2, styles.elevation,{marginBottom:40}]}>
-                <TouchableOpacity style={{flexDirection:"row"}}>
+                <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('hackuiet')}>
                     <Image style={{height:30,width:40,borderRadius:15,marginLeft:15,marginRight:15,marginTop:0,marginBottom:0}} source={require("../images/HackUiet.png")}></Image>    
                 <Text style={{fontFamily:"Montserrat_700Bold",textAlign:"center", marginTop:7}}>HACKUIET</Text>
                 </TouchableOpacity>
