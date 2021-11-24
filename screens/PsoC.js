@@ -16,7 +16,7 @@ const PsoC = () => {
     
     </TouchableOpacity>
     <TouchableOpacity style={{marginTop:20}}>
-    <Image style={{height:200,width:370,borderRadius:15,marginLeft:10,marginRight:10}} source={require("../images/sfdmain.jpg")}></Image></TouchableOpacity>
+    <Image style={{height:350,width:370,borderRadius:15,marginLeft:10}} source={require("../images/psocmain.jpg")}></Image></TouchableOpacity>
     <Text style={{marginTop:20,marginLeft:10,marginRight:10,textAlign:"center",fontFamily:"Montserrat_400Regular",fontSize:14,color: "#767676",lineHeight:22}}>
     PClub Summer of Code is the 2 month long Open Source program during summers conducted by Programming Club, UIET, with an aim to help beginners get started with Open Source Development while encouraging diversity. Throughout the program, participants contribute to different projects under guidance of experienced mentors. Mentors get to make their ideas alive and Mentees get to learn tech.
 

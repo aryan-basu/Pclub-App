@@ -37,11 +37,7 @@ const Explorescreen = ({navigation}) => {
         </View>
         <View style={styles.container}>
           <Text style={styles.title2}>EVENTS</Text>
-          <TouchableOpacity style={{flexDirection:"row",marginLeft:290}} onPress={()=>navigation.navigate('Ep2')}>
-            
-           <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
-           <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
-           </TouchableOpacity>
+       
           <ScrollView showsHorizontalScrollIndicator={false}   Vertical={true}>
           <View style={[styles.card2, styles.elevation,{marginTop:20}]}>
                     <TouchableOpacity style={{flexDirection:"row"}}onPress={()=>navigation.navigate('psoc')}>
