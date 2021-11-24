@@ -39,10 +39,10 @@ const Allarticles = ({navigation}) => {
     return (
 <View style={styles.container}>
     <ScrollView>
-    <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Home')}>
-    <Icon name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
+    <View style={{flexDirection:"row"}}>
+    <Icon onPress={()=>navigation.navigate('Home')} name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
     <Text style={styles.title}>Popular Articles</Text> 
-    </TouchableOpacity>
+    </View>
     {books && ( 
          <ScrollView>
   {books.filter((val)=>{if(searchTerm===""){
