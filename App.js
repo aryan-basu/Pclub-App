@@ -25,7 +25,13 @@ import Explorepage5 from "./screens/Explorepages/Explorepage5";
 import Explorepage6 from "./screens/Explorepages/Explorepage6";
 import WriteArticle from "./screens/WriteArticle";
 import Article from "./screens/Article";
+import Allarticles from "./screens/Allarticles";
 import FlashMessage from "react-native-flash-message";
+import Demo from "./screens/Demo";
+import Sfd from "./screens/Sfd";
+import Hackuiet from "./screens/Hackuiet";
+import PsoC from "./screens/PsoC";
+import Search from "./screens/Search";
 const AppStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -128,7 +134,12 @@ return ( <NavigationContainer>
     <AppStack.Screen name="Ep6"component={Explorepage6}/>
     <AppStack.Screen name="writearticle"component={WriteArticle}/>
     <AppStack.Screen name="article"component={Article}/>
-
+    <AppStack.Screen name="allarticle"component={Allarticles}/>
+    <AppStack.Screen name="demo"component={Demo}/>
+    <AppStack.Screen name="sfd"component={Sfd}/>
+    <AppStack.Screen name="hackuiet"component={Hackuiet}/>
+    <AppStack.Screen name="psoc"component={PsoC}/>
+    <AppStack.Screen name="search"component={Search}/>
 
 
 

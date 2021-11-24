@@ -5,6 +5,9 @@ import { useNavigation } from '@react-navigation/native';
 
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Swiper from "react-native-swiper";
+import Homescreen from "./Homescreen";
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 // import AppLoading from "expo-app-loading";
 
 import {
@@ -28,8 +31,9 @@ const styles = StyleSheet.create({
   abc :{
     alignItems:"center",
     alignSelf: "center",
-    height: 235,
-    width: 215,
+    height: 335,
+    width: 335,
+    marginTop:50
   },
   logotitle:{
     fontFamily: "Montserrat_700Bold",
@@ -117,8 +121,18 @@ const Onboardingscreen = ({navigation}) => {
   // if (!fontsLoaded) {
   //   return <AppLoading />;
   // } else {
-  
-  return (
+    useEffect (() => {
+
+      var data=auth().currentUser
+      // console.log(data)
+       if(data){
+navigation.navigate('Home')
+       }
+     
+      // console.log(userdata);
+     
+     })
+     return (
       <Swiper
         buttonWrapperStyle={{
           backgroundColor: "transparent",
@@ -177,11 +191,8 @@ const Onboardingscreen = ({navigation}) => {
         <Pressable style={styles.skip} onPress={()=>navigation.navigate('Login')} >
       <Text style={styles.skiptext}>Skip</Text>
     </Pressable>
-          <Image source={require("../images/tpp.png")} style={styles.abc} />
-          <Text style={styles.logotitle}>Programming Club</Text>
-          <Text style={styles.skiptext}>
-          An portal for uiet students
-          </Text>
+          <Image source={require("../images/Pclub.png")} style={styles.abc} />
+         
     
           
         
@@ -197,7 +208,7 @@ const Onboardingscreen = ({navigation}) => {
           </Text>
         
         </View>
-
+  
         <View style={styles.slide}>
         <Pressable style={styles.skip} onPress={()=>navigation.navigate('Login')} >
       <Text style={styles.skiptext}>Skip</Text>
@@ -206,7 +217,7 @@ const Onboardingscreen = ({navigation}) => {
           <Text style={styles.title}>Explore Open-source</Text>
           <Text style={styles.text}>
           Explore different open source project and new stacks with our experts and get a 
-chance to be a part of open source community
+  chance to be a part of open source community
           </Text>
          
         </View>

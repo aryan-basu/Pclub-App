@@ -46,9 +46,11 @@ const Homescreen = ({navigation}) => {
         <View style ={{ backgroundColor: '#f5f5f5',marginBottom:80}}>
            
             <ScrollView>
+              <View style={{flexDirection:"row"}}>
              <Text style={styles.title}>POPULAR ARTICLES</Text>
-          
-             <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}>
+             <AntDesign onPress={()=>navigation.navigate('search')} name="search1" style={{marginTop:24,marginLeft:86,color:"#118b06",textAlign:"right"}} size={24} color="#118b06" />  
+             </View>
+             <TouchableOpacity style={{flexDirection:"row",marginLeft:290,marginTop:13}}onPress={()=>navigation.navigate('allarticle')}>
          
             <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
             <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
@@ -59,7 +61,7 @@ const Homescreen = ({navigation}) => {
 
         <ScrollView  showsHorizontalScrollIndicator={false}  horizontal={true} style={{marginBottom:20,marginTop:20}}>
         <TouchableOpacity>
-          <Image style={{height:200,width:360,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/sql.png")}></Image></TouchableOpacity>
+          <Image style={{height:200,width:370,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/sql.png")}></Image></TouchableOpacity>
           <TouchableOpacity>
         
           <Image style={{height:200,width:360,borderRadius:15,marginLeft:10,marginRight:20}} source={require("../images/interview.png")}></Image></TouchableOpacity>
@@ -78,14 +80,14 @@ const Homescreen = ({navigation}) => {
          <ScrollView>
   {books.filter((val)=>{if(searchTerm===""){
               return val
-          }else if(val.dish.toLowerCase().includes(searchTerm.toLowerCase())){
+          }else if(val.Title.toLowerCase().includes(searchTerm.toLowerCase())){
         return val
           }
         }).map((book , index) => index<5&&(
-          <TouchableOpacity key={index} style={styles.card} onPress={()=>navigation.navigate('article',{Name:book.Name,Title:book.Title,Description:book.Description,Email:book.Email})} >
+          <TouchableOpacity key={index} style={[styles.card2,styles.elevation]} onPress={()=>navigation.navigate('article',{Name:book.Name,Title:book.Title,Description:book.Description,Email:book.Email})} >
           <Text style={styles.cardtitle}>{book.Title}</Text>
           <Text style={{  color: "#767676",
-          fontFamily: "Montserrat_400Regular", marginLeft:10,marginBottom:14,marginTop:10,marginRight:1,justifyContent:"space-evenly"}} numberOfLines={4}>{book.Description}</Text>
+          fontFamily: "Montserrat_400Regular", marginLeft:10,marginBottom:14,marginTop:10,marginRight:1,justifyContent:"space-evenly"}} numberOfLines={6}>{book.Description}</Text>
             
   </TouchableOpacity>
           ))}
@@ -148,6 +150,20 @@ const styles = StyleSheet.create({
 height:200,
 width:470,
 borderRadius:15,
-              }
+              },
+              card2:{
+                backgroundColor: 'white',
+                borderRadius: 10,
+    
+                width:370,
+                height:190,
+                marginTop:20,
+                marginRight:10,
+                marginLeft:10,
+              },
+              elevation: {
+                elevation: 20,
+                shadowColor: '#000',
+              },
 
 });
