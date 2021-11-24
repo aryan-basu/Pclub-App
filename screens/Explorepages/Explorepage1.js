@@ -21,7 +21,7 @@ const Explorepage1 = ({navigation}) => {
         <Text style={{fontFamily:"Montserrat_400Regular",
 color:"#767676",
 marginTop:16,
-textAlign:"center",marginLeft:5,marginRight:5,
+textAlign:"center",marginLeft:10,marginRight:10,
 fontSize:14,}}>Simple Web Application that offer you to create video meeting room using WebRTC and Socket its a project announced by Pclub to meet their needs</Text>
         <View style={{flexDirection:"row",justifyContent:"center",marginTop:95}}>
         <FontAwesome name="envelope-square" style={{marginTop:20,marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
@@ -35,7 +35,7 @@ fontSize:14,}}>Simple Web Application that offer you to create video meeting roo
         <Text style={{fontFamily:"Montserrat_400Regular",
 color:"#767676",
 marginTop:16,
-textAlign:"center",marginLeft:5,marginRight:5,
+textAlign:"center",marginLeft:10,marginRight:10,
 fontSize:14,}}>!answer is a discord bot that leverages state of the art artifical intelligence to serve your users in your discord guild. You can give the bot context paragraphs, from which the bot will reply to any questions of users. Best used to answer a user's doubt about FAQs or rules or venue.
 !answer also plans to release moderation tools and a real time dashboard for the ease of discord admins and moderators</Text>
         <View style={{flexDirection:"row",justifyContent:"center",marginTop:15}}>

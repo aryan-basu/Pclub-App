@@ -3,38 +3,38 @@ import {View , Text, Button , StyleSheet,TouchableOpacity,Image,ScrollView} from
 import { Card } from "react-native-elements/dist/card/Card";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import YouTubePlayer from "react-native-youtube-sdk";
 
 const Explorepage3 = ({navigation}) => {
 
     return (
        
 <View style={styles.container}>
-<ScrollView>
+
 <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>
     <Icon name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
     <Text style={styles.title}>SESSIONS</Text> 
     
     </TouchableOpacity>
-    
-                <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>DJANGO</Text>
-                </Card>
-                <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>REACT</Text>
-                </Card>
-                <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>COMPETATIVE PROGRAMMING</Text>
-                </Card>
-                <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>DEEP LEARNING</Text>
-                </Card>
-                <Card>
-                <Text style={{fontFamily:"Montserrat_700Bold"}}>MACHINE LEARNING</Text>
-                </Card>
-                <Image style={{height:350,width:380,justifyContent:"center"}} source={{uri:'https://robohash.org/b?size=400x400'}}></Image>
-                <Text style={{ fontFamily: "Montserrat_700Bold",fontSize:22,marginTop:18,textAlign:"center"}}>All Done!</Text>
-                <Text style={{ fontFamily: "Montserrat__400Regular",textAlign:"center",marginTop:12,color:"#767676",marginBottom:20}}>You are all caught up</Text>
-                </ScrollView>
+                
+        <Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
+        marginTop:20,}}>Backend Development using Django</Text>
+               
+                
+                <YouTubePlayer
+  ref={ref => (this.youTubePlayer = ref)}
+  videoId="Q0UEPXWSfCw"
+  autoPlay={false}
+  fullscreen={false}
+  showFullScreenButton={true}
+  showSeekBar={true}
+  showPlayPauseButton={true}
+  startTime={5}
+  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  onError={e => console.log(e)}
+  onChangeState={e => console.log(e)}
+  onChangeFullscreen={e => console.log(e)}
+/>
 </View>
 
 

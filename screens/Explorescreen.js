@@ -43,18 +43,21 @@ const Explorescreen = ({navigation}) => {
                     <TouchableOpacity style={{flexDirection:"row"}}onPress={()=>navigation.navigate('psoc')}>
                     <Image style={{height:35,width:40,borderRadius:15,marginLeft:15,marginRight:15,marginTop:0,marginBottom:0}} source={require("../images/psoc-logo.png")}></Image>    
                 <Text style={{fontFamily:"Montserrat_700Bold",textAlign:"center", marginTop:7}}>PSoC</Text>
+                <AntDesign name="right" style={{marginLeft:205,color:"#000",textAlign:"right",marginTop:9}} size={20} color="#118b06" />
                 </TouchableOpacity>
                 </View>
                 <View style={[styles.card2, styles.elevation]}>
                 <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('sfd')}>
                     <Image style={{height:30,width:40,borderRadius:15,marginLeft:15,marginRight:15,marginTop:0,marginBottom:0}} source={require("../images/sfd.png")}></Image>    
                 <Text style={{fontFamily:"Montserrat_700Bold",textAlign:"center", marginTop:7}}>SFD</Text>
+                <AntDesign name="right" style={{marginLeft:212,color:"#000",textAlign:"right",marginTop:9}} size={20} color="#118b06" />
                 </TouchableOpacity>
                 </View>
                 <View style={[styles.card2, styles.elevation,{marginBottom:40}]}>
                 <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('hackuiet')}>
                     <Image style={{height:30,width:40,borderRadius:15,marginLeft:15,marginRight:15,marginTop:0,marginBottom:0}} source={require("../images/HackUiet.png")}></Image>    
                 <Text style={{fontFamily:"Montserrat_700Bold",textAlign:"center", marginTop:7}}>HACKUIET</Text>
+                <AntDesign name="right" style={{marginLeft:165,color:"#000",marginTop:9}} size={20} color="#118b06" />
                 </TouchableOpacity>
                 </View>
               
@@ -103,6 +106,7 @@ const Explorescreen = ({navigation}) => {
            <ScrollView showsHorizontalScrollIndicator={false}   Vertical={true}>
            <View style={[styles.card2, styles.elevation,{marginTop:20}]}>
                 <Text style={{fontFamily:"Montserrat_700Bold" ,marginLeft:15}}>Introduction to Neutral Network</Text>
+             
               </View>
               <View style={[styles.card2, styles.elevation]}>
                 <Text style={{fontFamily:"Montserrat_700Bold",marginLeft:15}}>Optimizing Neutral Network</Text>
