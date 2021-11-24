@@ -46,9 +46,11 @@ const Homescreen = ({navigation}) => {
         <View style ={{ backgroundColor: '#f5f5f5',marginBottom:80}}>
            
             <ScrollView>
+              <View style={{flexDirection:"row"}}>
              <Text style={styles.title}>POPULAR ARTICLES</Text>
-          
-             <TouchableOpacity style={{flexDirection:"row",marginLeft:290}}onPress={()=>navigation.navigate('allarticle')}>
+             <AntDesign onPress={()=>navigation.navigate('search')} name="search1" style={{marginTop:24,marginLeft:86,color:"#118b06",textAlign:"right"}} size={24} color="#118b06" />  
+             </View>
+             <TouchableOpacity style={{flexDirection:"row",marginLeft:290,marginTop:13}}onPress={()=>navigation.navigate('allarticle')}>
          
             <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
             <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
@@ -78,7 +80,7 @@ const Homescreen = ({navigation}) => {
          <ScrollView>
   {books.filter((val)=>{if(searchTerm===""){
               return val
-          }else if(val.dish.toLowerCase().includes(searchTerm.toLowerCase())){
+          }else if(val.Title.toLowerCase().includes(searchTerm.toLowerCase())){
         return val
           }
         }).map((book , index) => index<5&&(

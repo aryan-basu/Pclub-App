@@ -31,6 +31,7 @@ import Demo from "./screens/Demo";
 import Sfd from "./screens/Sfd";
 import Hackuiet from "./screens/Hackuiet";
 import PsoC from "./screens/PsoC";
+import Search from "./screens/Search";
 const AppStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -138,6 +139,7 @@ return ( <NavigationContainer>
     <AppStack.Screen name="sfd"component={Sfd}/>
     <AppStack.Screen name="hackuiet"component={Hackuiet}/>
     <AppStack.Screen name="psoc"component={PsoC}/>
+    <AppStack.Screen name="search"component={Search}/>
 
 
 
