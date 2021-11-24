@@ -149,10 +149,10 @@ const Signupscreen = ({navigation}) => {
      
       }}>Already have an account ?</Text><Text style={{color:"#118b06"}}onPress={() =>navigation.navigate("Login")}> Sign in Now!</Text></View>
     
-    <Pressable style={styles.continue}   onPress={()=>navigation.navigate('Home')} >
+   {/* <Pressable style={styles.continue}   onPress={()=>navigation.navigate('Home')} >
       <Text style={styles.skiptext}>Sign Up</Text>
     </Pressable>
-    
+    */}
 </View>
 
     );

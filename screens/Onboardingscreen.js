@@ -73,22 +73,22 @@ borderRadius:5,
 color:"#FFFF",
 width:80,
 marginLeft:260,
-marginTop:-50,
-marginBottom:30
+marginBottom:0,
+marginTop:-50
   },
   skiptext:{
-color:"#118b06",
-fontFamily: "Montserrat_400Regular",
-
-    fontSize: 16,
-  
+    color:"#118b06",
+    fontFamily: "Montserrat_400Regular",
     
-    textAlign: 'center',
-
-paddingTop:10,
-paddingBottom:10
-
-  },
+        fontSize: 16,
+      
+        
+        textAlign: 'center',
+    
+    paddingTop:10,
+    paddingBottom:10
+    
+      },
   title: {
     fontFamily: "Montserrat_700Bold",
     marginTop: 30,
@@ -151,7 +151,7 @@ navigation.navigate('Home')
         loop={false}
         paginationStyle={{
          // marginLeft: w * 0.7,
-          marginBottom: h * 0.07,
+          marginBottom: h * 0.09,
         }}
         activeDotColor="#118b06"
         dotColor="#998FA2"
@@ -186,7 +186,7 @@ navigation.navigate('Home')
     }}
   }
       >
-   
+   {/*
         <View style={styles.slide}>
         <Pressable style={styles.skip} onPress={()=>navigation.navigate('Login')} >
       <Text style={styles.skiptext}>Skip</Text>
@@ -196,7 +196,7 @@ navigation.navigate('Home')
     
           
         
-        </View>
+   </View> */}
         <View style={styles.slide}>
         <Pressable style={styles.skip} onPress={()=>navigation.navigate('Login')} >
       <Text style={styles.skiptext}>Skip</Text>
@@ -226,14 +226,42 @@ navigation.navigate('Home')
         <Pressable style={styles.skip} onPress={()=>navigation.navigate('Login')} >
       <Text style={styles.skiptext}>Skip</Text>
     </Pressable>
-          <Image source={require("../images/topic.png")} style={styles.img} />
-          <Text style={styles.title}>Explore Popular Topics</Text>
-          <Text style={styles.text}>
-           Come and explore a variety of topics that are extremely important to know and understand which will help you to be future ready!
+          <Image source={require("../images/topic.png")} style={{alignSelf: "center",
+    borderTopRightRadius: 80,
+    borderBottomLeftRadius: 80,
+    height: 370,
+    width: w * 0.9,}} />
+          <Text style={{ fontFamily: "Montserrat_700Bold",
+    marginTop: 39,
+    textAlign:"center",
+    
+    fontSize: 21,}}>Gain knowledge from articles</Text>
+          <Text style={{color: "#767676",
+    fontFamily: "Montserrat_400Regular",
+    marginTop: 20,
+    fontSize: 16,
+    lineHeight: 24,
+    textAlign:"center"
+    }}>
+           Come and explore a variety of articles that are extremely important to know and understand which will help you to be future ready!
           </Text>
          
-          <Pressable style={styles.continue} onPress={()=>navigation.navigate('Login')} >
-      <Text style={styles.skiptext}>Get Started</Text>
+          <Pressable style={{  backgroundColor:"transparent",
+    borderColor:"#118b06",
+    //marginTop:20,
+    //marginTop:h * 0.09,
+    marginTop:90,
+    borderWidth:2,
+borderRadius:5,}} onPress={()=>navigation.navigate('Login')} >
+      <Text style={{color:"#118b06",
+    fontFamily: "Montserrat_400Regular",
+    
+        fontSize: 16,
+      
+        
+        textAlign: 'center',
+    paddingTop:10,
+    paddingBottom:10}}>Get Started</Text>
     </Pressable>
         </View>
        
