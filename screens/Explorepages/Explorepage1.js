@@ -10,11 +10,11 @@ const Explorepage1 = ({navigation}) => {
     return (
         <ScrollView>
 <View style={styles.container}>
-    <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>
-    <Icon name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
+    <View style={{flexDirection:"row"}} >
+    <Icon onPress={()=>navigation.navigate('Explore')} name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
     <Text style={styles.title}>Project</Text> 
     
-    </TouchableOpacity>
+    </View>
     
     <TouchableOpacity style={[styles.card2,styles.elevation,{marginTop:20}]}>
         <Text style={styles.cardtitle}>Pclub-Meet</Text>

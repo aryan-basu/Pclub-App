@@ -11,11 +11,11 @@ const Explorepage3 = ({navigation}) => {
        
 <View style={styles.container}>
 
-<TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>
-    <Icon name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
+<View style={{flexDirection:"row"}} >
+    <Icon onPress={()=>navigation.navigate('Explore')} name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
     <Text style={styles.title}>SESSIONS</Text> 
     
-    </TouchableOpacity>
+    </View>
                 
         <Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
         marginTop:20,}}>Backend Development using Django</Text>
