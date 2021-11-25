@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
                 height:hp(24.5),
                 marginTop:hp(4),
                 marginRight:wp(2),
-                marginLeft:wp(2),
+                marginLeft:wp(3),
               },
               elevation: {
                 elevation: 20,
