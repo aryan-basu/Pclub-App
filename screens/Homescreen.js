@@ -2,7 +2,7 @@
 // eslint-disable-next-line prettier/prettier
 import React from 'react';
 import {View , Text, Button, StyleSheet,ScrollView,TouchableOpacity,Image,TouchableHighlight} from 'react-native';
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { Card,Slider } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -48,9 +48,9 @@ const Homescreen = ({navigation}) => {
             <ScrollView>
               <View style={{flexDirection:"row"}}>
              <Text style={styles.title}>POPULAR ARTICLES</Text>
-             <AntDesign onPress={()=>navigation.navigate('search')} name="search1" style={{marginTop:24,marginLeft:86,color:"#118b06",textAlign:"right"}} size={24} color="#118b06" />  
+             <AntDesign onPress={()=>navigation.navigate('search')} name="search1" style={{marginTop:hp('3%'),marginLeft:wp('23%'),color:"#118b06",textAlign:"right"}} size={24} color="#118b06" />  
              </View>
-             <TouchableOpacity style={{flexDirection:"row",marginLeft:290,marginTop:13}}onPress={()=>navigation.navigate('allarticle')}>
+             <TouchableOpacity style={{flexDirection:"row",marginLeft:wp('75%'),marginTop:hp('0.6%')}}onPress={()=>navigation.navigate('allarticle')}>
          
             <Text style={{textAlign:"right",marginRight:5}}>View All</Text>
             <Icon name="chevron-right-circle" style={{marginLeft:5,color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
@@ -59,20 +59,20 @@ const Homescreen = ({navigation}) => {
      
           
 
-        <ScrollView  showsHorizontalScrollIndicator={false}  horizontal={true} style={{marginBottom:20,marginTop:20}}>
+        <ScrollView  showsHorizontalScrollIndicator={false}  horizontal={true} style={{marginBottom:hp(0.8),marginTop:hp(2)}}>
         <TouchableOpacity>
-          <Image style={{height:200,width:370,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/sql.png")}></Image></TouchableOpacity>
+          <Image style={{height:hp(26),width:wp(92),borderRadius:15,marginLeft:hp(2),marginRight:hp(2)}} source={require("../images/sql.png")}></Image></TouchableOpacity>
           <TouchableOpacity>
         
-          <Image style={{height:200,width:360,borderRadius:15,marginLeft:10,marginRight:20}} source={require("../images/interview.png")}></Image></TouchableOpacity>
+          <Image style={{height:hp(26),width:wp(92),borderRadius:15,marginLeft:hp(2),marginRight:hp(2)}} source={require("../images/interview.png")}></Image></TouchableOpacity>
  <TouchableOpacity>
-          <Image style={{height:200,width:360,borderRadius:15,marginLeft:10,marginRight:20}} source={require("../images/Django.jpg")}></Image>
+          <Image style={{height:hp(26),width:wp(92),borderRadius:15,marginLeft:hp(2),marginRight:hp(2)}} source={require("../images/Django.jpg")}></Image>
           </TouchableOpacity>
   <TouchableOpacity>
-          <Image style={{height:200,width:360,borderRadius:15,marginLeft:10,marginRight:20}} source={require("../images/react.png")}></Image> 
+          <Image style={{height:hp(26),width:wp(92),borderRadius:15,marginLeft:hp(2),marginRight:hp(2)}} source={require("../images/react.png")}></Image> 
 </TouchableOpacity>
 <TouchableOpacity>
-         <Image style={{height:200,width:360,borderRadius:15,marginLeft:10,marginRight:20}} source={require("../images/blockchain.png")}></Image> 
+         <Image style={{height:hp(26),width:wp(92),borderRadius:15,marginLeft:hp(2),marginRight:hp(2)}} source={require("../images/blockchain.png")}></Image> 
          </TouchableOpacity>
         </ScrollView>
        {/* display books from the API */}
@@ -87,7 +87,7 @@ const Homescreen = ({navigation}) => {
           <TouchableOpacity key={index} style={[styles.card2,styles.elevation]} onPress={()=>navigation.navigate('article',{Name:book.Name,Title:book.Title,Description:book.Description,Email:book.Email})} >
           <Text style={styles.cardtitle}>{book.Title}</Text>
           <Text style={{  color: "#767676",
-          fontFamily: "Montserrat_400Regular", marginLeft:10,marginBottom:14,marginTop:10,marginRight:1,justifyContent:"space-evenly"}} numberOfLines={6}>{book.Description}</Text>
+          fontFamily: "Montserrat_400Regular", marginLeft:wp(2),marginBottom:hp(1),marginTop:hp(1),marginRight:wp(1),justifyContent:"space-evenly"}} numberOfLines={6}>{book.Description}</Text>
             
   </TouchableOpacity>
           ))}
@@ -111,55 +111,32 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: "Montserrat_700Bold",
         marginTop: 0,
-        marginLeft:20,
-        marginTop:20,
-        marginHorizontal: 10,
+        marginLeft:wp('7%'),
+        marginTop:hp('2%'),
         fontSize: 22,
-        marginBottom:10
+        marginBottom:hp('1%')
     
       },
-      card:{
-        marginTop:15,
-        marginLeft:20,
-        height:160,
-        width:350,
-        backgroundColor:"#fff",
-        borderRadius:10,
-        borderColor:"#118b06",
-        borderWidth:2,
-    },
-    text: {
-        color: "#767676",
-        fontFamily: "Montserrat_400Regular",
-        marginTop: 10,
-        marginBottom:10,
-        fontSize: 19,
-        lineHeight: 24,
-        marginLeft: 10,
-       
-      },
+   
     cardtitle:{
         fontFamily:"Montserrat_700Bold",
         color:"#000",
-        marginTop:16,
-      marginLeft:10,
+        marginTop:hp(2),
+      marginLeft:wp(2),
+
         fontSize:14,
-        
+      marginRight:wp(1)  
               },
-              img:{
-height:200,
-width:470,
-borderRadius:15,
-              },
+
               card2:{
                 backgroundColor: 'white',
                 borderRadius: 10,
     
-                width:370,
-                height:190,
-                marginTop:20,
-                marginRight:10,
-                marginLeft:10,
+                width:wp(94),
+                height:hp(24.5),
+                marginTop:hp(4),
+                marginRight:wp(2),
+                marginLeft:wp(2),
               },
               elevation: {
                 elevation: 20,
