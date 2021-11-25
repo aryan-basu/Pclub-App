@@ -8,7 +8,7 @@ import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { updateId } from 'expo-updates';
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const Profilescreen = ({navigation}) => {
   const [userdata, updateuserdata] = useState('Robohash')
@@ -67,31 +67,31 @@ useEffect (() => {
   source={{
     uri: `${photo}`
   }} 
-  style={{width: 180, height: 180, borderRadius: 400/ 2,marginTop:40,backgroundColor:"#ffffff"}} 
+  style={{width: wp(45), height: hp(23), borderRadius: 400/ 2,marginTop:hp(3),backgroundColor:"#ffffff"}} 
 />
     <Text style={{ color: "#000",
       fontFamily: "Montserrat__700Bold",
-      marginTop: 20,
-      marginBottom:10,
+      marginTop: hp(2),
+      marginBottom:hp(1),
       fontSize: 19,
       lineHeight: 24,
-      marginLeft: 10,
+      marginLeft: wp(2),
      }}>{userdata}</Text>
       <Text style={{ color: "#767676",
       fontFamily: "Montserrat_400Regular",
-      marginTop: 5,
-      marginBottom:20,
+      marginTop: hp(0.5),
+      marginBottom:hp(2),
       fontSize: 19,
       lineHeight: 24,
-      marginLeft: 10,
-      marginRight:10,
+      marginLeft: wp(2),
+      marginRight:wp(2),
       textAlign:"center"
      }}>{institute}</Text>
      </View>
      <View style={styles.newconatiner}>
-       <TouchableOpacity style={{flexDirection: 'row', marginTop: 20,
-      marginBottom:10,marginLeft: 20,}} onPress={()=>navigation.navigate('writearticle')}>
-     <Icon name="pencil-box-multiple-outline" style={{marginRight:20,borderColor:"#373636",color:"#000",}} size={25} />
+       <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(3),
+      marginBottom:hp(1),marginLeft: wp(5),}} onPress={()=>navigation.navigate('writearticle')}>
+     <Icon name="pencil-box-multiple-outline" style={{marginRight:wp(5),borderColor:"#373636",color:"#000",}} size={25} />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -100,9 +100,9 @@ useEffect (() => {
       
       alignItems:"flex-start",
      }}>Write an article</Text></TouchableOpacity>
-    <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
-      marginBottom:10,marginLeft: 20,}}>
-     <Icon name="bookmark-multiple-outline" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+    <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+      marginBottom:hp(1),marginLeft: wp(5),}}>
+     <Icon name="bookmark-multiple-outline" style={{marginRight:wp(5),color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -112,9 +112,9 @@ useEffect (() => {
       alignItems:"flex-start",
      }}>Saved Articles</Text></TouchableOpacity>
          
-         <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
-      marginBottom:10,marginLeft: 20,}}>
-     <AntDesign name="download" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+         <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+      marginBottom:hp(1),marginLeft: wp(5),}}>
+     <AntDesign name="download" style={{marginRight:wp(5),color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -123,9 +123,9 @@ useEffect (() => {
       
       alignItems:"flex-start",
      }}>Offline Articles</Text></TouchableOpacity>
-           <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
-      marginBottom:10,marginLeft: 20,}}>
-     <Icon name="star-outline" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+           <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+      marginBottom:hp(1),marginLeft: wp(5),}}>
+     <Icon name="star-outline" style={{marginRight:wp(5),color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -134,9 +134,9 @@ useEffect (() => {
       
       alignItems:"flex-start",
      }}>Interests</Text></TouchableOpacity>
-             <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
-      marginBottom:10,marginLeft: 20,}}>
-     <Icon name="information-outline" style={{marginRight:22,color:"#373636"}} size={26} color="#900" />
+             <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+      marginBottom:hp(1),marginLeft: wp(5),}}>
+     <Icon name="information-outline" style={{marginRight:wp(5),color:"#373636"}} size={26} color="#900" />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -145,9 +145,9 @@ useEffect (() => {
       
       alignItems:"flex-start",
      }}>About us</Text></TouchableOpacity>
-         <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
-      marginBottom:10,marginLeft: 20,}}>
-     <Icon name="security" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+         <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+      marginBottom:hp(1),marginLeft: wp(5),}}>
+     <Icon name="security" style={{marginRight:wp(5),color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -156,9 +156,9 @@ useEffect (() => {
       
       alignItems:"flex-start",
      }}>Privacy and Policy</Text></TouchableOpacity>
-           <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
-      marginBottom:10,marginLeft: 20,}}>
-     <Icon name="bug-outline" style={{marginRight:20,color:"#373636"}} size={25}  />
+           <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+      marginBottom:hp(1),marginLeft: wp(5),}}>
+     <Icon name="bug-outline" style={{marginRight:wp(5),color:"#373636"}} size={25}  />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -167,9 +167,9 @@ useEffect (() => {
       
       alignItems:"flex-start",
      }}>Feedback</Text></TouchableOpacity>
-            <TouchableOpacity style={{flexDirection: 'row', marginTop: 10,
-      marginBottom:10,marginLeft: 20,}}>
-     <Icon name="cogs" style={{marginRight:20,color:"#373636"}} size={25}  />
+            <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+      marginBottom:hp(1),marginLeft: wp(5),}}>
+     <Icon name="cogs" style={{marginRight:wp(5),color:"#373636"}} size={25}  />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -178,9 +178,9 @@ useEffect (() => {
       
       alignItems:"flex-start",
      }}>Settings</Text></TouchableOpacity>
-         <TouchableOpacity onPress={signout} style={{flexDirection: 'row', marginTop: 10,
-      marginBottom:70,marginLeft: 20,}}>
-     <Icon name="logout" style={{marginRight:20,color:"#373636"}} size={25} color="#900" />
+         <TouchableOpacity onPress={signout} style={{flexDirection: 'row', marginTop: hp(1),
+      marginBottom:hp(10),marginLeft: wp(5),}}>
+     <Icon name="logout" style={{marginRight:wp(5),color:"#373636"}} size={25} color="#900" />
      <Text style={{ color: "#000",
       fontFamily: "Montserrat__400Regular",
      
@@ -208,12 +208,7 @@ const styles = StyleSheet.create ({
      marginTop:0,
      backgroundColor:"#f5f5f5",
      },
-     abc:{
-       marginTop:40,
-       borderRadius:40,
-       height:80,
-       width:90,
-     },
+   
      newconatiner:{
    backgroundColor:"#ffffff"
      }
