@@ -4,18 +4,18 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import YouTubePlayer from "react-native-youtube-sdk";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-const PsoC = () => {
+const PsoC = ({navigation}) => {
 
     return (
         <ScrollView   style={{marginBottom:20,marginTop:20}}>
-      <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>
-    <Icon name="arrow-left" style={{marginTop:0,marginLeft:wp(2),color:"#118b06",textAlign:"right",marginRight:wp(2)}} size={28} color="#118b06" />
+      <View style={{flexDirection:"row"}} >
+    <Icon onPress={()=>navigation.navigate('Explore')} name="arrow-left" style={{marginTop:0,marginLeft:wp(2),color:"#118b06",textAlign:"right",marginRight:wp(2)}} size={28} color="#118b06" />
     <Text style={{    fontFamily: "Montserrat_700Bold",
         
         textAlign:"center",
         fontSize: 22,}}>Pclub Summer of Code</Text> 
     
-    </TouchableOpacity>
+    </View>
     <TouchableOpacity style={{marginTop:20}}>
     <Image style={{height:hp(48),width:wp(94),borderRadius:15,marginLeft:wp(2.7)}} source={require("../images/psocmain.jpg")}></Image></TouchableOpacity>
     <Text style={{marginTop:hp(2),marginLeft:wp(1),marginRight:wp(1),textAlign:"center",fontFamily:"Montserrat_400Regular",fontSize:14,color: "#767676",lineHeight:22}}>
