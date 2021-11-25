@@ -3,6 +3,7 @@ import {View , Text, Button , StyleSheet,ScrollView,TouchableOpacity,Image} from
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import YouTubePlayer from "react-native-youtube-sdk";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const Hackuiet = ({navigation}) => {
 
     return (
@@ -15,7 +16,7 @@ const Hackuiet = ({navigation}) => {
         fontSize: 22,}}>HackUiet</Text> 
     </TouchableOpacity>
     <TouchableOpacity style={{marginTop:20}}>
-    <Image style={{height:350,width:370,borderRadius:15,marginLeft:10,marginRight:10}} source={require("../images/hackuietmain.jpg")}></Image></TouchableOpacity>
+    <Image style={{height:hp(47),width:wp(94),borderRadius:15,marginLeft:wp(2.5),marginRight:wp(3)}} source={require("../images/hackuietmain.jpg")}></Image></TouchableOpacity>
 
     <Text style={{marginTop:20,marginLeft:10,marginRight:10,textAlign:"center",fontFamily:"Montserrat_400Regular",fontSize:14,color: "#767676",lineHeight:22}}>
 HackUIET is UIET, PU's premier hackathon organised in the month of November. This year, the hackathon is being held from 12 to 14 November,2021 .We call for hackers, artists, coders, designers, tech evangelists, creatives, and developers from all disciplines to take a part to win awesome prizes. Throughout the weekend hackers at HackUiet will have unique opportunities to learn from each other trying hands in new technologies .We are determined to have an all-inclusive and diverse group of students attending.So come join us for a 48 hours sprint to build things and most importantly, to learn! Participants are requested to carefully fill the google form. Happy Hacking!</Text>
@@ -46,7 +47,7 @@ HackUIET is UIET, PU's premier hackathon organised in the month of November. Thi
 
         
 
-
+{/* 
         <Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
         marginTop:20,}}>HackUiet Opening Ceremony</Text>
                
@@ -83,7 +84,7 @@ HackUIET is UIET, PU's premier hackathon organised in the month of November. Thi
   onChangeState={e => console.log(e)}
   onChangeFullscreen={e => console.log(e)}
 />
-
+*/}
 
 
         <Text style={styles.title}>Our Sponsers</Text>
