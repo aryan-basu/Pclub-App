@@ -9,7 +9,7 @@ const PsoC = () => {
     return (
         <ScrollView   style={{marginBottom:20,marginTop:20}}>
       <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>
-    <Icon name="arrow-left" style={{marginTop:0,marginLeft:15,color:"#118b06",textAlign:"right",marginRight:10}} size={28} color="#118b06" />
+    <Icon name="arrow-left" style={{marginTop:0,marginLeft:wp(2),color:"#118b06",textAlign:"right",marginRight:wp(2)}} size={28} color="#118b06" />
     <Text style={{    fontFamily: "Montserrat_700Bold",
         
         textAlign:"center",
