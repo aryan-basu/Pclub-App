@@ -32,6 +32,7 @@ import Sfd from "./screens/Sfd";
 import Hackuiet from "./screens/Hackuiet";
 import PsoC from "./screens/PsoC";
 import Search from "./screens/Search";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const AppStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -46,12 +47,12 @@ function HomeTabs() {
       tabBarShowLabel:false,
       tabBarStyle: {
         position: 'absolute',
-        bottom: 0,
+        
         //left: 20,
         //right:20,
         elevation: 0,
         backgroundColor: '#ffffff',
-        height: 60,
+        height: hp(8),
         
         
       },
