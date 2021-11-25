@@ -43,7 +43,7 @@ const Homescreen = ({navigation}) => {
     }, []);
 
     return (
-        <View style ={{ backgroundColor: '#f5f5f5',marginBottom:80}}>
+        <View style ={{ backgroundColor: '#f5f5f5',marginBottom:hp(7)}}>
            
             <ScrollView>
               <View style={{flexDirection:"row"}}>
@@ -84,7 +84,7 @@ const Homescreen = ({navigation}) => {
         return val
           }
         }).map((book , index) => index<5&&(
-          <TouchableOpacity key={index} style={[styles.card2,styles.elevation]} onPress={()=>navigation.navigate('article',{Name:book.Name,Title:book.Title,Description:book.Description,Email:book.Email})} >
+          <TouchableOpacity key={index} style={[styles.card2,styles.elevation,]} onPress={()=>navigation.navigate('article',{Name:book.Name,Title:book.Title,Description:book.Description,Email:book.Email})} >
           <Text style={styles.cardtitle}>{book.Title}</Text>
           <Text style={{  color: "#767676",
           fontFamily: "Montserrat_400Regular", marginLeft:wp(2),marginBottom:hp(1),marginTop:hp(1),marginRight:wp(1),justifyContent:"space-evenly"}} numberOfLines={6}>{book.Description}</Text>
