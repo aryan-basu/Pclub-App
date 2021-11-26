@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import YouTubePlayer from "react-native-youtube-sdk";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-const Sfd = () => {
+const Sfd = ({navigation}) => {
 
     return (
         <ScrollView   style={{marginBottom:20,marginTop:20}}>

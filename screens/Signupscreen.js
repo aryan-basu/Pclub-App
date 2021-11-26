@@ -37,6 +37,7 @@ const Signupscreen = ({navigation}) => {
 
     }
     return (
+      <ScrollView style={{flex:1}}>
 <View  style={styles.container}>
 
     <Text style={styles.title}>Create an Account</Text>
@@ -147,13 +148,14 @@ const Signupscreen = ({navigation}) => {
       fontFamily: "Montserrat_400Regular",
      
      
-      }}>Already have an account ?</Text><Text style={{color:"#118b06"}}onPress={() =>navigation.navigate("Login")}> Sign in Now!</Text></View>
+      }}>Already have an account ?</Text><Text style={{color:"#118b06",marginBottom:hp(4)}}onPress={() =>navigation.navigate("Login")}> Sign in Now!</Text></View>
     
     <Pressable style={styles.continue}   onPress={()=>navigation.navigate('Home')} >
       <Text style={styles.skiptext}>Sign Up</Text>
     </Pressable>
 
 </View>
+</ScrollView>
 
     );
 };

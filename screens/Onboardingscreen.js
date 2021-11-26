@@ -103,7 +103,7 @@ marginTop:hp(-6)
     marginTop: hp(2),
     fontSize: 16,
     lineHeight: 22,
-   
+   marginBottom:hp(2),
     textAlign: 'center',
     flex:1
   },
@@ -134,6 +134,7 @@ navigation.navigate('Home')
      
      })
      return (
+       <View style={{flex:1}}>
       <Swiper
         buttonWrapperStyle={{
           backgroundColor: "transparent",
@@ -150,7 +151,9 @@ navigation.navigate('Home')
         showsButtons={false}
         loop={false}
         paginationStyle={{
-         marginBottom:hp(10)
+         marginBottom:hp(7),
+         
+         flex:1
           
         }}
         activeDotColor="#118b06"
@@ -266,6 +269,7 @@ borderRadius:5,}} onPress={()=>navigation.navigate('Login')} >
         </View>
        
       </Swiper>
+      </View>
     
   );
   // }

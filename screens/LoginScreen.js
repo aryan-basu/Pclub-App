@@ -53,6 +53,7 @@ const LoginScreen = ({navigation}) => {
       });
     }, []);
     return (
+      <ScrollView style={{flex:1}}>
 <View style={styles.container}>
 
     <Text style={styles.title}>Welcome</Text>
@@ -198,11 +199,12 @@ const LoginScreen = ({navigation}) => {
       fontFamily: "Montserrat_400Regular",
      
      
-      }}>Don't have an account ?</Text><Text style={{color:"#118b06"}}onPress={() =>navigation.navigate("Signup")}> Sign up Now!</Text></View>
+      }}>Don't have an account ?</Text><Text style={{color:"#118b06",marginBottom:hp(4)}}onPress={() =>navigation.navigate("Signup")}> Sign up Now!</Text></View>
     
  
     
 </View>
+</ScrollView>
 
     );
 };
