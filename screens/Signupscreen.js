@@ -37,7 +37,7 @@ const Signupscreen = ({navigation}) => {
 
     }
     return (
-<ScrollView  style={styles.container}>
+<View  style={styles.container}>
 
     <Text style={styles.title}>Create an Account</Text>
     <Text style={styles.text}>Sign-up To get Started!</Text>
@@ -153,7 +153,7 @@ const Signupscreen = ({navigation}) => {
       <Text style={styles.skiptext}>Sign Up</Text>
     </Pressable>
 
-</ScrollView>
+</View>
 
     );
 };

@@ -53,7 +53,7 @@ const LoginScreen = ({navigation}) => {
       });
     }, []);
     return (
-<ScrollView style={styles.container}>
+<View style={styles.container}>
 
     <Text style={styles.title}>Welcome</Text>
     <Text style={styles.text}>Sign-In To Contiue!</Text>
@@ -202,7 +202,7 @@ const LoginScreen = ({navigation}) => {
     
  
     
-</ScrollView>
+</View>
 
     );
 };
