@@ -64,7 +64,7 @@ function HomeTabs() {
       <Tab.Screen name="Home" component={Homescreen}
         options={{
           tabBarIcon:({focused}) => (
-            <View style={{alignItems:'center',justifyContent:'center',top:1}} >
+            <View style={{alignItems:'center',justifyContent:'center',top:1,flex:1}} >
 
             
 <Octicons name="home" style={{color:focused ? '#118b06':'#767676',}} size={focused?28:25} color="#900" />
@@ -81,7 +81,7 @@ function HomeTabs() {
       <Tab.Screen name="Explore" component={Explorescreen} 
       options={{
         tabBarIcon:({focused}) => (
-          <View style={{alignItems:'center',justifyContent:'center',top:1}} >
+          <View style={{alignItems:'center',justifyContent:'center',top:1,flex:1}} >
 
 
 <Icon name="star-outline" style={{color:focused ? '#118b06':'#767676',}} size={focused?31:29} color="#900" />
@@ -98,7 +98,7 @@ function HomeTabs() {
       
       options={{
         tabBarIcon:({focused}) => (
-          <View style={{alignItems:'center',justifyContent:'center',top:1,}} >
+          <View style={{alignItems:'center',justifyContent:'center',top:1,flex:1}} >
 
 <Icon name="account-outline" style={{color:focused ? '#118b06':'#767676',}} size={focused?28:25} color="#900" />
           

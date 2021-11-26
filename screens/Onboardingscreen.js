@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { StyleSheet, Image,Button, Dimensions, Text, View, Pressable  } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Swiper from "react-native-swiper";
@@ -24,7 +24,7 @@ const h = Dimensions.get("window").height;
 const styles = StyleSheet.create({
  
   slide: {
-    flex: 1,
+    flex:1,
     paddingTop: 80,
     marginHorizontal: 30,
   },
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     borderColor:"#118b06",
     //marginTop:20,
     //marginTop:h * 0.09,
-    marginTop:70,
+    marginTop:hp(4),
     borderWidth:2,
 borderRadius:5,
   },
@@ -62,8 +62,8 @@ borderRadius:5,
     alignSelf: "center",
     borderTopRightRadius: 80,
     borderBottomLeftRadius: 80,
-    height: h * 0.5,
-    width: w * 0.9,
+    height: hp(51),
+    width: wp(90),
   },
   skip:{
 backgroundColor:"transparent",
@@ -71,10 +71,10 @@ borderColor:"#118b06",
 borderWidth:2,
 borderRadius:5,
 color:"#FFFF",
-width:80,
-marginLeft:260,
+width:wp(22),
+marginLeft:wp(65),
 marginBottom:0,
-marginTop:-50
+marginTop:hp(-6)
   },
   skiptext:{
     color:"#118b06",
@@ -85,26 +85,27 @@ marginTop:-50
         
         textAlign: 'center',
     
-    paddingTop:10,
-    paddingBottom:10
+    paddingTop:hp(1),
+    paddingBottom:hp(1.2)
     
       },
   title: {
     fontFamily: "Montserrat_700Bold",
-    marginTop: 30,
+    marginTop: hp(1),
     textAlign: 'center',
-    marginHorizontal: 10,
+    
     fontSize: 22,
 
   },
   text: {
     color: "#767676",
     fontFamily: "Montserrat_400Regular",
-    marginTop: 20,
+    marginTop: hp(2),
     fontSize: 16,
-    lineHeight: 24,
-    marginLeft: 10,
+    lineHeight: 22,
+   
     textAlign: 'center',
+    flex:1
   },
 });
 
@@ -141,21 +142,19 @@ navigation.navigate('Home')
           bottom: 0,
           left: 0,
           flex: 1,
-          paddingHorizontal: 30,
-          paddingVertical: 20,
-          justifyContent: "center",
-          alignItems: "center",
+         
+          
+          
         }}
         style={styles.wrapper}
         showsButtons={false}
         loop={false}
         paginationStyle={{
-         // marginLeft: w * 0.7,
-          marginBottom: h * 0.09,
+         marginBottom:hp(10)
+          
         }}
         activeDotColor="#118b06"
         dotColor="#998FA2"
-        
         nextButton={
           <View 
             style={{
@@ -229,19 +228,20 @@ navigation.navigate('Home')
           <Image source={require("../images/topic.png")} style={{alignSelf: "center",
     borderTopRightRadius: 80,
     borderBottomLeftRadius: 80,
-    height: 370,
-    width: w * 0.9,}} />
+    height: hp(47),
+    width: wp(90),}} />
           <Text style={{ fontFamily: "Montserrat_700Bold",
-    marginTop: 39,
+    marginTop: hp(4.5),
     textAlign:"center",
     
     fontSize: 21,}}>Gain knowledge from articles</Text>
           <Text style={{color: "#767676",
     fontFamily: "Montserrat_400Regular",
-    marginTop: 20,
+    marginTop: hp(2),
     fontSize: 16,
-    lineHeight: 24,
-    textAlign:"center"
+    lineHeight: 22,
+    textAlign:"center",
+    flex:1
     }}>
            Come and explore a variety of articles that are extremely important to know and understand which will help you to be future ready!
           </Text>
@@ -250,7 +250,7 @@ navigation.navigate('Home')
     borderColor:"#118b06",
     //marginTop:20,
     //marginTop:h * 0.09,
-    marginTop:90,
+    marginBottom:hp(3),
     borderWidth:2,
 borderRadius:5,}} onPress={()=>navigation.navigate('Login')} >
       <Text style={{color:"#118b06",
@@ -260,8 +260,8 @@ borderRadius:5,}} onPress={()=>navigation.navigate('Login')} >
       
         
         textAlign: 'center',
-    paddingTop:10,
-    paddingBottom:10}}>Get Started</Text>
+    paddingTop:hp(1.2),
+    paddingBottom:hp(1.4)}}>Get Started</Text>
     </Pressable>
         </View>
        
