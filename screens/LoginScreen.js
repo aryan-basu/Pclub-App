@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import {View ,Image, Text, Button , StyleSheet,TextInput,Pressable,SocialIcon} from 'react-native';
+import {View ,Image, Text, Button , StyleSheet,TextInput,Pressable,SocialIcon,ScrollView} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
 
@@ -53,7 +53,7 @@ const LoginScreen = ({navigation}) => {
       });
     }, []);
     return (
-<View style={styles.container}>
+<ScrollView style={styles.container}>
 
     <Text style={styles.title}>Welcome</Text>
     <Text style={styles.text}>Sign-In To Contiue!</Text>
@@ -62,8 +62,8 @@ const LoginScreen = ({navigation}) => {
         borderWidth: 1,
         borderRadius: 10,
         padding: 10,
-        marginTop:10,
-        marginBottom:10,}}>
+        marginTop:hp(1.5),
+        marginBottom:hp(1.5),}}>
    <Icon name="email" style={{marginRight:20,color:"#666"}} size={25} color="#900" />
     <TextInput
         style={styles.input}
@@ -76,8 +76,8 @@ const LoginScreen = ({navigation}) => {
         borderWidth: 1,
         borderRadius: 10,
         padding: 10,
-        marginTop:10,
-        marginBottom:10,}}>
+        marginTop:hp(1.5),
+        marginBottom:hp(1.5),}}>
    <Icon name="key" style={{marginRight:20,color:"#666"}} size={25} color="#900" />
     <TextInput
         style={styles.input}
@@ -88,8 +88,8 @@ const LoginScreen = ({navigation}) => {
       /></View>
        <Text style={{ color: "#767676",
       fontFamily: "Montserrat_400Regular",
-      marginTop: 5,
-      marginBottom:5,
+      marginTop: hp(0.8),
+      marginBottom:hp(1),
       fontSize: 14,
       lineHeight: 24,
       textAlign:"right"
@@ -101,19 +101,19 @@ const LoginScreen = ({navigation}) => {
       borderColor:"#dcdcdc",
       //marginTop:20,
       //marginTop:h * 0.09,
-      marginTop:10,
+      marginTop:hp(1),
       borderWidth:2,
-      marginBottom:10,
-      justifyContent:"center",
+      marginBottom:hp(1),
+      
       flexDirection:"row",
   borderRadius:10,}}   onPress={googlelogin} >
-         <Icon name="google" style={{ marginTop:5,marginRight:18,color:"#373636"}} size={25} color="#900" />
+         <Icon name="google" style={{ marginTop:5,marginLeft:wp(9),color:"#373636"}} size={25} color="#900" />
       <Text style={{ color:"#000000",
       fontFamily: "Montserrat_400Regular",
       
           fontSize: 16,
         
-          
+          marginLeft:wp(10),
           textAlign: 'center',
       
       paddingTop:10,
@@ -123,19 +123,19 @@ const LoginScreen = ({navigation}) => {
       borderColor:"#dcdcdc",
       //marginTop:20,
       //marginTop:h * 0.09,
-      marginTop:10,
+      marginTop:hp(1),
       borderWidth:2,
-      marginBottom:10,
-      justifyContent:"center",
+      marginBottom:hp(1),
+      
       flexDirection:"row",
   borderRadius:10,}}   onPress={()=>navigation.navigate('Onboarding')} >
-         <Icon name="facebook" style={{ marginTop:5,marginRight:10,color:"#373636"}} size={25} color="#900" />
+         <Icon name="facebook" style={{ marginTop:5,marginLeft:wp(9),color:"#373636"}} size={25} color="#900" />
       <Text style={{ color:"#000000",
       fontFamily: "Montserrat_400Regular",
       
           fontSize: 16,
         
-          
+          marginLeft:wp(9),
           textAlign: 'center',
       
       paddingTop:10,
@@ -145,13 +145,13 @@ const LoginScreen = ({navigation}) => {
       borderColor:"#dcdcdc",
       //marginTop:20,
       //marginTop:h * 0.09,
-      marginTop:10,
+      marginTop:hp(1),
       borderWidth:2,
-      marginBottom:10,
-      justifyContent:"center",
+      marginBottom:hp(1),
+     
       flexDirection:"row",
   borderRadius:10,}}   onPress={()=>navigation.navigate('Onboarding')} >
-         <Icon name="github" style={{ marginTop:5,marginRight:20,color:"#373636"}} size={25} color="#900" />
+         <Icon name="github" style={{ marginTop:hp(1),marginLeft:wp(9),color:"#373636"}} size={25} color="#900" />
       <Text style={{ color:"#000000",
       fontFamily: "Montserrat_400Regular",
       
@@ -159,7 +159,7 @@ const LoginScreen = ({navigation}) => {
         
           
           textAlign: 'center',
-      
+          marginLeft:wp(10),
       paddingTop:10,
       paddingBottom:10}}>Sign In with Github</Text>
     </Pressable>
@@ -167,27 +167,27 @@ const LoginScreen = ({navigation}) => {
       borderColor:"#dcdcdc",
       //marginTop:20,
       //marginTop:h * 0.09,
-      marginTop:10,
+      marginTop:hp(1),
       borderWidth:2,
-      marginBottom:10,
-      justifyContent:"center",
+      marginBottom:hp(1),
+      
       flexDirection:"row",
   borderRadius:10,}}   onPress={()=>navigation.navigate('Onboarding')} >
-         <Icon name="linkedin" style={{ marginTop:5,marginRight:20,color:"#373636"}} size={25} color="#900" />
+         <Icon name="linkedin" style={{ marginTop:hp(1),marginLeft:wp(9),color:"#373636"}} size={25} color="#900" />
       <Text style={{ color:"#000000",
       fontFamily: "Montserrat_400Regular",
       
           fontSize: 16,
         
-          
+          marginLeft:wp(10),
           textAlign: 'center',
       
       paddingTop:10,
       paddingBottom:10}}>Sign In with linkedin</Text>
     </Pressable>
   
-    <View style={{ marginTop: 10,
-      marginBottom:10,
+    <View style={{ marginTop: hp(1),
+      marginBottom:hp(1),
       fontSize: 14,
       lineHeight: 24,
       flex: 1,
@@ -202,7 +202,7 @@ const LoginScreen = ({navigation}) => {
     
  
     
-</View>
+</ScrollView>
 
     );
 };
@@ -212,14 +212,14 @@ const styles = StyleSheet.create ({
   
     container : {
       flex: 1,
-      paddingTop: 80,
-      marginHorizontal: 30,
+      paddingTop: hp(13),
+      marginHorizontal: wp(7.6),
      },
      title: {
       fontFamily: "Montserrat_700Bold",
       marginTop: 0,
       
-      marginHorizontal: 10,
+      marginHorizontal: wp(2.5),
       fontSize: 22,
   
     },
@@ -246,9 +246,9 @@ left:10,
       borderColor:"#118b06",
       //marginTop:20,
       //marginTop:h * 0.09,
-      marginTop:10,
+      marginTop:hp(1.5),
       borderWidth:2,
-      marginBottom:10,
+      marginBottom:hp(1.5),
   borderRadius:10,
     },
     skiptext:{
