@@ -229,11 +229,11 @@ const styles = StyleSheet.create ({
     text: {
       color: "#767676",
       fontFamily: "Montserrat_400Regular",
-      marginTop: 10,
-      marginBottom:10,
+      marginTop: hp(1),
+      marginBottom:hp(1),
       fontSize: 19,
       lineHeight: 24,
-      marginLeft: 10,
+      marginLeft: wp(1),
      
     },
     abc:{
@@ -260,8 +260,8 @@ left:10,
           
           textAlign: 'center',
       
-      paddingTop:10,
-      paddingBottom:10
+      paddingTop:hp(1),
+      paddingBottom:hp(1)
       
         },
 });
