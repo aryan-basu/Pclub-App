@@ -7,7 +7,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 const Sfd = ({navigation}) => {
 
     return (
-        <ScrollView   style={{marginBottom:20,marginTop:20}}>
+        <ScrollView   style={{marginBottom:20,marginTop:20}} showsVerticalScrollIndicator={false}>
             <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>
     <Icon name="arrow-left" style={{marginTop:hp(1),marginLeft:wp(2),color:"#118b06",textAlign:"right",marginRight:wp(3)}} size={28} color="#118b06" />
     <Text style={styles.title}>Software Freedom Day</Text> 

@@ -7,7 +7,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 const PsoC = ({navigation}) => {
 
     return (
-        <ScrollView   style={{marginBottom:20,marginTop:20}}>
+        <ScrollView   style={{marginBottom:20,marginTop:20}} showsVerticalScrollIndicator={false}>
       <View style={{flexDirection:"row"}} >
     <Icon onPress={()=>navigation.navigate('Explore')} name="arrow-left" style={{marginTop:0,marginLeft:wp(2),color:"#118b06",textAlign:"right",marginRight:wp(2)}} size={28} color="#118b06" />
     <Text style={{    fontFamily: "Montserrat_700Bold",

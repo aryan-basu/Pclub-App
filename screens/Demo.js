@@ -5,7 +5,7 @@ const Demo = () => {
 
     return (
         <View>
-        <ScrollView   showsHorizontalScrollIndicator={false}  horizontal={true}>
+        <ScrollView showsVerticalScrollIndicator={false}  showsHorizontalScrollIndicator={false}  horizontal={true}>
 <View style={[styles.card, styles.elevation]}>
 <TouchableOpacity>
           <Text style={styles.title}>Pclub-Meet</Text>

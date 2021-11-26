@@ -37,7 +37,7 @@ const Signupscreen = ({navigation}) => {
 
     }
     return (
-      <ScrollView style={{flex:1}}>
+      <ScrollView style={{flex:1}} showsVerticalScrollIndicator={false}>
 <View  style={styles.container}>
 
     <Text style={styles.title}>Create an Account</Text>

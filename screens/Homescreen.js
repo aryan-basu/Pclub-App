@@ -45,7 +45,7 @@ const Homescreen = ({navigation}) => {
     return (
         <View style ={{ backgroundColor: '#f5f5f5',marginBottom:hp(7)}}>
            
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
               <View style={{flexDirection:"row"}}>
              <Text style={styles.title}>POPULAR ARTICLES</Text>
              <AntDesign onPress={()=>navigation.navigate('search')} name="search1" style={{marginTop:hp('3%'),marginLeft:wp('23%'),color:"#118b06",textAlign:"right"}} size={24} color="#118b06" />  

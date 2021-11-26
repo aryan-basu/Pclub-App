@@ -7,7 +7,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 const Hackuiet = ({navigation}) => {
 
     return (
-       <ScrollView style={{marginBottom:20,marginTop:hp(3)}}>
+       <ScrollView style={{marginBottom:20,marginTop:hp(3)}} showsVerticalScrollIndicator={false}>
             <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>
     <Icon name="arrow-left" style={{marginTop:0,marginLeft:wp(2),color:"#118b06",textAlign:"right",marginRight:wp(2)}} size={28} color="#118b06" />
     <Text style={{   fontFamily: "Montserrat_700Bold",

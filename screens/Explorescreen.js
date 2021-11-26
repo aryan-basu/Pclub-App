@@ -9,7 +9,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 const Explorescreen = ({navigation}) => {
     return (
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View   style ={{marginTop:10}}>
             <Text style={styles.title2}>PROJECTS</Text>
            <TouchableOpacity style={{flexDirection:"row",marginLeft:wp(75)}}onPress={()=>navigation.navigate('Ep1')}>

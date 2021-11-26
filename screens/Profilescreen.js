@@ -60,7 +60,7 @@ useEffect (() => {
 
 })
     return (
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
       <View>
 <View style={styles.container}>
 <Image 
