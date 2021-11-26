@@ -7,9 +7,9 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 const Hackuiet = ({navigation}) => {
 
     return (
-       <ScrollView style={{marginBottom:20,marginTop:20}}>
+       <ScrollView style={{marginBottom:20,marginTop:hp(3)}}>
             <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>
-    <Icon name="arrow-left" style={{marginTop:0,marginLeft:15,color:"#118b06",textAlign:"right",marginRight:10}} size={28} color="#118b06" />
+    <Icon name="arrow-left" style={{marginTop:0,marginLeft:wp(2),color:"#118b06",textAlign:"right",marginRight:wp(2)}} size={28} color="#118b06" />
     <Text style={{   fontFamily: "Montserrat_700Bold",
     
         textAlign:"center",
@@ -18,7 +18,7 @@ const Hackuiet = ({navigation}) => {
     <TouchableOpacity style={{marginTop:20}}>
     <Image style={{height:hp(47),width:wp(94),borderRadius:15,marginLeft:wp(2.5),marginRight:wp(3)}} source={require("../images/hackuietmain.jpg")}></Image></TouchableOpacity>
 
-    <Text style={{marginTop:20,marginLeft:10,marginRight:10,textAlign:"center",fontFamily:"Montserrat_400Regular",fontSize:14,color: "#767676",lineHeight:22}}>
+    <Text style={{marginTop:hp(3),marginLeft:wp(2),marginRight:wp(2),textAlign:"center",fontFamily:"Montserrat_400Regular",fontSize:14,color: "#767676",lineHeight:22}}>
 HackUIET is UIET, PU's premier hackathon organised in the month of November. This year, the hackathon is being held from 12 to 14 November,2021 .We call for hackers, artists, coders, designers, tech evangelists, creatives, and developers from all disciplines to take a part to win awesome prizes. Throughout the weekend hackers at HackUiet will have unique opportunities to learn from each other trying hands in new technologies .We are determined to have an all-inclusive and diverse group of students attending.So come join us for a 48 hours sprint to build things and most importantly, to learn! Participants are requested to carefully fill the google form. Happy Hacking!</Text>
 <Text style={styles.title}>Our Judges</Text>
          
@@ -26,21 +26,21 @@ HackUIET is UIET, PU's premier hackathon organised in the month of November. Thi
          
 <ScrollView  showsHorizontalScrollIndicator={false}  horizontal={true} style={{marginBottom:20,marginTop:20}}>
         <TouchableOpacity>
-          <Image style={{height:350,width:350,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/judges1.jpg")}></Image></TouchableOpacity>
+          <Image style={{height:hp(45),width:wp(90),borderRadius:15,marginLeft:wp(4),marginRight:wp(1)}} source={require("../images/judges1.jpg")}></Image></TouchableOpacity>
         
         
           <TouchableOpacity>
-          <Image style={{height:350,width:350,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/judges2.jpg")}></Image></TouchableOpacity>
+          <Image style={{height:hp(45),width:wp(90),borderRadius:15,marginLeft:wp(4),marginRight:wp(1)}} source={require("../images/judges2.jpg")}></Image></TouchableOpacity>
           
         </ScrollView>
         <Text style={styles.title}>Winner</Text>
         <ScrollView  showsHorizontalScrollIndicator={false}  horizontal={true} style={{marginBottom:20,marginTop:20}}>
         <TouchableOpacity>
-          <Image style={{height:350,width:350,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/winner.jpg")}></Image></TouchableOpacity>
+          <Image style={{height:hp(45),width:wp(90),borderRadius:15,marginLeft:wp(4),marginRight:wp(2)}} source={require("../images/winner.jpg")}></Image></TouchableOpacity>
         
         
           <TouchableOpacity>
-          <Image style={{height:350,width:350,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/award.jpg")}></Image></TouchableOpacity>
+          <Image style={{height:hp(45),width:wp(90),borderRadius:15,marginLeft:wp(4),marginRight:wp(2)}} source={require("../images/award.jpg")}></Image></TouchableOpacity>
           
         </ScrollView>
         
@@ -91,17 +91,17 @@ HackUIET is UIET, PU's premier hackathon organised in the month of November. Thi
          
 <ScrollView  showsHorizontalScrollIndicator={false}  horizontal={true} style={{marginBottom:20,marginTop:20}}>
         <TouchableOpacity>
-          <Image style={{height:350,width:350,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/sponser1.jpg")}></Image></TouchableOpacity>
+          <Image style={{height:hp(45),width:wp(90),borderRadius:15,marginLeft:wp(4),marginRight:10}} source={require("../images/sponser1.jpg")}></Image></TouchableOpacity>
         
         
           <TouchableOpacity>
-          <Image style={{height:350,width:350,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/sponser2.jpg")}></Image></TouchableOpacity>
+          <Image style={{height:hp(45),width:wp(90),borderRadius:15,marginLeft:wp(4),marginRight:wp(2)}} source={require("../images/sponser2.jpg")}></Image></TouchableOpacity>
           <TouchableOpacity>
-          <Image style={{height:350,width:350,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/sponser3.jpg")}></Image></TouchableOpacity>
+          <Image style={{height:hp(45),width:wp(90),borderRadius:15,marginLeft:wp(4),marginRight:wp(2)}} source={require("../images/sponser3.jpg")}></Image></TouchableOpacity>
           <TouchableOpacity>
-          <Image style={{height:350,width:350,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/sponser4.jpg")}></Image></TouchableOpacity>
+          <Image style={{height:hp(45),width:wp(90),borderRadius:15,marginLeft:wp(4),marginRight:wp(2)}} source={require("../images/sponser4.jpg")}></Image></TouchableOpacity>
           <TouchableOpacity>
-          <Image style={{height:350,width:350,borderRadius:15,marginLeft:20,marginRight:10}} source={require("../images/sponser5.jpg")}></Image></TouchableOpacity>
+          <Image style={{height:hp(45),width:wp(90),borderRadius:15,marginLeft:wp(4),marginRight:wp(2)}} source={require("../images/sponser5.jpg")}></Image></TouchableOpacity>
 
         </ScrollView>
            </ScrollView>
