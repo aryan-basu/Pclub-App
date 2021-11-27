@@ -5,7 +5,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const Allarticles = ({navigation}) => {
     const articles=[];
     const [books, setBooks] = useState(null);
@@ -37,8 +37,9 @@ const Allarticles = ({navigation}) => {
             }
           }, []);
     return (
+      <ScrollView style={{flex:1}} showsVerticalScrollIndicator={false}>
 <View style={styles.container}>
-    <ScrollView>
+    
     <View style={{flexDirection:"row"}}>
     <Icon onPress={()=>navigation.navigate('Home')} name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
     <Text style={styles.title}>Popular Articles</Text> 
@@ -63,8 +64,9 @@ const Allarticles = ({navigation}) => {
           ))}
   </ScrollView>
       )}
-    </ScrollView>
+    
 </View>
+</ScrollView>
 
     );
 };
@@ -79,11 +81,11 @@ const styles = StyleSheet.create ({
     title: {
         fontFamily: "Montserrat_700Bold",
         marginTop: 0,
-        marginLeft:20,
-        marginTop:20,
+        marginLeft:wp(4),
+        marginTop:hp(2.5),
         marginHorizontal: 10,
         fontSize: 22,
-        marginBottom:10
+        marginBottom:hp(1)
     
       },
       card:{
@@ -99,19 +101,21 @@ const styles = StyleSheet.create ({
     text: {
         color: "#767676",
         fontFamily: "Montserrat_400Regular",
-        marginTop: 10,
-        marginBottom:10,
+        marginTop: hp(2),
+        marginBottom:hp(2),
         fontSize: 19,
         lineHeight: 24,
-        marginLeft: 10,
+        marginLeft: wp(2),
+        marginRight:wp(2)
        
       },
     cardtitle:{
         fontFamily:"Montserrat_700Bold",
         color:"#000",
-        marginTop:16,
-      marginLeft:10,
+        marginTop:hp(2),
+      marginLeft:wp(2),
         fontSize:14,
+        marginRight:wp(2)
         
               },
               img:{
@@ -124,11 +128,12 @@ borderRadius:15,
                 backgroundColor: 'white',
                 borderRadius: 10,
     
-                width:370,
-                height:190,
-                marginTop:20,
-                marginRight:10,
-                marginLeft:10,
+                width:wp(94),
+                height:hp(25),
+                marginTop:hp(2),
+                marginRight:wp(2),
+                marginLeft:wp(3),
+                marginBottom:hp(2)
               },
               elevation: {
                 elevation: 20,
