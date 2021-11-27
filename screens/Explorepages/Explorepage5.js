@@ -10,8 +10,8 @@ const Explorepage5 = ({navigation}) => {
     return (
 <View style={styles.container}>
     <ScrollView style={{flex:1}}>
-<View style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>
-    <Icon onPress={()=>navigation.navigate('Explore')} name="arrow-left" style={{marginTop:hp(2.9),marginLeft:wp(3.5),color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
+<View style={{flexDirection:"row"}} >
+    <Icon onPress={()=>navigation.navigate('Explore')} onPress={()=>navigation.navigate('Explore')} name="arrow-left" style={{marginTop:hp(2.9),marginLeft:wp(3.5),color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
     <Text style={styles.title}>RESEARCH FRIDAY</Text> 
     
     </View>

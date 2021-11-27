@@ -8,13 +8,13 @@ const Hackuiet = ({navigation}) => {
 
     return (
        <ScrollView style={{marginBottom:20,marginTop:hp(3)}} showsVerticalScrollIndicator={false}>
-            <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>
-    <Icon name="arrow-left" style={{marginTop:0,marginLeft:wp(2),color:"#118b06",textAlign:"right",marginRight:wp(2)}} size={28} color="#118b06" />
+            <View style={{flexDirection:"row"}} >
+    <Icon onPress={()=>navigation.navigate('Explore')}name="arrow-left" style={{marginTop:0,marginLeft:wp(2),color:"#118b06",textAlign:"right",marginRight:wp(2)}} size={28} color="#118b06" />
     <Text style={{   fontFamily: "Montserrat_700Bold",
     
         textAlign:"center",
         fontSize: 22,}}>HackUiet</Text> 
-    </TouchableOpacity>
+    </View>
     <TouchableOpacity style={{marginTop:20}}>
     <Image style={{height:hp(47),width:wp(94),borderRadius:15,marginLeft:wp(2.5),marginRight:wp(3)}} source={require("../images/hackuietmain.jpg")}></Image></TouchableOpacity>
 
@@ -47,9 +47,9 @@ HackUIET is UIET, PU's premier hackathon organised in the month of November. Thi
 
         
 
-{/* 
-        <Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
-        marginTop:20,}}>HackUiet Opening Ceremony</Text>
+
+        <Text style={{fontFamily:"Montserrat_700Bold", marginLeft:wp(5),
+        marginTop:hp(3),}}>HackUiet Opening Ceremony</Text>
                
                 
                 <YouTubePlayer
@@ -61,13 +61,13 @@ HackUIET is UIET, PU's premier hackathon organised in the month of November. Thi
   showSeekBar={true}
   showPlayPauseButton={true}
   startTime={5}
-  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  style={{ width: "95%", height: hp(27),marginBottom:hp(2),marginTop:hp(2),marginLeft:wp(2),marginRight:wp(4)}}
   onError={e => console.log(e)}
   onChangeState={e => console.log(e)}
   onChangeFullscreen={e => console.log(e)}
 />
-<Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
-        marginTop:20,}}>HackUiet Closing Ceremony</Text>
+<Text style={{fontFamily:"Montserrat_700Bold", marginLeft:wp(5),
+        marginTop:hp(3),}}>HackUiet Closing Ceremony</Text>
                
                 
                 <YouTubePlayer
@@ -79,12 +79,12 @@ HackUIET is UIET, PU's premier hackathon organised in the month of November. Thi
   showSeekBar={true}
   showPlayPauseButton={true}
   startTime={5}
-  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  style={{ width: "95%", height: hp(27),marginBottom:hp(2),marginTop:hp(2),marginLeft:wp(2),marginRight:wp(4)}}
   onError={e => console.log(e)}
   onChangeState={e => console.log(e)}
   onChangeFullscreen={e => console.log(e)}
 />
-*/}
+
 
 
         <Text style={styles.title}>Our Sponsers</Text>

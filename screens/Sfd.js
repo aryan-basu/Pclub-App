@@ -8,11 +8,11 @@ const Sfd = ({navigation}) => {
 
     return (
         <ScrollView   style={{marginBottom:20,marginTop:20}} showsVerticalScrollIndicator={false}>
-            <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>
-    <Icon name="arrow-left" style={{marginTop:hp(1),marginLeft:wp(2),color:"#118b06",textAlign:"right",marginRight:wp(3)}} size={28} color="#118b06" />
+            <View style={{flexDirection:"row"}} >
+    <Icon onPress={()=>navigation.navigate('Explore')} name="arrow-left" style={{marginTop:hp(1),marginLeft:wp(2),color:"#118b06",textAlign:"right",marginRight:wp(3)}} size={28} color="#118b06" />
     <Text style={styles.title}>Software Freedom Day</Text> 
     
-    </TouchableOpacity>
+    </View>
     <TouchableOpacity style={{marginTop:20}}>
     <Image style={{height:hp(25),width:wp(94),borderRadius:15,marginLeft:wp(3),marginRight:wp(2)}} source={require("../images/sfdmain.jpg")}></Image></TouchableOpacity>
 
