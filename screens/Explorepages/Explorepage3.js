@@ -4,7 +4,7 @@ import { Card } from "react-native-elements/dist/card/Card";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import YouTubePlayer from "react-native-youtube-sdk";
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const Explorepage3 = ({navigation}) => {
 
     return (
@@ -12,15 +12,15 @@ const Explorepage3 = ({navigation}) => {
 <View style={styles.container}>
 
 <View style={{flexDirection:"row"}} >
-    <Icon onPress={()=>navigation.navigate('Explore')} name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
+    <Icon onPress={()=>navigation.navigate('Explore')} name="arrow-left" style={{marginTop:hp(2),marginLeft:wp(3),color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
     <Text style={styles.title}>SESSIONS</Text> 
     
     </View>
                 
-        <Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
-        marginTop:20,}}>Backend Development using Django</Text>
+        <Text style={{fontFamily:"Montserrat_700Bold", marginLeft:wp(6),
+        marginTop:hp(3),}}>Backend Development using Django</Text>
                
-                
+             
                 <YouTubePlayer
   ref={ref => (this.youTubePlayer = ref)}
   videoId="Q0UEPXWSfCw"
@@ -30,11 +30,12 @@ const Explorepage3 = ({navigation}) => {
   showSeekBar={true}
   showPlayPauseButton={true}
   startTime={5}
-  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  style={{ width: "100%", height: hp(27),marginBottom:hp(2),marginTop:hp(2),marginLeft:wp(2),marginRight:wp(2)}}
   onError={e => console.log(e)}
   onChangeState={e => console.log(e)}
   onChangeFullscreen={e => console.log(e)}
 />
+
 </View>
 
 
@@ -53,11 +54,10 @@ const styles = StyleSheet.create ({
     },
     title: {
         fontFamily: "Montserrat_700Bold",
-        marginTop: 0,
-        marginLeft:20,
-        marginTop:20,
-        marginHorizontal: 10,
+        marginTop:hp(2),
+        textAlign:"center",
         fontSize: 22,
+        marginLeft:wp(4)
     
       },
       card:{
