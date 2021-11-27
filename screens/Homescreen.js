@@ -61,10 +61,10 @@ const Homescreen = ({navigation}) => {
 
         <ScrollView  showsHorizontalScrollIndicator={false}  horizontal={true} style={{marginBottom:hp(0.8),marginTop:hp(2)}}>
         <TouchableOpacity>
-          <Image style={{height:hp(26),width:wp(92),borderRadius:15,marginLeft:hp(2),marginRight:hp(2)}} source={require("../images/sql.png")}></Image></TouchableOpacity>
+          <Image style={{height:hp(26),width:wp(86),borderRadius:15,marginLeft:hp(2),marginRight:hp(2.5)}} source={require("../images/sql.png")}></Image></TouchableOpacity>
           <TouchableOpacity>
         
-          <Image style={{height:hp(26),width:wp(92),borderRadius:15,marginLeft:hp(2),marginRight:hp(2)}} source={require("../images/interview.png")}></Image></TouchableOpacity>
+          <Image style={{height:hp(26),width:wp(92),borderRadius:15,marginLeft:hp(0),marginRight:hp(2)}} source={require("../images/interview.png")}></Image></TouchableOpacity>
  <TouchableOpacity>
           <Image style={{height:hp(26),width:wp(92),borderRadius:15,marginLeft:hp(2),marginRight:hp(2)}} source={require("../images/Django.jpg")}></Image>
           </TouchableOpacity>
