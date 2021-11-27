@@ -71,8 +71,7 @@ const LoginScreen = ({navigation}) => {
         placeholder='Email or Username'
         onChangeText={(email) => setEmail(email)}
         placeholderTextColor="#666"
-        autoFocus={true}
-        blurOnSubmit={false}
+        
       /></View>
        <View style={{flexDirection:"row", borderColor: "gray",
         width: "100%",
@@ -88,8 +87,7 @@ const LoginScreen = ({navigation}) => {
         onChangeText={(password) => setPassword(password)}
         placeholderTextColor="#666"
         secureTextEntry
-        autoFocus={true}
-        blurOnSubmit={false}
+        
       /></View>
        <Text style={{ color: "#767676",
       fontFamily: "Montserrat_400Regular",

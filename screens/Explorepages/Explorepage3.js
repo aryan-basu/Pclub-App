@@ -30,7 +30,7 @@ const Explorepage3 = ({navigation}) => {
   showSeekBar={true}
   showPlayPauseButton={true}
   startTime={5}
-  style={{ width: "100%", height: hp(27),marginBottom:hp(2),marginTop:hp(2),marginLeft:wp(2),marginRight:wp(2)}}
+  style={{ width: "95%", height: hp(27),marginBottom:hp(2),marginTop:hp(2),marginLeft:wp(2),marginRight:wp(4)}}
   onError={e => console.log(e)}
   onChangeState={e => console.log(e)}
   onChangeFullscreen={e => console.log(e)}

@@ -3,7 +3,7 @@ import {View , Text, Button , StyleSheet,TouchableOpacity,Image,ScrollView,Linki
 import { Card } from "react-native-elements/dist/card/Card";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import YouTubePlayer from "react-native-youtube-sdk";
 const Explorepage4 = ({navigation}) => {
 
@@ -11,12 +11,12 @@ const Explorepage4 = ({navigation}) => {
 <View style={styles.container}>
     <ScrollView>
 <View style={{flexDirection:"row"}} >
-    <Icon onPress={()=>navigation.navigate('Explore')} name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
+    <Icon onPress={()=>navigation.navigate('Explore')} name="arrow-left" style={{marginTop:hp(2.6),marginLeft:wp(4),color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
     <Text style={styles.title}>AI SATURDAY</Text> 
     </View>
 
    
-              
+      
                 
                 <Text style={{fontFamily:"Montserrat_700Bold", marginLeft:20,
         marginTop:20,}}>Introduction to Neutral Network</Text>
@@ -31,7 +31,7 @@ const Explorepage4 = ({navigation}) => {
   showSeekBar={true}
   showPlayPauseButton={true}
   startTime={5}
-  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  style={{ width: "95%", height: hp(27),marginBottom:hp(2),marginTop:hp(2),marginLeft:wp(2),marginRight:wp(4)}}
   onError={e => console.log(e)}
   onChangeState={e => console.log(e)}
   onChangeFullscreen={e => console.log(e)}
@@ -49,7 +49,7 @@ const Explorepage4 = ({navigation}) => {
   showSeekBar={true}
   showPlayPauseButton={true}
   startTime={5}
-  style={{ width: "100%", height: 200,marginBottom:20,marginTop:20,marginLeft:10,marginRight:10}}
+  style={{ width: "95%", height: hp(27),marginBottom:hp(2),marginTop:hp(2),marginLeft:wp(2),marginRight:wp(4)}}
   onError={e => console.log(e)}
   onChangeState={e => console.log(e)}
   onChangeFullscreen={e => console.log(e)}
@@ -68,7 +68,7 @@ const Explorepage4 = ({navigation}) => {
   showSeekBar={true}
   showPlayPauseButton={true}
   startTime={5}
-  style={{ width: "100%", height: 200,marginBottom:40,marginTop:20,marginRight:10,marginLeft:10}}
+  style={{ width: "95%", height: hp(27),marginBottom:hp(2),marginTop:hp(2),marginLeft:wp(2),marginRight:wp(4)}}
   onError={e => console.log(e)}
   onChangeState={e => console.log(e)}
   onChangeFullscreen={e => console.log(e)}
