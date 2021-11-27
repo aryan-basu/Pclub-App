@@ -55,6 +55,8 @@ const Signupscreen = ({navigation}) => {
         placeholder='Name'
         onChangeText={(name) => setName(name)}
         placeholderTextColor="#666"
+        blurOnSubmit={false}
+        autoFocus={true}
       /></TouchableOpacity>
     <View style={{flexDirection:"row", borderColor: "gray",
         width: "100%",
@@ -69,6 +71,8 @@ const Signupscreen = ({navigation}) => {
         placeholder='Email'
         onChangeText={(email) => setEmail(email)}
         placeholderTextColor="#666"
+        autoFocus={true}
+        blurOnSubmit={false}
       /></View>
      <View style={{flexDirection:"row", borderColor: "gray",
         width: "100%",
@@ -83,6 +87,8 @@ const Signupscreen = ({navigation}) => {
         placeholder='Institution/Organization'
         onChangeText={(institution) => setInstitution(institution)}
         placeholderTextColor="#666"
+        blurOnSubmit={false}
+        autoFocus={true}
       /></View>
         <View style={{flexDirection:"row", borderColor: "gray",
         width: "100%",
@@ -98,6 +104,8 @@ const Signupscreen = ({navigation}) => {
         onChangeText={(password) => setPassword(password)}
         placeholderTextColor="#666"
         secureTextEntry
+        blurOnSubmit={false}
+        autoFocus={true}
       /></View>
         <View style={{flexDirection:"row", borderColor: "gray",
         width: "100%",
@@ -112,6 +120,8 @@ const Signupscreen = ({navigation}) => {
         placeholder='Confirm Password'
         placeholderTextColor="#666"
         secureTextEntry
+        blurOnSubmit={false}
+        autoFocus={true}
       /></View>
        <View style={{ 
       fontSize: 14,
