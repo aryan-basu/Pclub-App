@@ -5,7 +5,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const Search = ({navigation}) => {
     const [searchTerm,setsearchTerm]=useState("");
     const articles=[];
@@ -37,20 +37,20 @@ const Search = ({navigation}) => {
         }
       }, []);
     return (
-  <ScrollView style={styles.container}>
+  <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={{flexDirection:"row"}}>
     {/*      <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Explore')}>  */}
-    <Icon onPress={()=>navigation.navigate('Explore')} name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"left"}} size={28} color="#118b06" />  
+    <Icon onPress={()=>navigation.navigate('Explore')} name="arrow-left" style={{marginTop:hp(3),marginLeft:wp(3),color:"#118b06",textAlign:"left"}} size={28} color="#118b06" />  
     <TouchableOpacity style={{flexDirection:"row", borderColor: "gray",
-        width: "82%",
+        width: "84%",
         borderWidth: 1,
         borderRadius: 10,
         padding: 10,
-        marginTop:15,
-        marginLeft:15,
-        marginBottom:10,
+        marginTop:hp(2),
+        marginLeft:wp(2.5),
+        marginBottom:hp(2),
         backgroundColor:"white"}}>
-   <AntDesign name="search1" style={{marginRight:20,color:"#666"}} size={22} color="#900" />
+   <AntDesign name="search1" style={{marginRight:wp(3),color:"#666"}} size={22} color="#900" />
     <TextInput
         style={styles.input}
         placeholder='Search'
@@ -97,8 +97,12 @@ const styles = StyleSheet.create ({
       },
       title: {
         fontFamily: "Montserrat_700Bold",
-        textAlign:"center",
+        marginTop: 0,
+        marginLeft:wp(4),
+        marginTop:hp(2.5),
+        marginHorizontal: 10,
         fontSize: 22,
+        marginBottom:hp(1)
     
       },
       card: {
@@ -114,21 +118,23 @@ const styles = StyleSheet.create ({
       cardtitle:{
         fontFamily:"Montserrat_700Bold",
         color:"#000",
-        marginTop:16,
-      marginLeft:10,
+        marginTop:hp(2),
+      marginLeft:wp(2),
         fontSize:14,
+        marginRight:wp(2)
         
               },
-      card2:{
-        backgroundColor: 'white',
-        borderRadius: 10,
-
-        width:370,
-        height:190,
-        marginTop:20,
-        marginRight:10,
-        marginLeft:10,
-      },
+              card2:{
+                backgroundColor: 'white',
+                borderRadius: 10,
+    
+                width:wp(94),
+                height:hp(25),
+                marginTop:hp(2),
+                marginRight:wp(2),
+                marginLeft:wp(3),
+                marginBottom:hp(2)
+              },
       elevation: {
         elevation: 20,
         shadowColor: '#000',
@@ -154,13 +160,14 @@ const styles = StyleSheet.create ({
         borderWidth:2,
     },
     text: {
-        color: "#767676",
-        fontFamily: "Montserrat_400Regular",
-        marginTop: 10,
-        marginBottom:10,
-        fontSize: 19,
-        lineHeight: 24,
-        marginLeft: 10,
-       
-      },
+      color: "#767676",
+      fontFamily: "Montserrat_400Regular",
+      marginTop: hp(2),
+      marginBottom:hp(2),
+      fontSize: 19,
+      lineHeight: 24,
+      marginLeft: wp(2),
+      marginRight:wp(2)
+     
+    },
 });
