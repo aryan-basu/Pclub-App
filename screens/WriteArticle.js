@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { showMessage, hideMessage } from "react-native-flash-message";
 const WriteArticle = ({navigation}) => {
     async function Post(title,description)
@@ -36,7 +36,7 @@ const WriteArticle = ({navigation}) => {
     return (
 <View style={styles.container}>
 <TouchableOpacity style={{flexDirection:"row"}} onPress={()=>navigation.navigate('Profile')}>
-    <Icon name="arrow-left" style={{marginTop:20,marginLeft:15,color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
+    <Icon name="arrow-left" style={{marginTop:hp(2.9),marginLeft:wp(4),color:"#118b06",textAlign:"right"}} size={28} color="#118b06" />
     <Text style={styles.title}>Write An Article</Text> 
     
     </TouchableOpacity>
@@ -49,7 +49,7 @@ const WriteArticle = ({navigation}) => {
         marginTop:"20%",
         marginLeft:"5%",
         marginRight:"5%",
-        marginBottom:10,}}
+        marginBottom:hp(1),}}
         onChangeText={(title) => setTitle(title)}
         value={title}
         placeholder='Title'
@@ -71,7 +71,7 @@ const WriteArticle = ({navigation}) => {
         marginTop:"5%",
         marginLeft:"5%",
         marginRight:"5%",
-        marginBottom:10,}}
+        marginBottom:hp(1),}}
         onChangeText={(description) => setDescription(description)}
         textAlignVertical={'top'}
         value={description}
@@ -98,9 +98,8 @@ const styles = StyleSheet.create ({
      },
      title: {
          fontFamily: "Montserrat_700Bold",
-         marginTop: 0,
-         marginLeft:20,
-         marginTop:20,
+         marginLeft:wp(4),
+         marginTop:hp(2.8),
          marginHorizontal: 10,
          fontSize: 22,
      
