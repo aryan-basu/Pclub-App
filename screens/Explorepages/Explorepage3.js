@@ -22,9 +22,9 @@ const Explorepage3 = ({navigation}) => {
                 querySnapshot.forEach((doc) => {
                     // doc.data() is never undefined for query doc snapshots
                  // console.log(doc.data().email);
-                   articles.push({Title:doc.data().title,videoid:doc.data().videoId});
+                   articles.push({Title:doc.data().title,videoid:doc.data().id});
                     //console.log(doc.id, " => ", doc.data().firstName);
-                  
+                  console.log(doc.data().id);
                 });
                // console.log(maindata);
                // <CSVDownload data={maindata} target="_blank" />
@@ -38,7 +38,7 @@ const Explorepage3 = ({navigation}) => {
         
         }
       }, []);
-    return loader?(<View style={{justifyContent:"center",flex: 1,}}><ActivityIndicator size="large" color="#118b06" /></View>): (
+    return loader?(<View style={{justifyContent:"center",flex: 1,}}><ActivityIndicator size="large" color="#118b06" /></View>):(
        
 <View style={styles.container}>
 
