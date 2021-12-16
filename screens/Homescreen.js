@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 // eslint-disable-next-line prettier/prettier
 import React from 'react';
-import {View , Text, Button, StyleSheet,ScrollView,TouchableOpacity,Image,TouchableHighlight} from 'react-native';
+import {View , Text, Button, StyleSheet,ScrollView,TouchableOpacity,Image,TouchableHighlight,ActivityIndicator} from 'react-native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { Card,Slider } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -9,18 +9,20 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import { useState,useEffect } from 'react';
+import { color } from 'react-native-reanimated';
 const Homescreen = ({navigation}) => {
   const articles=[];
   const [books, setBooks] = useState(null);
     const [searchTerm,setsearchTerm]=useState("");
-
-
+const [rl,setrl]=useState("");
+const [loader,setloader]=useState(true);
     useEffect(() => {
       getData();
   
       // we will use async/await to fetch this data
       async function getData() {
-        
+        const doc=await firestore().collection('image').doc('image1').get();
+setrl(doc.data().url);
          await firestore().collection('article').get().then((querySnapshot) => {
               querySnapshot.forEach((doc) => {
                   // doc.data() is never undefined for query doc snapshots
@@ -36,19 +38,20 @@ const Homescreen = ({navigation}) => {
  //console.log(articles)
         // store the data into our books variable
         //console.log(maindata);
-       setBooks(articles) ;
+       await setBooks(articles) ;
       
-      
+       setloader(false)
       }
+    
     }, []);
 
-    return (
+    return loader?(<View style={{justifyContent:"center",flex: 1,}}><ActivityIndicator size="large" color="#118b06" /></View>):(
         <View style ={{ backgroundColor: '#f5f5f5',marginBottom:hp(7)}}>
            
             <ScrollView showsVerticalScrollIndicator={false}>
               <View style={{flexDirection:"row"}}>
              <Text style={styles.title}>POPULAR ARTICLES</Text>
-             <AntDesign onPress={()=>navigation.navigate('search')} name="search1" style={{marginTop:hp('3%'),marginLeft:wp('23%'),color:"#118b06",textAlign:"right"}} size={24} color="#118b06" />  
+             <AntDesign onPress={()=>navigation.navigate('search')} name="search1" style={{marginTop:hp('3%'),color:"#118b06",position:"absolute",right:wp(4)}} size={24} color="#118b06" />  
              </View>
              <TouchableOpacity style={{flexDirection:"row",marginLeft:wp('75%'),marginTop:hp('0.6%')}}onPress={()=>navigation.navigate('allarticle')}>
          
@@ -61,7 +64,10 @@ const Homescreen = ({navigation}) => {
 
         <ScrollView  showsHorizontalScrollIndicator={false}  horizontal={true} style={{marginBottom:hp(0.8),marginTop:hp(2)}}>
         <TouchableOpacity>
-          <Image style={{height:hp(26),width:wp(86),borderRadius:15,marginLeft:hp(2),marginRight:hp(2.5)}} source={require("../images/sql.png")}></Image></TouchableOpacity>
+          <Image style={{height:hp(26),width:wp(86),borderRadius:15,marginLeft:hp(2),marginRight:hp(2.5)}}  source={require("../images/sql.png")}></Image></TouchableOpacity>
+ 
+            
+          
           <TouchableOpacity>
         
           <Image style={{height:hp(26),width:wp(92),borderRadius:15,marginLeft:hp(0),marginRight:hp(2)}} source={require("../images/interview.png")}></Image></TouchableOpacity>

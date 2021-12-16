@@ -1,22 +1,60 @@
 /* eslint-disable prettier/prettier */
 // eslint-disable-next-line prettier/prettier
 import React from 'react';
-import {View , Text, Button, StyleSheet,ScrollView,TouchableOpacity,Image} from 'react-native';
+import {View , Text, Button, StyleSheet,ScrollView,TouchableOpacity,Image,ActivityIndicator} from 'react-native';
 import { Card } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
+import { useState,useEffect } from 'react';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
+
 const Explorescreen = ({navigation}) => {
-    return (
+  const [rl,setrl]=useState("");
+  const [image2,setimage2]=useState("");
+  const [image3,setimage3]=useState("");
+  const [image4,setimage4]=useState("");
+  
+const [loader,setloader]=useState(true);
+  useEffect(() => {
+    getData();
+
+    // we will use async/await to fetch this data
+    async function getData() {
+      const doc1=await firestore().collection('image').doc('image1').get();
+setrl(doc1.data().url);
+      
+const doc2=await firestore().collection('image').doc('image2').get();
+setimage2(doc2.data().url);
+const doc3=await firestore().collection('image').doc('image3').get();
+setimage3(doc3.data().url);
+const doc4=await firestore().collection('image').doc('image4').get();
+setimage4(doc4.data().url);
+     setloader(false)
+    }
+  
+  }, []);
+  return loader?(<View style={{justifyContent:"center",flex: 1,}}><ActivityIndicator size="large" color="#118b06" /></View>):(
         <ScrollView showsVerticalScrollIndicator={false}>
+          
+         
+     
         <View   style ={{marginTop:10}}>
-            <Text style={styles.title2}>PROJECTS</Text>
-           <TouchableOpacity style={{flexDirection:"row",marginLeft:wp(75)}}onPress={()=>navigation.navigate('Ep1')}>
+        <View style={{flexDirection:"row"}}>
+            <Text style={{fontFamily: "Montserrat_700Bold",
+    marginTop: 0,
+    marginLeft:wp(4.5),
+    marginTop:hp(2.5),
+   marginBottom:hp(2),
+    fontSize: 22,}}>PROJECTS</Text>
+           
             
-           <Text style={{textAlign:"right",marginRight:wp(1.8)}}>View All</Text>
-           <Icon name="chevron-right-circle" style={{marginLeft:wp(1.8),color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
-           </TouchableOpacity>
+           <Text style={{textAlign:"right",marginRight:wp(1.8),marginTop:hp(3.2) ,marginLeft:wp(40),}}>View All</Text>
+           <Icon onPress={()=>{navigation.navigate('Ep1')}} name="chevron-right-circle" style={{marginLeft:wp(1.8),color:"#118b06",textAlign:"right",marginTop:hp(3.1),}} size={22} color="#118b06" />
+           
+      </View>
             <ScrollView showsHorizontalScrollIndicator={false}  horizontal={true}>
              
             <View style={[styles.card, styles.elevation,{marginBottom:40}]}>
@@ -66,12 +104,20 @@ const Explorescreen = ({navigation}) => {
 
           </View>
           <View style={styles.container}>
-          <Text style={styles.title2}>SESSIONS</Text>
-          <TouchableOpacity style={{flexDirection:"row",marginLeft:wp(75)}}onPress={()=>navigation.navigate('Ep3')}>
+          <View style={{flexDirection:"row"}}>
+            <Text style={{fontFamily: "Montserrat_700Bold",
+    marginTop: 0,
+    marginLeft:wp(4.5),
+    marginTop:hp(2.5),
+   marginBottom:hp(2),
+    fontSize: 22,}}>SESSIONS</Text>
+           
             
-           <Text style={{textAlign:"right",marginRight:wp(1.8)}}>View All</Text>
-           <Icon name="chevron-right-circle" style={{marginLeft:wp(1.9),color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
-           </TouchableOpacity>
+           <Text style={{textAlign:"right",marginRight:wp(1.8),marginTop:hp(3.2) ,marginLeft:wp(40),}}>View All</Text>
+           <Icon onPress={()=>{navigation.navigate('Ep3')}} name="chevron-right-circle" style={{marginLeft:wp(1.8),color:"#118b06",textAlign:"right",marginTop:hp(3.1),}} size={22} color="#118b06" />
+           
+      </View>
+         
           <ScrollView showsHorizontalScrollIndicator={false}  horizontal={true}>
            
           <View style={[styles.card, styles.elevation,{marginBottom:hp(5)}]}>
@@ -95,14 +141,23 @@ const Explorescreen = ({navigation}) => {
           </View>
           
           <View style={styles.container}>
-          <Text style={styles.title2}>AI SATURDAY</Text>
+          <View style={{flexDirection:"row"}}>
+            <Text style={{fontFamily: "Montserrat_700Bold",
+    marginTop: 0,
+    marginLeft:wp(4.5),
+    marginTop:hp(2.5),
+   marginBottom:hp(2),
+    fontSize: 22,}}>AI SATURDAY</Text>
+           
+            
+           <Text style={{textAlign:"right",marginRight:wp(1.8),marginTop:hp(3.2) ,marginLeft:wp(30),}}>View All</Text>
+           <Icon onPress={()=>{navigation.navigate('Ep4')}} name="chevron-right-circle" style={{marginLeft:wp(1.8),color:"#118b06",textAlign:"right",marginTop:hp(3.1),}} size={22} color="#118b06" />
+           
+      </View>
+         
 
           <Image style={[{height:hp(28),width:wp(92),borderRadius:15,marginLeft:wp(3.5),marginRight:wp(3),marginTop:hp(2),marginBottom:hp(1)}]} source={require("../images/AIsaturday.jpg")}></Image>
-          <TouchableOpacity style={{flexDirection:"row",marginTop:hp(1.5),marginLeft:wp(75)}}onPress={()=>navigation.navigate('Ep4')}>
-            
-           <Text style={{textAlign:"right",marginRight:wp(1.8)}}>View All</Text>
-           <Icon name="chevron-right-circle" style={{marginLeft:wp(1.9),color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
-           </TouchableOpacity>
+        
            <ScrollView showsHorizontalScrollIndicator={false}   Vertical={true}>
            <View style={[styles.card2, styles.elevation,{marginTop:hp(4)}]}>
                 <Text style={{fontFamily:"Montserrat_700Bold" ,marginLeft:wp(3.5)}}>Introduction to Neutral Network</Text>
@@ -119,13 +174,22 @@ const Explorescreen = ({navigation}) => {
             </ScrollView>
           </View>
           <View style={styles.container}>
-          <Text style={styles.title2}>RESEARCH FRIDAY</Text>
-          <Image style={{height:hp(28),width:wp(92),borderRadius:15,marginLeft:wp(3.5),marginRight:wp(2),marginTop:hp(2),marginBottom:hp(1)}} source={require("../images/RF.png")}></Image>
-          <TouchableOpacity style={{flexDirection:"row",marginTop:10,marginLeft:wp(75)}} onPress={()=>navigation.navigate('Ep5')}>
+          <View style={{flexDirection:"row"}}>
+            <Text style={{fontFamily: "Montserrat_700Bold",
+    marginTop: 0,
+    marginLeft:wp(4.5),
+    marginTop:hp(2.5),
+   marginBottom:hp(2),
+    fontSize: 22,}}>RESEARCH FRIDAY</Text>
+           
             
-           <Text style={{textAlign:"right",marginRight:wp(1.8)}}>View All</Text>
-           <Icon name="chevron-right-circle" style={{marginLeft:wp(1.9),color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
-           </TouchableOpacity>
+           <Text style={{textAlign:"right",marginRight:wp(1.8),marginTop:hp(3.2) ,marginLeft:wp(15),}}>View All</Text>
+           <Icon onPress={()=>{navigation.navigate('Ep5')}} name="chevron-right-circle" style={{marginLeft:wp(1.8),color:"#118b06",textAlign:"right",marginTop:hp(3.1),}} size={22} color="#118b06" />
+           
+      </View>
+         
+          <Image style={{height:hp(28),width:wp(92),borderRadius:15,marginLeft:wp(3.5),marginRight:wp(2),marginTop:hp(2),marginBottom:hp(1)}} source={require("../images/RF.png")}></Image>
+        
           <ScrollView showsHorizontalScrollIndicator={false}   Vertical={true}>
           <View style={[styles.card2, styles.elevation]}>
                 <Text style={{fontFamily:"Montserrat_700Bold",marginLeft:wp(3.5)}}>RESEARCH FRIDAY 1</Text>
@@ -141,13 +205,22 @@ const Explorescreen = ({navigation}) => {
             </ScrollView>
           </View>
           <View style={styles.container}>
-          <Text style={styles.title2}>OUR TEAM</Text>
-          <Image style={{height:hp(28),width:wp(92),borderRadius:15,marginLeft:wp(3.5),marginRight:wp(2),marginTop:hp(2),marginBottom:hp(1)}} source={require("../images/Psoc-bg.jpg")}></Image>
-          <TouchableOpacity style={{flexDirection:"row",marginTop:10,marginLeft:wp(75)}} onPress={()=>navigation.navigate('Ep6')}>
+          <View style={{flexDirection:"row"}}>
+            <Text style={{fontFamily: "Montserrat_700Bold",
+    marginTop: 0,
+    marginLeft:wp(4.5),
+    marginTop:hp(2.5),
+   marginBottom:hp(2),
+    fontSize: 22,}}>OUR TEAM</Text>
+           
             
-           <Text style={{textAlign:"right",marginRight:wp(1.8)}}>View All</Text>
-           <Icon name="chevron-right-circle" style={{marginLeft:wp(1.9),color:"#118b06",textAlign:"right"}} size={22} color="#118b06" />
-           </TouchableOpacity>
+           <Text style={{textAlign:"right",marginRight:wp(1.8),marginTop:hp(3.2) ,marginLeft:wp(40),}}>View All</Text>
+           <Icon onPress={()=>{navigation.navigate('Ep6')}} name="chevron-right-circle" style={{marginLeft:wp(1.8),color:"#118b06",textAlign:"right",marginTop:hp(3.1),}} size={22} color="#118b06" />
+           
+      </View>
+         
+          <Image style={{height:hp(28),width:wp(92),borderRadius:15,marginLeft:wp(3.5),marginRight:wp(2),marginTop:hp(2),marginBottom:hp(1)}} source={require("../images/Psoc-bg.jpg")}></Image>
+          
           <ScrollView showsHorizontalScrollIndicator={false}  horizontal={true} style={{marginBottom:50}}>
           <View style={[styles.card, styles.elevation,{marginBottom:hp(6)}]}>
                 <Text style={styles.cardtitle}>GURNAMEH SINGH</Text>

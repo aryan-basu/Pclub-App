@@ -16,7 +16,7 @@ import Profilescreen from "./screens/Profilescreen";
 import Homescreen from "./screens/Homescreen";
 import Explorescreen from "./screens/Explorescreen";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import Upcoming from "./screens/Upcoming";
 import Explorepage1 from "./screens/Explorepages/Explorepage1";
 import Explorepage2 from "./screens/Explorepages/Explorepage2";
 import Explorepage3 from "./screens/Explorepages/Explorepage3";
@@ -93,6 +93,23 @@ function HomeTabs() {
         )
       }}
       
+      />
+       <Tab.Screen name="Upcoming" component={Upcoming}
+      
+      options={{
+        tabBarIcon:({focused}) => (
+          <View style={{alignItems:'center',justifyContent:'center',top:1,flex:1}} >
+
+<Icon name="calendar-month-outline" style={{color:focused ? '#118b06':'#767676',}} size={focused?28:25} color="#900" />
+          
+            
+            <Text style={{color:focused ? '#118b06':'#767676',fontSize:12,
+      fontFamily: "Montserrat_400Regular" }} > Upcoming</Text>
+          </View>
+        
+    
+        )
+      }}
       />
       <Tab.Screen name="Profile" component={Profilescreen}
       
