@@ -1,13 +1,44 @@
 import React from "react";
-import {View , Text, Button , StyleSheet,TouchableOpacity,Image,ScrollView} from 'react-native';
+import {View , Text, Button , StyleSheet,TouchableOpacity,Image,ScrollView,ActivityIndicator,Linking} from 'react-native';
 import { Card } from "react-native-elements/dist/card/Card";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import YouTubePlayer from "react-native-youtube-sdk";
+import firestore from '@react-native-firebase/firestore';
+import { useState,useEffect } from 'react';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const Explorepage3 = ({navigation}) => {
+    const [loader,setloader]=useState(true);
+    const articles=[];
+    const [searchTerm,setsearchTerm]=useState("");
+    const [books, setBooks] = useState(null);
+    useEffect(() => {
+        getData();
 
-    return (
+        // we will use async/await to fetch this data
+        async function getData() {
+          
+           await firestore().collection('sessions').get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    // doc.data() is never undefined for query doc snapshots
+                 // console.log(doc.data().email);
+                   articles.push({Title:doc.data().title,videoid:doc.data().videoId});
+                    //console.log(doc.id, " => ", doc.data().firstName);
+                  
+                });
+               // console.log(maindata);
+               // <CSVDownload data={maindata} target="_blank" />
+              
+              });
+   //console.log(articles)
+          // store the data into our books variable
+          //console.log(maindata);
+         setBooks(articles) ;
+         setloader(false)
+        
+        }
+      }, []);
+    return loader?(<View style={{justifyContent:"center",flex: 1,}}><ActivityIndicator size="large" color="#118b06" /></View>): (
        
 <View style={styles.container}>
 
@@ -16,14 +47,22 @@ const Explorepage3 = ({navigation}) => {
     <Text style={styles.title}>SESSIONS</Text> 
     
     </View>
-                
+    {books && ( 
+         <ScrollView>
+  {books.filter((val)=>{if(searchTerm===""){
+              return val
+          }else if(val.dish.toLowerCase().includes(searchTerm.toLowerCase())){
+        return val
+          }
+        }).map((book , index) => index<105&&( 
+            <View key={index}>
         <Text style={{fontFamily:"Montserrat_700Bold", marginLeft:wp(6),
-        marginTop:hp(3),}}>Backend Development using Django</Text>
+        marginTop:hp(3),}}>{book.Title}</Text>
                
              
                 <YouTubePlayer
   ref={ref => (this.youTubePlayer = ref)}
-  videoId="Q0UEPXWSfCw"
+  videoId={book.videoid}
   autoPlay={false}
   fullscreen={false}
   showFullScreenButton={true}
@@ -35,7 +74,11 @@ const Explorepage3 = ({navigation}) => {
   onChangeState={e => console.log(e)}
   onChangeFullscreen={e => console.log(e)}
 />
+</View>
+                ))}
 
+                </ScrollView>
+                    )}
 </View>
 
 
