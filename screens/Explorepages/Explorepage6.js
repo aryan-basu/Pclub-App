@@ -1,13 +1,44 @@
 import React from "react";
-import {View , Text, Button , StyleSheet,ScrollView,TouchableOpacity,Image} from 'react-native';
+import {View , Text, Button , StyleSheet,ScrollView,TouchableOpacity,Image,ActivityIndicator,Linking} from 'react-native';
 import { Card } from "react-native-elements/dist/card/Card";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import firestore from '@react-native-firebase/firestore';
+import { useState,useEffect } from 'react';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const Explorepage6 = ({navigation}) => {
+    const [loader,setloader]=useState(true);
+    const articles=[];
+    const [searchTerm,setsearchTerm]=useState("");
+    const [books, setBooks] = useState(null);
+    useEffect(() => {
+        getData();
 
-    return (
+        // we will use async/await to fetch this data
+        async function getData() {
+          
+           await firestore().collection('Teams').get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    // doc.data() is never undefined for query doc snapshots
+                 // console.log(doc.data().email);
+                   articles.push({Name:doc.data().name,Github:doc.data().github,LinkedIn:doc.data().linkedin,Email:doc.data().email});
+                    //console.log(doc.id, " => ", doc.data().firstName);
+                //  console.log(doc.data().id);
+                });
+               // console.log(maindata);
+               // <CSVDownload data={maindata} target="_blank" />
+              
+              });
+   //console.log(articles)
+          // store the data into our books variable
+          //console.log(maindata);
+         setBooks(articles) ;
+         setloader(false)
+        
+        }
+      }, []);
+    return loader?(<View style={{justifyContent:"center",flex: 1,}}><ActivityIndicator size="large" color="#118b06" /></View>):(
        <View>
 <ScrollView>
 <View style={{flexDirection:"row"}} >
@@ -15,9 +46,17 @@ const Explorepage6 = ({navigation}) => {
     <Text style={styles.title}>OUR TEAM</Text> 
     
     </View>
-    
+    {books && ( 
+         <ScrollView>
+  {books.filter((val)=>{if(searchTerm===""){
+              return val
+          }else if(val.dish.toLowerCase().includes(searchTerm.toLowerCase())){
+        return val
+          }
+        }).map((book , index) => index<105&&( 
+            <View key={index}>
     <TouchableOpacity style={[styles.card2,styles.elevation,{marginTop:40}]}>
-        <Text style={styles.cardtitle}>GURNAMEH SINGH</Text>
+        <Text style={styles.cardtitle}>{book.Name}</Text>
         <Text style={styles.cardtitle}>Core Team Member</Text>
         <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
         <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
@@ -26,178 +65,13 @@ const Explorepage6 = ({navigation}) => {
         </View>
         
     </TouchableOpacity>
-   
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>ASHWANI RATHEE</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>ARYAN BASU</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>RIK</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>HARBANS SINGH</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>MEGHNA THAKUR</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>KANISHK TYAGI</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>GURIKA</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>ADITI SANDHYAL</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>NITIN</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>PRIYANSHI</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>SHUBHAM</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>ABHIROOP SINGH</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>JATIN JAIN</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>RITVIK</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>AMRINDER KAUR</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation]}>
-        <Text style={styles.cardtitle}>GURNAMEH SINGH</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.card2,styles.elevation,{marginBottom:hp(6)}]}>
-        <Text style={styles.cardtitle}>GURNAMEH SINGH</Text>
-        <Text style={styles.cardtitle}>Core Team Member</Text>
-        <View style={{flexDirection:"row",justifyContent:"center",marginTop:hp(1)}}>
-        <FontAwesome name="envelope-square" style={{marginTop:hp(2.7),marginLeft:0,color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="github-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06"}} size={38} color="#118b06" />
-        <FontAwesome name="linkedin-square" style={{marginTop:hp(2.7),marginLeft:wp(2),color:"#118b06",}} size={38} color="#118b06" />
-        </View>
-        
-    </TouchableOpacity>
+    </View>
+                ))}
+
+                </ScrollView>
+                    )}
+
+  
 
     </ScrollView>
     </View>
