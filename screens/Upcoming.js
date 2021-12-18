@@ -51,7 +51,7 @@ setimage4(doc4.data().url);
           <Text style={styles.cardtitle}>Linux</Text>
           <Text style={{  color: "#767676",
           fontFamily: "Montserrat_400Regular", marginLeft:wp(2),marginBottom:hp(1),marginTop:hp(1),marginRight:wp(1),justifyContent:"space-evenly"}} numberOfLines={12} >{rl.descriptions}</Text>
-          <Text style={{color:"#118b06",marginBottom:hp(4)}}onPress={ ()=> Linking.openURL(`${rl.Meetlink}`) }> Meet link!</Text>   
+          <Text style={{color:"#118b06",marginBottom:hp(4),marginLeft:wp(1.5)}}onPress={ ()=> Linking.openURL(`${rl.Meetlink}`) }> Meet link!</Text>   
   </View>
       
 </View>
@@ -70,7 +70,7 @@ setimage4(doc4.data().url);
           Did you know Linux is a community of open-source Unix like operating systems that are based on Linux Kernel?Are you puzzled and unsure where to begin with Linux?🤔
           So, we are again back with a bang🤩.
           We, however, do have a solution to it🥳. Pclub is organizing an Introductory session on Linux on December 17, 2021. Don't miss out on the chance to learn about Linux🤩 and have a chit-chat with us🙌🏻.</Text>
-          <Text style={{color:"#118b06",marginBottom:hp(4)}}onPress={ ()=> Linking.openURL('https://google.com') }> Meet link!</Text> 
+          <Text style={{color:"#118b06",marginBottom:hp(4),marginLeft:wp(1.5)}}onPress={ ()=> Linking.openURL('https://google.com') }> Meet link!</Text> 
   </View>
   
       
@@ -81,7 +81,7 @@ setimage4(doc4.data().url);
       <Text style={styles.cardtitle}>Introduction to DSA</Text>
       <Text style={{  color: "#767676",
           fontFamily: "Montserrat_400Regular", marginLeft:wp(2),marginBottom:hp(1),marginTop:hp(1),marginRight:wp(1),justifyContent:"space-evenly"}} >{image3.descriptions}</Text>
-          <Text style={{color:"#118b06",marginBottom:hp(4)}}onPress={ ()=> Linking.openURL(`${rl.Meetlink}`) }> Meet link!</Text>   
+          <Text style={{color:"#118b06",marginBottom:hp(4),marginLeft:wp(1.5)}}onPress={ ()=> Linking.openURL(`${rl.Meetlink}`) }> Meet link!</Text>   
       </View>
       </View>
       <View style={[styles.card2,styles.elevation,{marginBottom:40}]}>
@@ -90,7 +90,7 @@ setimage4(doc4.data().url);
       <Text style={styles.cardtitle}>Introduction to DSA</Text>
       <Text style={{  color: "#767676",
           fontFamily: "Montserrat_400Regular", marginLeft:wp(2),marginBottom:hp(1),marginTop:hp(1),marginRight:wp(1),justifyContent:"space-evenly"}} >{image3.descriptions}</Text>
-          <Text style={{color:"#118b06",marginBottom:hp(4)}}onPress={ ()=> Linking.openURL(`${rl.Meetlink}`) }> Meet link!</Text>   
+          <Text style={{color:"#118b06",marginBottom:hp(4),marginLeft:wp(1.5)}}onPress={ ()=> Linking.openURL(`${rl.Meetlink}`) }> Meet link!</Text>   
       </View>
       </View>
 </ScrollView>
