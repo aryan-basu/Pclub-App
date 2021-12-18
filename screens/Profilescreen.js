@@ -91,100 +91,100 @@ useEffect (() => {
      <View style={styles.newconatiner}>
        <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(3),
       marginBottom:hp(1),marginLeft: wp(5),}} onPress={()=>navigation.navigate('writearticle')}>
-     <Icon name="pencil-box-multiple-outline" style={{marginRight:wp(5),borderColor:"#373636",color:"#000",}} size={25} />
+     <Icon name="pencil-box-multiple-outline" style={{marginRight:wp(5),borderColor:"#373636",color:"#000",}} size={22} />
      <Text style={{ color: "#000",
-      fontFamily: "Montserrat__400Regular",
+      fontFamily: "Montserrat_500Medium",
      
-      fontSize: 19,
+      fontSize: 15,
       lineHeight: 24,
       
       alignItems:"flex-start",
      }}>Write an article</Text></TouchableOpacity>
-    <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+    <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(3),
       marginBottom:hp(1),marginLeft: wp(5),}}>
-     <Icon name="bookmark-multiple-outline" style={{marginRight:wp(5),color:"#373636"}} size={25} color="#900" />
+     <Icon name="bookmark-multiple-outline" style={{marginRight:wp(5),color:"#373636"}} size={22} color="#900" />
      <Text style={{ color: "#000",
-      fontFamily: "Montserrat__400Regular",
+      fontFamily: "Montserrat_500Medium",
      
-      fontSize: 19,
+      fontSize: 15,
       lineHeight: 24,
       
       alignItems:"flex-start",
      }}>Saved Articles</Text></TouchableOpacity>
          
-         <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+         <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(3),
       marginBottom:hp(1),marginLeft: wp(5),}}>
-     <AntDesign name="download" style={{marginRight:wp(5),color:"#373636"}} size={25} color="#900" />
+     <AntDesign name="download" style={{marginRight:wp(5),color:"#373636"}} size={22} color="#900" />
      <Text style={{ color: "#000",
-      fontFamily: "Montserrat__400Regular",
+      fontFamily: "Montserrat_500Medium",
      
-      fontSize: 19,
+      fontSize: 15,
       lineHeight: 24,
       
       alignItems:"flex-start",
      }}>Offline Articles</Text></TouchableOpacity>
-           <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+           <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(3),
       marginBottom:hp(1),marginLeft: wp(5),}}>
-     <Icon name="star-outline" style={{marginRight:wp(5),color:"#373636"}} size={25} color="#900" />
+     <Icon name="star-outline" style={{marginRight:wp(5),color:"#373636"}} size={24} color="#900" />
      <Text style={{ color: "#000",
-      fontFamily: "Montserrat__400Regular",
+      fontFamily: "Montserrat_500Medium",
      
-      fontSize: 19,
+      fontSize: 15,
       lineHeight: 24,
       
       alignItems:"flex-start",
      }}>Interests</Text></TouchableOpacity>
-             <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+             <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(3),
       marginBottom:hp(1),marginLeft: wp(5),}}>
-     <Icon name="information-outline" style={{marginRight:wp(5),color:"#373636"}} size={26} color="#900" />
+     <Icon name="information-outline" style={{marginRight:wp(5),color:"#373636"}} size={22} color="#900" />
      <Text style={{ color: "#000",
-      fontFamily: "Montserrat__400Regular",
+      fontFamily: "Montserrat_500Medium",
      
-      fontSize: 19,
+      fontSize: 15,
       lineHeight: 24,
       
       alignItems:"flex-start",
      }}>About us</Text></TouchableOpacity>
-         <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+         <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(3),
       marginBottom:hp(1),marginLeft: wp(5),}}>
-     <Icon name="security" style={{marginRight:wp(5),color:"#373636"}} size={25} color="#900" />
+     <Icon name="security" style={{marginRight:wp(5),color:"#373636"}} size={22} color="#900" />
      <Text style={{ color: "#000",
-      fontFamily: "Montserrat__400Regular",
+      fontFamily: "Montserrat_500Medium",
      
-      fontSize: 19,
+      fontSize: 15,
       lineHeight: 24,
       
       alignItems:"flex-start",
      }}>Privacy and Policy</Text></TouchableOpacity>
-           <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+           <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(3),
       marginBottom:hp(1),marginLeft: wp(5),}}>
-     <Icon name="bug-outline" style={{marginRight:wp(5),color:"#373636"}} size={25}  />
+     <Icon name="bug-outline" style={{marginRight:wp(5),color:"#373636"}} size={22}  />
      <Text style={{ color: "#000",
-      fontFamily: "Montserrat__400Regular",
+      fontFamily: "Montserrat_500Medium",
      
-      fontSize: 19,
+      fontSize: 15,
       lineHeight: 24,
       
       alignItems:"flex-start",
      }}>Feedback</Text></TouchableOpacity>
-            <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(1),
+            <TouchableOpacity style={{flexDirection: 'row', marginTop: hp(3),
       marginBottom:hp(1),marginLeft: wp(5),}}>
-     <Icon name="cogs" style={{marginRight:wp(5),color:"#373636"}} size={25}  />
+     <Icon name="cogs" style={{marginRight:wp(5),color:"#373636"}} size={22}  />
      <Text style={{ color: "#000",
-      fontFamily: "Montserrat__400Regular",
-     
-      fontSize: 19,
+      fontFamily: "Montserrat_500Medium",
+      fontSize: 15,
       lineHeight: 24,
       
       alignItems:"flex-start",
+      
      }}>Settings</Text></TouchableOpacity>
-         <TouchableOpacity onPress={signout} style={{flexDirection: 'row', marginTop: hp(1),
+         <TouchableOpacity onPress={signout} style={{flexDirection: 'row', marginTop: hp(3),
       marginBottom:hp(10),marginLeft: wp(5),}}>
-     <Icon name="logout" style={{marginRight:wp(5),color:"#373636"}} size={25} color="#900" />
+     <Icon name="logout" style={{marginRight:wp(5),color:"#373636"}} size={22} color="#900" />
      <Text style={{ color: "#000",
-      fontFamily: "Montserrat__400Regular",
+      fontFamily: "Montserrat_500Medium",
      
-      fontSize: 19,
+      fontSize: 15,
       lineHeight: 24,
       
       alignItems:"flex-start",
