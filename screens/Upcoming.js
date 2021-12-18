@@ -3,6 +3,8 @@ import {View , Text, Button, StyleSheet,ScrollView,TouchableOpacity,Image,Activi
 import firestore from '@react-native-firebase/firestore';
 import { useState,useEffect } from 'react';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import Ion from 'react-native-vector-icons/Ionicons';
+import CountDown from 'react-native-countdown-component';
 const Upcoming= ({navigation}) => {
     const [rl,setrl]=useState("");
     const [image2,setimage2]=useState("");
@@ -44,55 +46,166 @@ setimage4(doc4.data().url);
        <ScrollView  showsHorizontalScrollIndicator={false}  horizontal={true} style={{marginBottom:hp(0.8),marginTop:hp(2)}}>
     
         
-       <View style={[styles.card2,styles.elevation,{marginBottom:40}]}>
+       <View style={[styles.card2,styles.elevation,{marginTop:hp(7),marginBottom:hp(7)}]}>
       <Image style={{height:hp(42),width:wp(86),borderTopLeftRadius:10,borderTopRightRadius:10,marginLeft:hp(0),marginRight:hp(0)}}  source={{uri:`${rl.url}`}}></Image>
 
       <View   >
-          <Text style={styles.cardtitle}>Linux</Text>
-          <Text style={{  color: "#767676",
-          fontFamily: "Montserrat_400Regular", marginLeft:wp(2),marginBottom:hp(1),marginTop:hp(1),marginRight:wp(1),justifyContent:"space-evenly"}} numberOfLines={12} >{rl.descriptions}</Text>
-          <Text style={{color:"#118b06",marginBottom:hp(4),marginLeft:wp(1.5)}}onPress={ ()=> Linking.openURL(`${rl.Meetlink}`) }> Meet link!</Text>   
+        <View style={{flexDirection:"row"}}>
+          <Text style={styles.cardtitle}>Introduction to Linux</Text>
+          <View style={{borderRadius:5,height:hp(7),width:wp(12),backgroundColor:"#118b06",position:"absolute",right:15,marginTop:hp(-1.5),justifyContent:"center",padding:wp(2)}}>
+            <Text style={{color:"#ffff",fontFamily: "Montserrat_700Bold",textAlign:"center",fontSize:14}}numberOfLines={2}>24 Oct</Text>
+          </View>
+          </View>
+          <View style={{flexDirection:"row"}}>
+          <Ion name="location-outline" style={{marginTop:hp(2),marginLeft:wp(2),color:"#118b06"}} size={22} color="#118b06" />
+          <Text style={{ color: "#000",
+      fontFamily: "Montserrat_500Medium",
+     marginTop:hp(2),
+      fontSize: 15,
+      lineHeight: 24,
+      marginLeft:wp(1),
+      alignItems:"flex-start",
+     }}>Online</Text>
+      <Ion name="time-outline" style={{marginTop:hp(2),position:"absolute",right:80,color:"#118b06"}} size={22} color="#118b06" />
+      <Text style={{ color: "#000",
+      fontFamily: "Montserrat_500Medium",
+     marginTop:hp(2),
+      fontSize: 15,
+      lineHeight: 24,
+      marginLeft:wp(1),
+      position:"absolute",
+      right:10
+     }}>6:00 Pm</Text>
+          </View>
+  <View style={{borderRadius:7,height:hp(5),width:wp(25),backgroundColor:"#118b06",marginLeft:wp(30),marginTop:hp(2),padding:wp(2)}}
+  >
+<Text style={{color:"#ffff",fontFamily: "Montserrat_700Bold",textAlign:"center",fontSize:18}}onPress={ ()=> Linking.openURL(`${rl.Meetlink}`) }>Join</Text>
+  </View>
+
+  </View>
+      
+</View>
+<View style={[styles.card2,styles.elevation,{marginTop:hp(7),marginBottom:hp(7)}]}>
+      <Image style={{height:hp(42),width:wp(86),borderTopLeftRadius:10,borderTopRightRadius:10,marginLeft:hp(0),marginRight:hp(0)}}  source={{uri:`${image3.url}`}}></Image>
+
+      <View   >
+        <View style={{flexDirection:"row"}}>
+          <Text style={styles.cardtitle}>Introduction to Linux</Text>
+          <View style={{borderRadius:5,height:hp(7),width:wp(12),backgroundColor:"#118b06",position:"absolute",right:15,marginTop:hp(-1.5),justifyContent:"center",padding:wp(2)}}>
+            <Text style={{color:"#ffff",fontFamily: "Montserrat_700Bold",textAlign:"center",fontSize:14}}numberOfLines={2}>24 Oct</Text>
+          </View>
+          </View>
+          <View style={{flexDirection:"row"}}>
+          <Ion name="location-outline" style={{marginTop:hp(2),marginLeft:wp(2),color:"#118b06"}} size={22} color="#118b06" />
+          <Text style={{ color: "#000",
+      fontFamily: "Montserrat_500Medium",
+     marginTop:hp(2),
+      fontSize: 15,
+      lineHeight: 24,
+      marginLeft:wp(1),
+      alignItems:"flex-start",
+     }}>Online</Text>
+      <Ion name="time-outline" style={{marginTop:hp(2),position:"absolute",right:80,color:"#118b06"}} size={22} color="#118b06" />
+      <Text style={{ color: "#000",
+      fontFamily: "Montserrat_500Medium",
+     marginTop:hp(2),
+      fontSize: 15,
+      lineHeight: 24,
+      marginLeft:wp(1),
+      position:"absolute",
+      right:10
+     }}>6:00 Pm</Text>
+          </View>
+  <View style={{borderRadius:7,height:hp(5),width:wp(25),backgroundColor:"#118b06",marginLeft:wp(30),marginTop:hp(2),padding:wp(2)}}
+  >
+<Text style={{color:"#ffff",fontFamily: "Montserrat_700Bold",textAlign:"center",fontSize:18}}onPress={ ()=> Linking.openURL(`${rl.Meetlink}`) }>Join</Text>
+  </View>
+
+  </View>
+      
+</View>
+<View style={[styles.card2,styles.elevation,{marginTop:hp(7),marginBottom:hp(7)}]}>
+      <Image style={{height:hp(42),width:wp(86),borderTopLeftRadius:10,borderTopRightRadius:10,marginLeft:hp(0),marginRight:hp(0)}}  source={{uri:`${image2}`}}></Image>
+
+      <View   >
+        <View style={{flexDirection:"row"}}>
+          <Text style={styles.cardtitle}>Introduction to Linux</Text>
+          <View style={{borderRadius:5,height:hp(7),width:wp(12),backgroundColor:"#118b06",position:"absolute",right:15,marginTop:hp(-1.5),justifyContent:"center",padding:wp(2)}}>
+            <Text style={{color:"#ffff",fontFamily: "Montserrat_700Bold",textAlign:"center",fontSize:14}}numberOfLines={2}>24 Oct</Text>
+          </View>
+          </View>
+          <View style={{flexDirection:"row"}}>
+          <Ion name="location-outline" style={{marginTop:hp(2),marginLeft:wp(2),color:"#118b06"}} size={22} color="#118b06" />
+          <Text style={{ color: "#000",
+      fontFamily: "Montserrat_500Medium",
+     marginTop:hp(2),
+      fontSize: 15,
+      lineHeight: 24,
+      marginLeft:wp(1),
+      alignItems:"flex-start",
+     }}>Online</Text>
+      <Ion name="time-outline" style={{marginTop:hp(2),position:"absolute",right:80,color:"#118b06"}} size={22} color="#118b06" />
+      <Text style={{ color: "#000",
+      fontFamily: "Montserrat_500Medium",
+     marginTop:hp(2),
+      fontSize: 15,
+      lineHeight: 24,
+      marginLeft:wp(1),
+      position:"absolute",
+      right:10
+     }}>7:00 Pm</Text>
+          </View>
+  <View style={{borderRadius:7,height:hp(5),width:wp(25),backgroundColor:"#118b06",marginLeft:wp(30),marginTop:hp(2),padding:wp(2)}}
+  >
+<Text style={{color:"#ffff",fontFamily: "Montserrat_700Bold",textAlign:"center",fontSize:18}}onPress={ ()=> Linking.openURL(`${rl.Meetlink}`) }>Join</Text>
+  </View>
+
+  </View>
+      
+</View>
+<View style={[styles.card2,styles.elevation,{marginTop:hp(7),marginBottom:hp(7)}]}>
+      <Image style={{height:hp(42),width:wp(86),borderTopLeftRadius:10,borderTopRightRadius:10,marginLeft:hp(0),marginRight:hp(0)}}  source={{uri:`${rl.url}`}}></Image>
+
+      <View   >
+        <View style={{flexDirection:"row"}}>
+          <Text style={styles.cardtitle}>Introduction to Linux</Text>
+          <View style={{borderRadius:5,height:hp(7),width:wp(12),backgroundColor:"#118b06",position:"absolute",right:15,marginTop:hp(-1.5),justifyContent:"center",padding:wp(2)}}>
+            <Text style={{color:"#ffff",fontFamily: "Montserrat_700Bold",textAlign:"center",fontSize:14}}numberOfLines={2}>24 Oct</Text>
+          </View>
+          </View>
+          <View style={{flexDirection:"row"}}>
+          <Ion name="location-outline" style={{marginTop:hp(2),marginLeft:wp(2),color:"#118b06"}} size={22} color="#118b06" />
+          <Text style={{ color: "#000",
+      fontFamily: "Montserrat_500Medium",
+     marginTop:hp(2),
+      fontSize: 15,
+      lineHeight: 24,
+      marginLeft:wp(1),
+      alignItems:"flex-start",
+     }}>Online</Text>
+      <Ion name="time-outline" style={{marginTop:hp(2),position:"absolute",right:80,color:"#118b06"}} size={22} color="#118b06" />
+      <Text style={{ color: "#000",
+      fontFamily: "Montserrat_500Medium",
+     marginTop:hp(2),
+      fontSize: 15,
+      lineHeight: 24,
+      marginLeft:wp(1),
+      position:"absolute",
+      right:10
+     }}>8:00 Pm</Text>
+          </View>
+  <View style={{borderRadius:7,height:hp(5),width:wp(25),backgroundColor:"#118b06",marginLeft:wp(30),marginTop:hp(2),padding:wp(2)}}
+  >
+<Text style={{color:"#ffff",fontFamily: "Montserrat_700Bold",textAlign:"center",fontSize:18}}onPress={ ()=> Linking.openURL(`${rl.Meetlink}`) }>Join</Text>
+  </View>
+
   </View>
       
 </View>
 
         
       
-   
-<View style={[styles.card2,styles.elevation,{marginBottom:40}]}>
-      <Image style={{height:hp(42),width:wp(86),borderTopLeftRadius:10,borderTopRightRadius:10,marginLeft:hp(0),marginRight:hp(0)}}  source={{uri:`${image2}`}}></Image>
-
-      <View   >
-          <Text style={styles.cardtitle}>Linux</Text>
-          <Text style={{  color: "#767676",
-          fontFamily: "Montserrat_400Regular", marginLeft:wp(2),marginBottom:hp(1),marginTop:hp(1),marginRight:wp(1),justifyContent:"space-evenly"}} numberOfLines={12} >Hola freshers🤩!
-
-          Did you know Linux is a community of open-source Unix like operating systems that are based on Linux Kernel?Are you puzzled and unsure where to begin with Linux?🤔
-          So, we are again back with a bang🤩.
-          We, however, do have a solution to it🥳. Pclub is organizing an Introductory session on Linux on December 17, 2021. Don't miss out on the chance to learn about Linux🤩 and have a chit-chat with us🙌🏻.</Text>
-          <Text style={{color:"#118b06",marginBottom:hp(4),marginLeft:wp(1.5)}}onPress={ ()=> Linking.openURL('https://google.com') }> Meet link!</Text> 
-  </View>
-  
-      
-</View>
-<View style={[styles.card2,styles.elevation,{marginBottom:40}]}>
-<Image style={{height:hp(42),width:wp(86),borderTopLeftRadius:10,borderTopRightRadius:10,marginLeft:hp(0),marginRight:hp(0)}}  source={{uri:`${image3.url}`}}></Image>
-      <View>
-      <Text style={styles.cardtitle}>Introduction to DSA</Text>
-      <Text style={{  color: "#767676",
-          fontFamily: "Montserrat_400Regular", marginLeft:wp(2),marginBottom:hp(1),marginTop:hp(1),marginRight:wp(1),justifyContent:"space-evenly"}} >{image3.descriptions}</Text>
-          <Text style={{color:"#118b06",marginBottom:hp(4),marginLeft:wp(1.5)}}onPress={ ()=> Linking.openURL(`${rl.Meetlink}`) }> Meet link!</Text>   
-      </View>
-      </View>
-      <View style={[styles.card2,styles.elevation,{marginBottom:40}]}>
-<Image style={{height:hp(42),width:wp(86),borderTopLeftRadius:10,borderTopRightRadius:10,marginLeft:hp(0),marginRight:hp(0)}}  source={{uri:`${image3.url}`}}></Image>
-      <View>
-      <Text style={styles.cardtitle}>Introduction to DSA</Text>
-      <Text style={{  color: "#767676",
-          fontFamily: "Montserrat_400Regular", marginLeft:wp(2),marginBottom:hp(1),marginTop:hp(1),marginRight:wp(1),justifyContent:"space-evenly"}} >{image3.descriptions}</Text>
-          <Text style={{color:"#118b06",marginBottom:hp(4),marginLeft:wp(1.5)}}onPress={ ()=> Linking.openURL(`${rl.Meetlink}`) }> Meet link!</Text>   
-      </View>
-      </View>
+ 
 </ScrollView>
 </ScrollView>
 
@@ -121,7 +234,7 @@ const styles = StyleSheet.create ({
         fontFamily:"Montserrat_700Bold",
         color:"#000",
         marginTop:hp(2),
-      marginLeft:wp(2),
+      marginLeft:wp(3),
 
         fontSize:14,
       marginRight:wp(1)  
@@ -132,7 +245,7 @@ const styles = StyleSheet.create ({
                 borderRadius: 10,
     
                 width:wp(86),
-                height:hp(76.5),
+                height:hp(60.5),
                 marginTop:hp(0.5),
                 marginRight:wp(2),
                 marginLeft:wp(4),
